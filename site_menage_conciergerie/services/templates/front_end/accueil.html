@@ -1,10 +1,11 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <script src="script.js" async></script>
     <title>Page d'accueil</title>
@@ -14,7 +15,7 @@
     <header>
         <section class="sec1">
             <div class="logo">
-                <img src="nos-images/logovide.PNG" alt="photo logo">
+                <img src="{% static 'images/logovide.PNG' %}" alt="photo logo">
             </div>
             <nav class="menu">
                 <ul>
@@ -71,25 +72,25 @@
         </div>
         <section class="sec2">
             <div class="reactivite">
-                <img src="nos-images/eclat.png" alt="eclat">
+                <img src="{% static 'images/eclat.png' %}" alt="eclat">
                 <h2>Réactivité</h2>
                 <p>Majestic Prestige Multiservices met à votre <br> disposition une équipe disponible 24/24h, <br>7j/7
                     pour répondre à tous vos besoins</p>
             </div>
             <div class="humain">
-                <img src="nos-images/humain.png" alt="">
+                <img src="{% static 'images/humain.png' %}" alt="">
                 <h2>Humain</h2>
                 <p>Notre société à taille humaine nous permet d’établir un contact privilégié et une proximité précieuse
                     avec chacun de nos membres</p>
             </div>
             <div class="qualite">
-                <img src="nos-images/main.png" alt="">
+                <img src="{% static 'images/main.png' %}" alt="">
                 <h2>Qualité</h2>
                 <p>La rigueur, l'honnêteté, la ponctualité et la discrétion ce sont les principals qualités de la
                     Prestation fournie par notre société.<br> </p>
             </div>
             <div class="polyvalence">
-                <img src="nos-images/fleches.png" alt="">
+                <img src="{% static 'images/fleches.png' %}" alt="">
                 <h2>Polyvalence</h2>
                 <p>La société proposeras une grande polyvalence entre des services de ménage de tous types, avec des
                     services de conciergerie et gestion.</p>
@@ -104,7 +105,7 @@
            <div class="services">
             <div class="slides fade">
                 <div class="titre">menage</div>
-                <div class="gliss"><img src="nos-images/menage.jpg" alt=""></div>
+                <div class="gliss"><img src="{% static 'images/menage.jpg' %}" alt=""></div>
                 <div class="text"><p>Les beaux jours arrivent, préparons votre résidence
                     avant que la saison ne commence avec un ménage de tous types.</p>
                </div>
@@ -112,7 +113,7 @@
 
             <div class="slides fade">
                 <div class="titre">Conciergerie</div>
-               <div class="gliss"> <img src="nos-images/conciergerie.jpg" alt=""></div>
+               <div class="gliss"> <img src="{% static 'images/conciergerie.jpg' %}" alt=""></div>
                 <div class="text"><p>Profitez de votre temps libre !
 
                     Nous prenons soins de votre bien au moyen de services personnalisés.</p>
@@ -121,21 +122,21 @@
 
             <div class="slides fade">
                 <div class="titre">Service de soutien à domicile</div>
-                <div class="gliss"><img src="nos-images/soutien.jpg" alt=""></div>
+                <div class="gliss"><img src="{% static 'images/soutien.jpg' %}" alt=""></div>
                 <div class="text"><p>Une aide à domicile c’est un précieux gain de qualité de vie! Découvrez ici les différents services à domicile que nous vous proposons.</p>
                 </div>
             </div>
 
             <div class="slides fade">
                 <div class="titre">Service de chantier</div>
-               <div class="gliss"><img src="nos-images/chantier.jpeg" alt=""></div> 
+               <div class="gliss"><img src="{% static 'images/chantier.jpeg' %}" alt=""></div> 
                 <div class="text"><p>Toute prestation ou service inhérent à la propreté, rangement, petites démolitions avant travaux, débarras et fin de chantier de locaux commerciaux, administratifs et privés</p>
                </div>
             </div>
 
             <div class="slides fade">
                 <div class="titre">Entretien espace vert</div>
-               <div class="gliss"><img src="nos-images/espacevert.jpg" alt=""></div> 
+               <div class="gliss"><img src="{% static 'images/espacevert.jpg' %}" alt=""></div> 
                 <div class="text"><p>Votre jardin où espace vert mérite une attention particulière, on ferait les travaux nécessaires pour conserver votre jardin en bon état </p>
                 </div>
             </div>
@@ -213,21 +214,21 @@
     <h1>Pourquoi choisir Majestic Prestige & Conciergerie</h1>
     <div class="principe">
 <div class="principe1">
-<img src="nos-images/reglage.png" alt="">
+<img src="{% static 'images/reglage.png' %}" alt="">
 <div class="texteprincipe">
     <h2>Résponsabilité</h2>
 <p>Entiérement assuré.</p>
 </div>
 </div>
 <div class="principe2">
-    <img src="nos-images/reglage.png" alt="">
+    <img src="{% static 'images/reglage.png' %}" alt="">
    <div class="texteprincipe">
      <h2>Ecologie</h2>
     <p>Utilisation de produits ecologiques.</p>
 </div>
     </div>
     <div class="principe3">
-       <img src="nos-images/reglage.png" alt=""> 
+       <img src="{% static 'images/reglage.png' %}" alt=""> 
         <div class="texteprincipe">
             <h2>flexibilté</h2>
             <p>Réservation flexible à annuler a tout moment.</p>
@@ -244,35 +245,35 @@
 <div class="allcall">
 
 <div class="etape1">
-   <div class="image"> <img src="nos-images/decouvrir.png" alt=""></div>
+   <div class="image"> <img src="{% static 'images/decouvrir.png' %}" alt=""></div>
     <div class="numero"><p>1</p></div>
     <div class="paratitre"><p>Découvrez nos offres</p></div>
    <div class="paradesc"> <p>Majestic préstige conciergerie vous propose différents services tous types, aprés avoir choisir l'offre qui vous convient vous pouvez nous contactez</p></div>
 </div>
 
 <div class="etape2">
-    <div class="image"> <img src="nos-images/groupe.png" alt=""></div>
+    <div class="image"> <img src="{% static 'images/groupe.png' %}" alt=""></div>
      <div class="numero"><p>2</p></div>
      <div class="paratitre"><p>Contactez notre équipe</p></div>
     <div class="paradesc"> <p>Notre équipe prend contact avec vous et organise une visite personnalisée. Nous comprendrons ainsi mieux vos besoins et vos attentes.</p></div>
  </div>
 
  <div class="etape3">
-    <div class="image"> <img src="nos-images/devis.png" alt=""></div>
+    <div class="image"> <img src="{% static 'images/devis.png' %}" alt=""></div>
      <div class="numero"><p>3</p></div>
      <div class="paratitre"><p>Demandez un devis gratuit</p></div>
     <div class="paradesc"> <p>Majestic préstige conciergerie vous soumet un budget adapté et sur-mesure. Nous réalisons pour vous les démarches administratives liées à votre situation.</p></div>
  </div>
 
  <div class="etape4">
-    <div class="image"> <img src="nos-images/menage.png" alt=""></div>
+    <div class="image"> <img src="{% static 'images/menage.png' %}" alt=""></div>
      <div class="numero"><p>4</p></div>
      <div class="paratitre"><p>Explorez nos services</p></div>
     <div class="paradesc"> <p>Nous sélectionnons uniquement des employés avec expériences et spécialisés en ménage et entretien de tous les espaces. Trouvons ensemble l’intervenant qui vous convient le mieux.</p></div>
  </div>
 
  <div class="etape5">
-    <div class="image"> <img src="nos-images/maison-propre.png" alt=""></div>
+    <div class="image"> <img src="{% static 'images/maison-propre.png' %}" alt=""></div>
      <div class="numero"><p>5</p></div>
      <div class="paratitre"><p>Accéder à la tranquilité d'esprit</p></div>
     <div class="paradesc"> <p>Majestic préstige conciergerie tiens à vous délivrer une prestation de qualité, elle sera toujours à votre service. Vous allez adorer rentrer chez vous !</p></div>
@@ -311,7 +312,7 @@
     <footer>
         <section class="sec9">
             <div class="logogif">
-                <a href="accueil.html"><img src="nos-images/logovide.PNG" alt="gifemploi"></a>
+                <a href="accueil.html"><img src="{% static 'images/logovide.PNG' %}" alt="gifemploi"></a>
             </div>
             <div class="menufooter">
                 <nav>
