@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+def accueil(request):
+    return render(request, 'front_end/accueil.html')  # Affiche le template accueil.html
+
