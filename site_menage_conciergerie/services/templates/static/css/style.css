@@ -410,7 +410,7 @@ animation-duration: 1.5s;
   filter:brightness(50%);
 }
 .titreadministration{
-  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(../images/tacheadmin.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/tacheadmin.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -440,7 +440,7 @@ object-fit: cover;
   margin-left: 40px;
 }*/
 .titrelocation{
-  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url(nos-images/location.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/location.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -509,11 +509,6 @@ object-fit: cover;
  border: none;
 }
 
-
-
-.packairbnb{
- /* margin-left: 40px;*/
-}
 .serviceadministratif p,.gestionlocation p,.packairbnb p{
 text-align:justify;
 
