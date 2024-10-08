@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/services.css' %}">
+{% endblock %}
+
+{% block title %}
+Nos Services
+{% endblock %}
+
+{% block header_image %}
+{% static 'images/image-nosservices.jpg' %}
+{% endblock %}
+
+{% block header_title %}
+Majestic Préstige & Conciergerie
+{% endblock %}
+
+{% block header_subtitle %}
+Nos offres de services de luxe
+{% endblock %}
+
+{% block content %}
+    <main>
+
+        <section class="section1">
+            <h1>Majestic Préstige & Conciergerie</h1>
+            <h2>Nos offres de services de luxe</h2>
+            </section>
+
+
+<section class="section2">
+<h1>Nos services</h1>
+<hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
+<p>Majestic Préstige & Conciergerie proposeras ume grande polyvalence entre des services de ménage tous types,
+     avec des services de conciergerie et gestion, entretien à domicile et espace vert ainsi que l'aide à la personne. 
+     Nous vous proposons des solutions globales et sur mesure en fonction de vos envies et de vos besoins.</p>
+
+</section>
+<section class="secteur1">
+    {% for service in services %}
+    <div class="service-item {% cycle 'left' 'right' %}">
+        <div class="service-image" style="background-image: url('{% static service.image_path %}');">
+        </div>
+        <div class="para1">
+            <h2>{{ service.service_name }}</h2>
+
+                <!-- Vérification si le premier sous-service existe -->
+                {% if service.subservice1_name %}
+                    <h3>{{ service.subservice1_name }}</h3>
+                    {% if service.subservice1_description %}
+                        <p>{{ service.subservice1_description }}</p>
+                    {% endif %}
+                {% endif %}
+
+                <!-- Vérification si le deuxième sous-service existe -->
+                {% if service.subservice2_name %}
+                    <h3>{{ service.subservice2_name }}</h3>
+                    {% if service.subservice2_description %}
+                        <p>{{ service.subservice2_description }}</p>
+                    {% endif %}
+                {% endif %}
+
+                <!-- Si aucun sous-service n'existe, afficher la description normale -->
+                {% if not service.subservice1_name and not service.subservice2_name %}
+                    {% if service.service_description %}
+                        <p>{{ service.service_description }}</p>
+                    {% endif %}
+                {% endif %}
+                
+                <a href="#"><p class="lire">Lire la suite</p></a>
+        </div>
+    </div>
+    {% endfor %}
+</section>
+
+<section class="sec6">
+<h1>call to action</h1>
+    <h2>Élevez votre expérience</h2>
+    <p>Notre conciergerie de luxe vous invite à découvrir un monde d'élégance et de raffinement:</p>
+    <hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
+<div class="allcall">
+
+<div class="etape1">
+   <div class="image"> <img src="{% static 'images/decouvrir.png' %}" alt=""></div>
+    <div class="numero"><p>1</p></div>
+    <div class="paratitre"><p>Découvrez nos offres</p></div>
+   <div class="paradesc"> <p>Majestic préstige conciergerie vous propose différents services tous types, aprés avoir choisir l'offre qui vous convient vous pouvez nous contactez</p></div>
+</div>
+
+<div class="etape2">
+    <div class="image"> <img src="{% static 'images/groupe.png' %}" alt=""></div>
+     <div class="numero"><p>2</p></div>
+     <div class="paratitre"><p>Contactez notre équipe</p></div>
+    <div class="paradesc"> <p>Notre équipe prend contact avec vous et organise une visite personnalisée. Nous comprendrons ainsi mieux vos besoins et vos attentes.</p></div>
+ </div>
+
+ <div class="etape3">
+    <div class="image"> <img src="{% static 'images/devis.png' %}" alt=""></div>
+     <div class="numero"><p>3</p></div>
+     <div class="paratitre"><p>Demandez un devis gratuit</p></div>
+    <div class="paradesc"> <p>Majestic préstige conciergerie vous soumet un budget adapté et sur-mesure. Nous réalisons pour vous les démarches administratives liées à votre situation.</p></div>
+ </div>
+
+ <div class="etape4">
+    <div class="image"> <img src="{% static 'images/menage.png' %}" alt=""></div>
+     <div class="numero"><p>4</p></div>
+     <div class="paratitre"><p>Explorez nos services</p></div>
+    <div class="paradesc"> <p>Nous sélectionnons uniquement des employés avec expériences et spécialisés en ménage et entretien de tous les espaces. Trouvons ensemble l’intervenant qui vous convient le mieux.</p></div>
+ </div>
+
+ <div class="etape5">
+    <div class="image"> <img src="{% static 'images/maison-propre.png' %}" alt=""></div>
+     <div class="numero"><p>5</p></div>
+     <div class="paratitre"><p>Accéder à la tranquilité d'esprit</p></div>
+    <div class="paradesc"> <p>Majestic préstige conciergerie tiens à vous délivrer une prestation de qualité, elle sera toujours à votre service. Vous allez adorer rentrer chez vous !</p></div>
+ </div>
+
+</div>
+
+
+<a href=""><button>Demandez un devis</button></a>
+  <div class="devis"><p>c'est gratuit et sans engagement</p></div> 
+</section>
+
+    <section class="fotobas">
+<div class="gauche">
+<h3>Vous souhaitez demander un devis ?</h3>
+<p>Consultez nos offres de services et n'hésitez pas à nous contacter</p>
+<a href="views/contact.html"><button id="contacternous">
+    Contactez-nous
+</button>
+</a>
+
+</div>
+
+<div class="droite">
+
+</div>
+<div>
+
+</div>
+    </section>
+    </main>
+{% endblock %}

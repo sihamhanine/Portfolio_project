@@ -30,6 +30,13 @@ class Service(BaseModel):
     service_name = models.CharField(max_length=50)
     service_description = models.TextField()
     price = models.FloatField()
+    image_path = models.CharField(max_length=255, blank=True, null=True)
+
+    # Sous-services pour mieux structurer les données
+    subservice1_name = models.CharField(max_length=50, blank=True, null=True)
+    subservice1_description = models.TextField(blank=True, null=True)
+    subservice2_name = models.CharField(max_length=50, blank=True, null=True)
+    subservice2_description = models.TextField(blank=True, null=True)
 
     def __str__(self):
         return self.service_name
