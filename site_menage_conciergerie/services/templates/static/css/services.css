@@ -121,8 +121,9 @@ header{
 .secteur1{
    /*background-color: #d4af37;*/
     width: 70%;
-    margin: 0;
-   /* margin-top: 60px;*/
+    margin: auto
+    ;
+   margin-top: 60px;
 }
 
 .para1 h2{
@@ -282,6 +283,7 @@ margin-top: 10px;
   width: 100%;
   display: flex;
   margin-top: 180px;
+  margin-bottom: 0px;
 }
 .gauche{
   width: 50%;
@@ -328,106 +330,3 @@ margin-left: 350px;
 
 
 
-
-/*footer*/
-
-.sec9{
-  background: rgba(0,0,0,.7);
-  display: flex;
-  height: 350px;
-  justify-content: center;
-  padding-top: 50px;
-}
-.logogif{
- width: 25%;
- text-align: center;
-}
-.logogif img{
-  width: 300px;
-  height: auto; 
-}
-.menufooter{
-  width:25%;
-  
-}
-.listes{
-  width:25%;
- 
-}
-.reseau{
-  width:25%;
-
-}
-.menufooter nav ul{
-  list-style: none;
-
-line-height: 2.5em;
-padding-left: 100px;
-}
-.menufooter nav ul li{
-  color:#cab48d;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
-  
-}
-.listes ul{
-  list-style: none;
-  line-height: 2.5em;
-padding-left: 10px;
-}
-.listes ul li{
-  color:#cab48d;
-  font-size: 18px;
-  font-weight: 500;
-  font-family: Arial, Helvetica, sans-serif;
-}
-.suivre{
-  display: flex;
-}
-.ytbbas{
- margin-left: 20px;
-
-}
-.linkdinbas{
-
-  margin-left: -15px;
-}
-.gmailbas{
-  margin-left: 20px;
-
-}
-#titres{
-  color:#cab48d;
-font-family: Arial, Helvetica, sans-serif;
-font-size: 20px;
-  font-weight: 500;
-  padding-top: 8px;
-}
-.menufooter a, .listes a{
-  text-decoration: none;
-}
-.menufooter a:hover, .listes a:hover{
-  text-decoration: underline;
-  color:#cab48d;
-}
-
-
-.copy{
-  background: rgba(0,0,0,.7);
-  
-  margin-top:0px;
-  padding-bottom: 30px;
-}
-.copy p{
-  font-family: Arial, Helvetica, sans-serif;
-  font-weight: bold;
-  color: #cab48d;
-  text-align: center;
- word-spacing: 0.1em;
- padding-top:20px;
-
-}
-.copy hr{
-  margin-left: 750px;
-}
