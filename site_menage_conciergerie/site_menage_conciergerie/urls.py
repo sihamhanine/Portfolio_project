@@ -34,6 +34,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.accueil, name='accueil'),  # Page d'accueil
     path('nosservices/', views.nos_services, name='nos_services'),
+    path('a-propos/', views.a_propos, name= 'a_propos'),
 ]
 
 if settings.DEBUG:

@@ -1,0 +1,522 @@
+
+/*main*/
+.section1{
+  background: rgba(0,0,0,.2);
+  width: 50%;
+  margin: auto;
+  padding-bottom: 30px;
+}
+
+.section1 h1{
+  padding-top: 20px;
+  font-size: 40px!important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+ line-height:2em;
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif;
+  margin-top: -450px;
+  color: #cab48d;
+ /* color: white;*/
+}
+
+.section1 h2{
+  padding-top: 20px;
+  font-size: 20px!important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+ line-height:2em;
+  font-weight: 700;
+ color: #cab48d;
+ /*color: white;*/
+  font-family: 'Montserrat', sans-serif;
+}
+.histoire h1,.expertise h1,.description h1{
+  padding-top: 20px;
+  font-size: 30px!important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+ line-height:2em;
+  font-weight: 700;
+  margin-top:280px;
+ color:black;
+ /*color: white;*/
+  font-family: 'Montserrat', sans-serif;
+}
+.description p{
+  text-align: center;
+  margin-top: 20px;
+  line-height: 2em;
+}
+.description h3{
+  font-size: 20px;
+  line-height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+  text-align: center;
+}
+
+/*.menu a:hover{
+  color:#ED7F10;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 15px;
+ 
+}*/
+/*
+.section2{
+  background-color: #F8F9F9;
+
+margin-top: 50px;
+}
+.regrouper{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.mission{
+  width: 39%;
+  background-color:white;
+  height: 500px;
+  padding: 50px 50px;
+  margin-top: 80px;
+  margin-right: -90px;
+  position: relative;
+
+}
+.fotomission{
+  width: 50%;
+}
+
+.fotomission{
+  background-image: url("nos-images/fotomission.jpeg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 48%;
+  height: 650px;
+}
+#textmission{
+  text-align: center;
+  margin-top: 20px;
+  color: #cab48d;
+  font-weight: 600;
+ font-family: 'Montserrat', sans-serif;
+ letter-spacing: 3px;
+}
+.mission h2{
+  text-align: center;
+  font-size: 20px;
+  line-height: 24px;
+  font-family: 'Montserrat', sans-serif;
+  letter-spacing: 3px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #444;
+  text-align: center;
+  text-transform: uppercase;
+}
+.mission p{
+  text-align: justify;
+  margin-top: 10px;
+  line-height: 2.5em;
+}
+
+*/
+
+.secentre1, .secentre2, .secentre3{
+    
+  display: flex;
+  /*background-color: orange;*/
+  width: 70%;
+/*  margin: auto;*/
+  margin-left: 240px;
+}
+.secentre2{
+  margin-left: 262px;
+}
+.RH{
+  width: 50%;
+  height: 350px;
+  text-align: justify;
+  padding: 40px;
+  background-color: #cab48d;
+  margin: 20px;
+}
+.fotoRh{
+  width: 50%;
+  height: 350px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.fotoRh img{
+ width:100%;
+height: 350px;
+}
+.RH h3{
+text-align: center;
+font-size: 18px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 600;
+letter-spacing: 3px;
+text-transform: uppercase;
+}
+.RH p{
+font-size: 16px;
+font-family: Arial, Helvetica, sans-serif;
+font-weight: 100;
+line-height: 2em;
+padding-top: 30px;
+}
+.secentre1{
+  margin-top: 50px;
+}
+.secentre2{
+  margin-top: -20px;
+}
+.secentre3{
+  margin-top: -20px;
+}
+.RH ul{
+  list-style: none;
+  padding-top: 20px;
+}
+.RH li{
+font-size: 16px;
+font-weight: 100;
+font-family: Arial, Helvetica, sans-serif;
+line-height: 2em;
+}
+.RH li::before{
+  content: "\2022";
+  color: #ED7F10;
+  margin: 10px;
+}
+
+
+.titreUnique h1,.secnosservices h1,.secnotregestion h1,.rejoignernous h1{
+padding-top: 20px;
+font-size: 30px!important;
+text-align: center;
+text-transform: uppercase;
+letter-spacing: 4px;
+line-height:2em;
+font-weight: 700;
+margin-top: 50px;
+color:black;
+/*color: white;*/
+font-family: 'Montserrat', sans-serif;}
+/*avis clients*/
+.sectionclient{
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("nos-images/confiance.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height:60vh;
+}
+
+.avisclient{
+  height: 100vh;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  /*justify-content: space-around;*/
+  justify-content: center;
+  /*align-items: center;*/
+  gap: 36px;
+  padding-top: 100px;
+}
+.clients{
+  height: 350px;
+  width: 400px;
+  background-color: white;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  display: block;
+  padding: 10px;
+  box-shadow: 1px 1px 10px #333;
+  border-radius: 15px;
+  padding: 30px 20px;
+}
+.clients img{
+  width:100px;
+  height: 100px;
+  border-radius:50%;
+ box-shadow: 1px 1px 10px #333;
+border: 1px solid white;
+}
+.clients p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: justify;
+}
+.fas{
+  color:#cab48d;
+}
+
+/*nos services */
+
+.secnosservices{
+ background-color: #f3f3f3;
+ padding-top: 10px;
+ padding-bottom: 70px;
+ }
+ .nosservices{
+  display: flex;
+  margin: auto;
+  width: 80%;
+  margin-top: 60px;
+ }
+
+ .servicemenage,.serviceconciergerie,.serviceaide,.servicechantier,.serviceEntretien{
+ 
+  width: 20%;
+   margin-left: 10px;
+ }
+
+ .serviceEntretien{
+  margin-right: 10px;
+ }
+
+ .servicemenage a,.serviceconciergerie a,.serviceaide a,.servicechantier a,.serviceEntretien a{
+  text-decoration: none;
+}
+.servicemenage a:hover .titremenage,.serviceconciergerie a:hover .titreconciergerie,.serviceaide a:hover .titreaide,.servicechantier a:hover .titrechantier,.serviceEntretien a:hover .titreEntretien{
+  filter:brightness(70%);
+}
+.titremenage{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/menage.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titreconciergerie{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/conciergerie.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titreaide{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/soutien.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titrechantier{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/chantier.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titreEntretien{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/espacevert.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titremenage h2,.titreconciergerie h2,.titreaide h2,.titrechantier h2,.titreEntretien h2{
+  padding-top: 80px;
+  line-height:2em;
+   font-family: 'Montserrat', sans-serif ;
+  font-size: 20px!important;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.secnosservices button,.secnotregestion button{
+  background:#CDB181;
+  border-radius: 10px;
+  color: white;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-left: 41.7%;
+  margin-top: 60px;
+  letter-spacing: 3px;
+  border: none;
+  text-transform: uppercase;
+}
+.devis p{
+  margin-left: 42.7%;
+  margin-top: 10px;
+}
+
+/*notre gestion*/
+.secnotregestion{
+  background-color: #f3f3f3;
+  margin-top: -50px;
+  padding-bottom: 100px;
+}
+.groupe1{
+  display: flex;
+  width: 60%;
+  margin: auto;
+ margin-top: 50px;
+ }
+ .serviceadministratif,.gestionlocation,.packairbnb{
+ 
+   width: 40%;
+   margin-left: 10px;
+
+ }
+
+ .packairbnb{
+  margin-right: 10px;
+ }
+
+ .serviceadministratif a,.gestionlocation a,.packairbnb a{
+  text-decoration: none;
+}
+.serviceadministratif a:hover .titreadministration,.gestionlocation a:hover .titrelocation,.packairbnb a:hover .titreairbnb{
+  filter:brightness(70%);
+}
+.titreadministration{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/tacheadmin.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+height: 250px;
+width:100%;
+
+}
+
+
+.titrelocation{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/location.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+height: 250px;
+width:100%;
+object-fit: cover;
+
+}
+
+
+.titreairbnb{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://pic.clubic.com/v1/images/1726363/raw.webp?width=1200&fit=max&hash=578697ceec01668a40e1bd4eab09f444a2acb85d);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 250px;
+width: 100%;
+object-fit: cover;
+
+}
+.titreairbnb h2,.titrelocation h2,.titreadministration h2{
+  padding-top: 110px;
+  line-height:2em;
+   font-family: 'Montserrat', sans-serif ;
+  font-size: 22px!important;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+
+/*rejoigner nous*/
+
+.final{
+  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("nos-images/rejoigner-nous.jpg");
+  background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 100%;
+  height: 500px;
+  padding-top: 50px;
+}
+ .lestitres{
+  background: rgba(0,0,0,0.4);
+margin: auto;
+width: 70%;
+height: 400px;
+padding: 20px 20px;
+}
+.lestitres h3{
+  text-align: center;
+  padding: 20px;
+  color:white;
+  letter-spacing: 3px;
+  font-size: 18px;
+  /*text-transform:uppercase ;*/
+  font-weight: 600;
+}
+.lestitres h2{
+  text-align: center;
+  padding: 20px;
+  color:white;
+  letter-spacing: 3px;
+  font-size: 22px;
+  /*text-transform:uppercase ;*/
+  font-weight: 700;
+}
+.lestitres p{
+  text-align: center;
+  padding: 20px;
+  color: white;
+  letter-spacing: 3px;
+  font-size: 15px;
+  /*text-transform:uppercase ;*/
+  font-weight: 500;
+}
+
+.lestitres  #boutonfinale{
+ margin-left: 500px;
+  margin-top: 30px;
+ /* background:#cab48d;*/
+ background:#cab48d;
+  border-radius: 5px;
+padding: 20px 40px;
+color:white;
+font-size: 18px;
+font-weight: 700;
+letter-spacing: 4px;
+position: absolute;
+border: none;
+text-transform: uppercase;
+}
+
