@@ -10,6 +10,9 @@ def nos_services(request):
     services = Service.objects.all()  # Récupérer tous les services depuis la base de données
     return render(request, 'front_end/NosServices.html', {'services': services})
 
+def a_propos(request):
+    return render(request, 'front_end/a-propos.html') # affiche le template a-propos.html
+
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
     queryset = Client.objects.all()

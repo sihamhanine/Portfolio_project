@@ -24,10 +24,10 @@
             </div>
             <nav class="menu">
                 <ul>
-                    <li><a href="accueil.html">Accueil</a></li>
+                    <li><a href="{% url 'accueil' %}">Accueil</a></li>
                     <li><a href="A-propos.html">À propos</a></li>
                     <li class="p-sous-nav-service">
-                        <a href="NosServices.html">Nos offres de services</a>
+                        <a href="{% url 'nos_services' %}">Nos offres de services</a>
                         <ul class="sous-nav-service">
                             <li class="p-sous-nav-menage">
                                 <a href="/">Ménage</a>
