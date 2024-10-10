@@ -10,76 +10,19 @@
 {% endblock%}
 
 {% block header_image %}
-{% static 'images/acc.jpg' %}
+{% static 'images/apropos.jpg' %}
 {% endblock %}
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link type="text/css" rel="stylesheet" href="apropos.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@2.1.4/css/boxicons.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 
-    <script src="scriptService.js" defer></script>
-    <title></title>
-</head>
-<body>
-    <header>
-        <section class="sec1">
-            <div class="logo">
-                <img src="nos-images/logovide.PNG" alt="photo logo">
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="accueil.html">Accueil</a></li>
-                    <li><a href="A-propos.html">À propos</a></li>
-                    <li class="p-sous-nav-service">
-                        <a href="NosServices.html">Nos offres de services</a>
-                        <ul class="sous-nav-service">
-                            <li class="p-sous-nav-menage">
-                                <a href="/">Ménage</a>
-                                <ul class="sous-nav-menage">
-                                    <li><a href="Menage-Résidentiel.html">Résidentiel </a></li>
-                                    <li><a href="Menage-Commercial.html">Commercial</a></li>
-                                </ul>
+{% block header_title %}
+Majestic Préstige & Conciergerie
+{% endblock %}
 
+{% block header_subtitle %}
+Bienvenue dans la haute conciergerie
+{% endblock %}
 
-                            </li>
-                            <li class="p-sous-nav-conciergerie">
-                                <a href="/">Conciergerie</a>
-                                <ul class="sous-nav-conciergerie">
-                                    <li><a href="/">Résidentielle</a></li>
-                                   
-                                </ul>
+{% block content %}
 
-
-                            </li>
-                            <li><a href="/">Service de soutien à domicile</a></li>
-                            <li><a href="/">Service de chantier</a></li>
-                            <li><a href="/">Entretien espace vert</a></li>
-                        </ul>
-                    </li>
-                    <li class="p-sous-nav-projet">
-                        <a href="/">Notre gestion</a>
-                        <ul class="sous-nav-projet">
-                            <li><a href="/">Service administratifs</a></li>
-                            <li><a href="/">Gestion location</a></li>
-                            <li><a href="/">Pack AIRBNB</a></li>
-
-
-
-                        </ul>
-                    </li>
-                    <li> <a href="views/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-
-        </section>
-
-    </header>
     <main>
         <section class="section1">
 <h1>Majestic Préstige & Conciergerie</h1>
@@ -103,12 +46,12 @@
     </div>
     <div class="fotoRh">
         
-    <img src="nos-images/fotomission.jpeg" alt="notre mission">
+    <img src="{% static 'images/fotomission.jpeg' %}" alt="notre mission">
     </div>
 </section>
 <section class="secentre2">
     <div class="fotoRh">
-        <img src="nos-images/notreEquipe.jpg" alt="notre equipe">
+        <img src="{%static 'images/notreEquipe.jpg' %}" alt="notre equipe">
     </div> 
     <div class="RH">
         <h3>NOTRE EQUIPE :</h3>
@@ -130,7 +73,7 @@
              Notre objectif : répondre efficacement à vos besoins dans les meilleurs délais, et anticiper vos attentes.</p>
         </div>
         <div class="fotoRh">
-            <img src="nos-images/notreengagement.jpg" alt="notre engagement"></div>
+            <img src="{% static 'images/notreengagement.jpg' %}" alt="notre engagement"></div>
 </section>
 
 <div class="titreUnique">  <h1>Ils nous font confiance  </h1>
@@ -140,7 +83,7 @@
   
 <div class="avisclient">
     <div class="clients">
-        <img src="nos-images/personne1.jpg" alt="">
+        <img src="{% static 'images/personne1.jpg' %}" alt="">
         <p>Intervenante consciencieuse et rapide, qui s’efforce de répondre à toutes les attentes qu’on peut avoir. 
             C’est un plaisir de rentrer chez soi après son passage.</p>
               <div class="notes">
@@ -153,7 +96,7 @@
     </div>
 
     <div class="clients">
-        <img src="nos-images/personne8.jpg" alt="">
+        <img src="{% static 'images/personne8.jpg' %}" alt="">
         <p>Excellente prestation de la personne qui est intervenue. Les résultats constatés sont bien positivement au-delà de l’attendu. 
             
         Mille mercis à cette excellente intervenante.</p>
@@ -167,7 +110,7 @@
     </div>
 
     <div class="clients">
-        <img src="nos-images/personne6.jpg" alt="">
+        <img src="{% static 'images/personne6.jpg' %}" alt="">
         <p>Un service de conciergerie de qualité supérieure ! Leur équipe prend soin de tout, des entretiens réguliers aux réparations nécessaires. 
            . Un service exceptionnel !.</p>
               <div class="notes">
@@ -286,49 +229,5 @@
     </section>
 
     </main>
-    <footer>
-
-        <section class="sec9">
-            <div class="logogif">
-                <a href="accueil.html"><img src="nos-images/logovide.PNG" alt="gifemploi"></a>
-            </div>
-            <div class="menufooter">
-                <nav>
-                    <ul>
-                        <a href="accueil.html"><li>ACCUEIL</li> </a> 
-                        <a href="A-propos.html"><li>A PROPOS</li></a>
-                        <a href=""><li>NOS OFFRES DE SERVICES</li></a>
-                        <a href=""><li>NOTRE GESTION</li></a>
-                        <a href="views/contact.html"><li>CONTACT</li></a>
-                    
-                    </ul>
-                </nav>
-            </div>
-            <div class="listes">
-                <ul>
-                   <a href=""><li>PACK AIRBNB</li></a> 
-                    <a href=""><li>SERVICE ADMINISTRATIF</li></a>
-                    <a href=""><li>GESTION LOCATION</li></a>
-                    <a href=""><li>CGU</li></a>
-                    <a href=""><li>POLITIQUE DE PROTECTION DES DONNÉES PERSONNELLES</li></a>
-                </ul>
-            </div>
-            <div class="reseau">
-                <h2 id="titres">Suivez-nous sur:</h2>
-                <div class="suivre">
-                    <div class="linkdinbas"><a href="https://www.linkedin.com/company/"><img src="views/images/capdernier.png" alt="linkedin"></a></div>
-                    <div class="gmailbas"><a href=""><img src="views/images/gmail.png" alt="gmail"></a></div>
-                    <div class="ytbbas"><a href="https://www.youtube.com/channel/UCy0L6f8kYbNlhLx2DzrAlCg"><img src="views/images/youtube.png" alt="youtube"></a></div>
-                </div>
-            </div>
-           
-        </section>
-        <div class="copy">
-            <hr width="20%" size="1.5" text-align="center" color="#cab48d">
-            <p>Copyright @ 2023 Majestic Prestige Conciergerie. Tous les droits sont réservés</p>
-            
-            </div>
-    </footer>
-  
-</body>
-</html>
+    {% endblock %}
+    
