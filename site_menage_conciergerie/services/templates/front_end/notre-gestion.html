@@ -1,0 +1,96 @@
+{% extends 'base.html' %}
+{% load static%}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/gestion.css' %}">
+{% endblock %}
+
+{% block title%}
+Notre Gestion
+{% endblock%}
+
+{% block header_image %}
+{% static 'images/image' %}
+{% endblock %}
+
+{% block header_title %}
+Notre prémium Gestion de luxe
+{% endblock %}
+
+{% block header_subtitle %}
+Administrative et locative
+{% endblock %}
+
+{% block content %}
+    <main>
+        <section class="section1">
+            <h1> Notre prémium Gestion de luxe</h1>
+            <h2>Administrative et locative</h2>
+            </section>
+    
+            <section class="section2">
+               
+                <div class="texte1">
+        
+                    <p><span>Majestic Préstige & Conciergerie </span> propose un service haut de gamme de la gestion administrative sur mesure dédié aux particuliers et entreprises,
+                         ainsi qu’un service de gestion locative de prestige auprès des particuliers et propriétaires de biens locatifs.</p>
+                       <P>Nous sommes à votre service et là pour vous faciliter les démarches administratives du quotidien, organiser
+                         l’intégralité des contingences logistiques si nécessaire et vous permettre de passer des moments de totale quiétude pour un quotidien qui ne ressemble à personne d’autre que vous.</p>
+                       <!-- <p> Notre savoir-faire distinctif réside dans la création et la gestion de services de conciergerie au sein de copropriétés de prestige.</p>-->
+                        <p>Notre conciergerie apporte un vent de fraîcheur et une touche de modernité de luxe. Elle réside dans sa capacité à allier la tradition de la conciergerie avec une agence de gestion locative. </p> 
+                          <p> Nos clients, qu’ils soient voyageurs ou propriétaires, sont accueillis et accompagnés tout au long de leur parcours.</p>
+                </div>
+                <div class="image2">
+                <img src="{% static 'images/image1-section2-notregestion.png' %}" alt="" id="foto">
+                <img src="{% static 'images/image2-notre-gestion.jpg' %}" alt="" id="arriere-marron">
+                </div>
+                </section>
+
+                <section class="section3">
+
+                <h1>Majestic Préstige & Conciergerie haut de gamme <br> et Gestion locative de prestige</h1>
+                <hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
+                <p>Vous permettre d’allier art de vivre et confort d’exception, on vous accompagne au quotidien, <br>où que vous soyez et quels que soient vos besoins.</p>
+<div class="groupe-prestation">
+    <div class="prestation1">
+        <div class="partie1">
+
+        </div>
+       <a href="Gestion-Administrative.html"> <div class="partie2">
+<img src="{% static 'images/formalites-administratives.png' %}" alt="">
+<h2>Gestion administrative</h2>
+<p>Un service de conciergerie haut de gamme, libérez-vous du fardeau administratif et consacrez-vous à ce qui compte vraiment.</p>
+        </div> </a>
+        <div class="partie3">
+
+        </div>
+    </div>
+
+    <div class="prestation2">
+      <a href="Gestion-Location.html">  <div class="partie4">
+            <img src="{% static 'images/clef-locative.png' %}" alt="">
+            <h2>Gestion locative</h2>
+            <p>Assistance complète aux propriétaires de biens premium proposés en location saisonnière.</p>
+        </div>
+    </a>
+        <div class="partie5">
+
+        </div>
+       <a href="Pack-Airbnb.html"> <div class="partie6">
+            <img src="{% static 'images/airbnb.png' %}" alt="">
+            <h2>Votre Pack Airbnb</h2>
+            <p>La conciergerie Airbnb offre un soutien complet aux hôtes pour optimiser l'expérience de leurs clients.</p>
+        </div>
+    </a>
+    </div>
+</div>
+
+                </section>
+
+                <section class="section4">
+<h2>Vous êtes à la recherche d'une <br> conciergerie haut de gamme ?</h2>
+<p>Contactez nous pour profiter des services de conciergerie toute options  et de nos gestion administrative <br>et locative de vos biens.</p>
+<button>CONTACTEZ-NOUS</button>
+                </section>
+    </main>
+   {% endblock %}
