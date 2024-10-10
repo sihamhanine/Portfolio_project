@@ -16,6 +16,9 @@ def a_propos(request):
 def notre_gestion(request):
     return render(request, 'front_end/notre-gestion.html') # affiche le template notre-gestion.html
 
+def gestion_administrative(request):
+    return render(request, 'front_end/gestion-administrative.html')
+
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
     queryset = Client.objects.all()
