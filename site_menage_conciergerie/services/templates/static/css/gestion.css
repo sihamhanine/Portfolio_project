@@ -1,0 +1,248 @@
+
+header{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/image-header-notre-gestion.jpg');
+  background-attachment: fixed;
+  background-position:center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ width: 100%;
+ height: 80vh;
+}
+
+/* main */
+.section1{
+    background: rgba(0,0,0,.2);
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+  
+  .section1 h1{
+    padding-top: 20px;
+    font-size: 32px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -450px;
+   /* color: #cab48d;*/
+   color: #CDB181;
+   /*color: white;*/
+
+  }
+  
+  .section1 h2{
+    padding-top: 20px;
+    font-size: 24px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+   color: #CDB181;
+  /* color: white;*/
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /* section2 */
+  .section2{
+    margin: auto;
+    margin-top: 350px;
+    width: 70%;
+    display: flex;
+  }
+span{
+    font-weight: 700;
+    font-size: 18px;
+}
+  .texte1{
+    width: 50%;
+  
+  }
+  .texte1 p{
+    text-align: justify;
+padding: 10px 20px;
+line-height: 2rem;
+letter-spacing: 1.5px;
+  }
+  .image2{
+    width: 50%;
+    margin-left: 40px;
+
+  }
+  .image2 #arriere-marron{
+    margin-top:75px;
+    position: relative;
+    width: 75%;
+    height: 59vh;
+  }
+  .image2 #foto{
+    position: absolute;
+    z-index: 99;
+  }
+/* section3 */
+.section3{
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+}
+.section3 h1{
+        padding-top: 40px;
+        font-size: 25px!important;
+        text-align: center;
+        text-transform: uppercase;
+        letter-spacing: 4px;
+       line-height:2em;
+        font-weight: 700;
+        font-family: 'Montserrat', sans-serif;
+}
+.section3 p{
+    text-align: center;
+    line-height: 2rem;
+letter-spacing: 1px;
+}
+.section3 a{
+    text-decoration: none;
+    color: black;
+}
+.section3 a:hover{
+    background-color: rgba(0,0,0,0.1);
+ /*  background-color: #f0d5a8;*/
+}
+
+.prestation1{
+    display: flex;
+    margin: auto;
+    width: 80%;
+    margin-top: 40px;
+}
+.prestation2{
+    display: flex;
+    margin: auto;
+    width: 80%;
+ margin-top:20px ;
+
+   justify-content: center;
+}
+  .partie1{
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/image1-gestion-location.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  margin: auto;
+  height: 371px;
+  width:371px;
+  object-fit: cover;
+  
+  }
+  .partie2{
+    border: 1px solid rgba(0,0,0,.3);
+    width: 371px;
+    height: 371px;
+    margin: auto;
+    padding: 20px 20px;
+  }
+  .partie4{
+    border: 1px solid rgba(0,0,0,.3);
+    width: 371px;
+    height: 371px;
+   margin-right: 19px;
+
+   padding: 20px 20px;
+
+  }
+  .partie6{
+    border: 1px solid rgba(0,0,0,.3);
+    width: 371px;
+    height: 371px;
+margin-left: 20px;
+   padding: 20px 20px;
+
+  }
+  .partie2 img,.partie4 img,.partie6 img{
+    width: 20%;
+    margin-left: 120px;
+    margin-top: 30px;
+  }
+  .partie2 h2,.partie4 h2,.partie6 h2{
+    text-align: center;
+    letter-spacing: 1.5px;
+    padding-top: 20px;
+    font-size: 22px;
+  }
+  .partie2 p,.partie4 p,.partie6 p{
+    text-align: center;
+    letter-spacing: 1px;
+    padding-top: 10px;
+  }
+  .partie3{
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/image2-gestion-location.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  margin: auto;
+  height: 371px;
+  width:371px;
+  object-fit: cover;
+  
+  }
+  .partie5{
+    background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/location.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  height: 371px;
+  width:371px;
+  object-fit: cover;
+  margin-left: 0px;
+  
+  }
+/* section4*/
+  .section4{
+    background-image:url('../images/bas-page-notre-gestion.jpg');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+background-attachment: fixed;
+  width: 100%;
+  height:689px;
+  object-fit: cover;
+  margin-top: 70px;
+  }
+
+  .section4 h2{
+    text-align: center;
+    padding-top: 180px;
+    font-size: 42px;
+    font-weight: 700;
+    line-height: 1.5em;
+    letter-spacing: 2.5px;
+    color: white;
+  }
+  .section4 p{
+    text-align: center;
+    padding-top: 40px;
+    color: white;
+    letter-spacing: 2px;
+    line-height: 2em;
+  }
+  .section4 button{
+    margin-left: 795px;
+    margin-top: 80px;
+    background:#cab48d;
+    border-radius: 0px;
+  padding: 20px 40px;
+  color: white;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  position: absolute;
+  border: none;
+  }
+  .section4 button:hover{
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+
+  

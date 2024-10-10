@@ -13,6 +13,9 @@ def nos_services(request):
 def a_propos(request):
     return render(request, 'front_end/a-propos.html') # affiche le template a-propos.html
 
+def notre_gestion(request):
+    return render(request, 'front_end/notre-gestion.html') # affiche le template notre-gestion.html
+
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
     queryset = Client.objects.all()
