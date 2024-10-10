@@ -1,3 +1,12 @@
+header{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/apropos.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+ width: 100%;
+ height: 80vh;
+}
+
 
 /*main*/
 .section1{
@@ -62,76 +71,6 @@
   text-align: center;
 }
 
-/*.menu a:hover{
-  color:#ED7F10;
-  text-decoration-thickness: 3px;
-  text-underline-offset: 15px;
- 
-}*/
-/*
-.section2{
-  background-color: #F8F9F9;
-
-margin-top: 50px;
-}
-.regrouper{
-  width: 80%;
-  margin: auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding-top: 100px;
-  padding-bottom: 100px;
-}
-.mission{
-  width: 39%;
-  background-color:white;
-  height: 500px;
-  padding: 50px 50px;
-  margin-top: 80px;
-  margin-right: -90px;
-  position: relative;
-
-}
-.fotomission{
-  width: 50%;
-}
-
-.fotomission{
-  background-image: url("nos-images/fotomission.jpeg");
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  width: 48%;
-  height: 650px;
-}
-#textmission{
-  text-align: center;
-  margin-top: 20px;
-  color: #cab48d;
-  font-weight: 600;
- font-family: 'Montserrat', sans-serif;
- letter-spacing: 3px;
-}
-.mission h2{
-  text-align: center;
-  font-size: 20px;
-  line-height: 24px;
-  font-family: 'Montserrat', sans-serif;
-  letter-spacing: 3px;
-  font-weight: 600;
-  margin-bottom: 8px;
-  color: #444;
-  text-align: center;
-  text-transform: uppercase;
-}
-.mission p{
-  text-align: justify;
-  margin-top: 10px;
-  line-height: 2.5em;
-}
-
-*/
 
 .secentre1, .secentre2, .secentre3{
     
@@ -217,7 +156,7 @@ color:black;
 font-family: 'Montserrat', sans-serif;}
 /*avis clients*/
 .sectionclient{
-  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("nos-images/confiance.jpg");
+  background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url('../images/confiance.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -295,7 +234,7 @@ border: 1px solid white;
   filter:brightness(70%);
 }
 .titremenage{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/menage.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/menage.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -306,7 +245,7 @@ object-fit: cover;
 
 }
 .titreconciergerie{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/conciergerie.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/conciergerie.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat; 
@@ -317,7 +256,7 @@ object-fit: cover;
 
 }
 .titreaide{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/soutien.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/soutien.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -329,7 +268,7 @@ object-fit: cover;
 
 }
 .titrechantier{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/chantier.jpeg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/chantier.jpeg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -340,7 +279,7 @@ object-fit: cover;
 
 }
 .titreEntretien{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/espacevert.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/espacevert.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -412,7 +351,7 @@ object-fit: cover;
   filter:brightness(70%);
 }
 .titreadministration{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/tacheadmin.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/tacheadmin.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -423,7 +362,7 @@ width:100%;
 
 
 .titrelocation{
-  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/location.jpg);
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/location.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -460,7 +399,7 @@ object-fit: cover;
 /*rejoigner nous*/
 
 .final{
-  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url("nos-images/rejoigner-nous.jpg");
+  background-image:linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../images/rejoigner-nous.jpg');
   background-size: cover;
   background-attachment: fixed;
   background-position: center;
