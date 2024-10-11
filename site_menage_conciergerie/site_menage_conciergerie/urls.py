@@ -36,7 +36,8 @@ urlpatterns = [
     path('nosservices/', views.nos_services, name='nos_services'),
     path('a-propos/', views.a_propos, name='a_propos'),
     path('notre-gestion/', views.notre_gestion, name='notre_gestion'),
-    path('gestion-administrative/', views.gestion_administrative, name= 'gestion_administrative')
+    path('gestion-administrative/', views.gestion_administrative, name= 'gestion_administrative'),
+    path('gestion-locative/', views.gestion_locative, name= 'gestion_locative'),
 ]
 
 if settings.DEBUG:

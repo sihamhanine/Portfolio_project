@@ -1,6 +1,6 @@
 
 header{
-  background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../static/images/notre-gestion.jpg');
+  background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/notre-gestion.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -57,7 +57,7 @@ header{
   
   }
   .image1{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../static/images/foto1-gestion-administrative.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/foto1-gestion-administrative.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -67,7 +67,7 @@ header{
   
   
   .image2{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../static/images/foto2-gestion-administrative.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('../images/foto2-gestion-administrative.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -98,7 +98,7 @@ header{
   }
   /* section3*/
   .section3{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('../static/images/Admin-1-gestion-administrative.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('../images/Admin-1-gestion-administrative.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -182,7 +182,7 @@ background-attachment: fixed;
     margin-left: -10px;
   }
   .image-administration{
-    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../static/images/aide1-gestion-administative.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/aide1-gestion-administative.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -238,7 +238,7 @@ background-attachment: fixed;
     filter:brightness(50%);
   }
   .titreadministration{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../static/images/tacheadmin.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/tacheadmin.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -262,7 +262,7 @@ background-attachment: fixed;
   }
 
   .titrelocation{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../static/images/location.jpg');
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/location.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -318,16 +318,12 @@ background-attachment: fixed;
     text-align: center;
     margin-left: 108px;
     margin-top: 70px;
+    margin-bottom: 70px;
     letter-spacing: 3px;
    /* position: absolute;*/
    border: none;
   }
   
-  
-  
-  .packairbnb{
-   /* margin-left: 40px;*/
-  }
   
   .sec4 h1{
     padding-top: 20px;
