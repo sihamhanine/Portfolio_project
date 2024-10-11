@@ -1,0 +1,378 @@
+
+header{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)), url('../images/header-page-gestion-locative.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ width: 100%;
+ height: 80vh;
+}
+
+
+/* main */
+.section1{
+    background: rgba(0,0,0,.2);
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+  
+  .section1 h1{
+    padding-top: 20px;
+    font-size: 32px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -450px;
+   /* color: #cab48d;*/
+    color: #CDB181;
+   /* color: white;*/
+  }
+  
+  .section1 h2{
+    padding-top: 20px;
+    font-size: 24px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+   color: #CDB181;
+   /*color: white;*/
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /*section2*/
+  .section2{
+
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 300px;
+}
+
+
+
+.section2 h1{
+  padding-top: 20px;
+  font-size: 30px!important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+ line-height:2em;
+  font-weight: 700;
+  margin-top:260px;
+ color:black;
+ /*color: white;*/
+  font-family: 'Montserrat', sans-serif;
+}
+.section2 h2{
+  font-size: 20px!important;
+  text-align: center;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+ line-height:2em;
+  font-weight: 700;
+  margin-top:20px;
+ color:black;
+ /*color: white;*/
+  font-family: 'Montserrat', sans-serif;
+  margin-bottom: 10px;
+}
+
+.section2 p{
+  text-align: center;
+  line-height: 2em;
+  letter-spacing: 1.5px;
+  
+}
+/*secteur1*/
+.secteur1{
+  background-color: #d4af37;
+   width: 70%;
+   margin: auto;
+   margin-top: 60px;
+}
+.service1,.service2,.service3,.service4,.service5{
+   width: 100%;
+   height: 400px;
+   margin: auto;
+   display: flex;
+}
+.annonce{
+   background-image: url('../images/creation-annonce.jpg');
+   width: 50%;
+   height: 400px;
+   background-position: center;
+   background-size: cover;
+   margin: auto;
+
+}
+.voyageur{
+   background-image: url('../images/voyageur.jpg');
+   width: 50%;
+   height: 400px;
+   background-position: center;
+   background-size: cover;
+   margin: auto;
+}
+.prix{
+ background-image: url('../images/prix-locatif.jpg');
+ width: 50%;
+ height: 400px;
+ background-position: center;
+ background-size: cover;
+ margin: auto;
+}
+.nettoyage-visite{
+ background-image: url('../images/menage-residentiel.jpg');
+ width: 50%;
+ height: 400px;
+ background-position: center;
+ background-size: cover;
+ margin: auto;
+}
+.maintenance{
+ background-image: url('../images/maintenance.jpg');
+ width: 50%;
+ height: 400px;
+ background-position: center;
+ background-size: cover;
+ margin: auto;
+}
+.service1 p,.service2 p,.service3 p,.service4 p,.service5 p{
+padding: 10px;
+letter-spacing: 1.5px;
+line-height: 2em;
+}
+.para1{
+   color: black;
+   width: 50%;
+   height: 400px;
+   text-align: justify;
+   margin: auto;
+   background-color:#f3f3f3;
+   padding: 20px;
+}
+.para1 h2{
+   text-align: center;
+   margin-bottom: 20px;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   font-family: 'Montserrat', sans-serif;
+   padding-top: 10px;
+  
+}
+.para1 p{
+line-height: 2rem;
+}
+.para2{
+ margin-top: 10px;
+}
+.para1 h3{
+   text-align: left;
+   padding-top: 10px;
+   padding-bottom: 10px;
+   letter-spacing: 3px;
+   
+}
+.para1 a{
+ text-decoration: none;
+/* color: #d4af37;*/
+ color: #CDB181;
+ 
+}
+
+.para1 a:hover{
+ color:#cab48d;
+}
+
+ /* section3*/
+ .section3{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),url('../images/gestion-locative-dispo.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+background-attachment: fixed;
+width: 100%;
+height:520px;
+object-fit: cover;
+margin-top: 70px;
+}
+
+.section3 h2{
+  text-align: center;
+  padding-top: 120px;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 1.5em;
+  letter-spacing: 2.5px;
+  color: white;
+}
+.section3 p{
+  text-align: center;
+  padding-top: 30px;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 2em;
+  font-size: 18px;
+}
+.section3 button{
+  margin-left: 825px;
+  margin-top: 40px;
+  background:#cab48d;
+  border-radius: 0px;
+padding: 15px 15px;
+color: white;
+font-size: 16px;
+font-weight: 700;
+letter-spacing: 3px;
+position: absolute;
+border: none;
+}
+.section3 button:hover{
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+  /* sec4 */
+  .sec4{
+
+    margin-top:70px;
+    margin: auto;
+   
+  }
+  .sec4 h1{
+    margin-top: 30px;
+  }
+ 
+  .sec4 p{
+    text-align: center;
+    padding-top: 0px;
+    margin-bottom: 40px;
+    letter-spacing: 2px;
+    line-height: 2em;
+  }
+  .groupe1{
+   display: flex;
+   max-width: 80%;
+   margin: auto;
+  }
+  .serviceadministratif,.gestionlocation,.packairbnb{
+
+    width: 40%;
+    margin-left: 20px;
+  }
+ 
+  .packairbnb{
+   margin-right: 14px;
+  }
+ 
+  .serviceadministratif a,.gestionlocation a,.packairbnb a{
+   text-decoration: none;
+ }
+ .serviceadministratif a:hover .titreadministration,.gestionlocation a:hover .titrelocation,.packairbnb a:hover .titreairbnb{
+   filter:brightness(50%);
+ }
+ .titreadministration{
+   background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/tacheadmin.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+ /*width: 100%;
+ height: 250px;*/
+ height: 300px;
+ width:100%;
+ object-fit: cover;
+ 
+ }
+ .titreadministration h2{
+   padding-top: 130px;
+   letter-spacing: 3px;
+   text-transform: uppercase;
+   line-height:2em;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+   font-size: 23px!important;
+   text-align: center;
+   color: white;
+ }
+
+ .titrelocation{
+   background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/location.jpg');
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+ height: 300px;
+ width:100%;
+ object-fit: cover;
+ 
+ }
+ .titrelocation h2{
+   padding-top: 130px;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   line-height:2em;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+   font-size: 23px!important;
+   text-align: center;
+   color: white;
+ }
+
+ .titreairbnb{
+   background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(https://pic.clubic.com/v1/images/1726363/raw.webp?width=1200&fit=max&hash=578697ceec01668a40e1bd4eab09f444a2acb85d);
+   background-position: center;
+   background-size: cover;
+   background-repeat: no-repeat;
+
+ height: 300px;
+ width: 100%;
+ object-fit: cover;
+ 
+ }
+ .titreairbnb h2{
+   padding-top: 130px;
+   text-transform: uppercase;
+   letter-spacing: 3px;
+   line-height:2em;
+    font-weight: 500;
+    font-family: 'Montserrat', sans-serif;
+   font-size: 23px!important;
+   text-align: center;
+   color: white;
+ }
+ 
+ .gestionlocation button{
+   background:#CDB181;
+  /* background-color: #EDBB99;*/
+  /* border-radius: 4px;*/
+   color:white;
+   padding: 20px 30px;
+   font-size: 17px;
+   font-weight: 700;
+   text-align: center;
+   margin-left: 108px;
+   margin-top: 70px;
+   letter-spacing: 3px;
+  /* position: absolute;*/
+  border: none;
+ }
+ 
+ .sec4 h1{
+   padding-top: 20px;
+   font-size: 25px!important;
+   text-align: center;
+   text-transform: uppercase;
+   letter-spacing: 4px;
+  line-height:2em;
+   font-weight: 700;
+   font-family: 'Montserrat', sans-serif;
+ }
+
+  

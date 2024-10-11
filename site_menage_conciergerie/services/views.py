@@ -19,6 +19,9 @@ def notre_gestion(request):
 def gestion_administrative(request):
     return render(request, 'front_end/gestion-administrative.html')
 
+def gestion_locative(request):
+    return rennder(request, 'front_end/gestion-locative.html')
+
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
     queryset = Client.objects.all()
