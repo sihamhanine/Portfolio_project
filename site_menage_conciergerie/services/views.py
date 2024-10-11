@@ -20,7 +20,10 @@ def gestion_administrative(request):
     return render(request, 'front_end/gestion-administrative.html')
 
 def gestion_locative(request):
-    return rennder(request, 'front_end/gestion-locative.html')
+    return render(request, 'front_end/gestion-locative.html')
+
+def packairbnb(request):
+    return render(request, 'front_end/packairbnb.html')
 
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
