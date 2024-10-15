@@ -1,7 +1,9 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from rest_framework import generics
 from .models import Client, Service, Reservation, Devis, Contact
 from .serializers import ClientSerializer, ServiceSerializer, ReservationSerializer, DevisSerializer, ContactSerializer
+from django.core.mail import send_mail
+
 
 def accueil(request):
     return render(request, 'front_end/accueil.html')  # Affiche le template accueil.html
