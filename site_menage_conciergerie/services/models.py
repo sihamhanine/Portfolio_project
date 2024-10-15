@@ -56,15 +56,15 @@ class Reservation(BaseModel):
 
 # Modèle Devis
 class Devis(BaseModel):
-    client = models.ForeignKey(Client, on_delete=models.CASCADE)
-    service = models.ForeignKey(Service, on_delete=models.CASCADE)
-    service_description = models.TextField()
-    estimated_price = models.FloatField()
-    devis_status = models.CharField(max_length=25)
-    client_address = models.CharField(max_length=100)
+    client_name = models.CharField(max_length=100, default='Inconnu')  # Nom et Prénom du client
+    client_email = models.EmailField(default='unknown@example.com')  # Email du client
+    phone = models.CharField(max_length=15, blank=True, null=True)  # Numéro de téléphone
+    service = models.CharField(max_length=100)  # Type de service demandé
+    additional_details = models.TextField(blank=True, null=True)  # Détails supplémentaires
+    desired_date = models.DateField(null=True, blank=True)  # Date souhaitée
+    estimated_budget = models.DecimalField(max_digits=10, decimal_places=2, blank=True, null=True)  # Budget estimé
+    created_at = models.DateTimeField(null=True, blank=True)  # Date de création du devis
 
-    def __str__(self):
-        return f'Devis for {self.client.name} - {self.estimated_price}'
 
 # Modèle Contact
 class Contact(BaseModel):

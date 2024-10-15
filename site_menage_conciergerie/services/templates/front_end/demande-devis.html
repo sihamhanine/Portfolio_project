@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/devis.css' %}">
+{% endblock %}
+
+{% block title %}
+Demande de Devis
+{% endblock %}
+
+{% block header_image %}
+{% static 'images/image-nosservices.jpg' %}
+{% endblock %}
+
+{% block header_title %}
+Demandez un Devis Personnalisé
+{% endblock %}
+
+{% block header_subtitle %}
+Recevez une estimation gratuite pour nos services
+{% endblock %}
+
+{% block content %}
+<main>
+    <section class="section1">
+        <h1>Demande de Devis Personnalisé</h1>
+        <h2>Recevez une estimation gratuite pour nos services</h2>
+        </section> 
+    <section class="demande-devis-section">
+        <h1>Vos Coordonnées</h1>
+        <p>Remplissez ce formulaire et nous vous répondrons sous 24h avec un devis adapté à vos besoins.</p>
+
+        <form method="POST" action="{% url 'demander_devis' %}">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="client_name">Nom et Prénom :</label>
+                <input type="text" id="client_name" name="client_name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="client_email">Adresse Email :</label>
+                <input type="email" id="client_email" name="client_email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Numéro de téléphone :</label>
+                <input type="tel" id="phone" name="phone" required>
+            </div>
+
+            <div class="form-group">
+                <label for="service">Type de service :</label>
+                <select id="service" name="service" required>
+                    <option value="menage">Ménage résidentiel</option>
+                    <option value="conciergerie">Conciergerie résidentielle</option>
+                    <option value="jardin">Entretien de jardin</option>
+                    <option value="autre">Autre</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="additional_details">Détails supplémentaires :</label>
+                <textarea id="additional_details" name="additional_details"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="desired_date">Date souhaitée :</label>
+                <input type="date" id="desired_date" name="desired_date">
+            </div>
+
+            <div class="form-group">
+                <label for="estimated_budget">Budget estimé (optionnel) :</label>
+                <input type="number" id="estimated_budget" name="estimated_budget" placeholder="Montant en €">
+            </div>
+
+            <button type="submit">Envoyer la demande</button>
+        </form>
+
+        <p class="note">Nous vous répondrons sous 24 heures. Le devis est gratuit et sans engagement.</p>
+    </section>
+
+</main>
+{% endblock %}
