@@ -25,6 +25,44 @@ def gestion_locative(request):
 def packairbnb(request):
     return render(request, 'front_end/packairbnb.html')
 
+def demander_devis(request):
+    if request.method == 'POST':
+        # Récupérer les données du formulaire
+        client_name = request.POST.get('client_name')
+        client_email = request.POST.get('client_email')
+        phone = request.POST.get('phone')
+        service = request.POST.get('service')
+        additional_details = request.POST.get('additional_details')
+        desired_date = request.POST.get('desired_date')
+        estimated_budget = request.POST.get('estimated_budget')
+
+        # Créer un nouvel objet Devis
+        devis = Devis(
+            client_name=client_name,  # Utilisez client_name ici
+            client_email=client_email,  # Utilisez client_email ici
+            phone=phone,
+            service=service,
+            additional_details=additional_details,
+            desired_date=desired_date,
+            estimated_budget=estimated_budget
+        )
+        devis.save()
+
+        # Envoyer l'email de confirmation
+        send_mail(
+            'Demande de Devis',
+            f'Merci pour votre soumission ! Nous reviendrons vers vous bientôt.\nNom: {client_name}\nEmail: {client_email}\nTéléphone: {phone}\nService: {service}\nDétails: {additional_details}\nDate souhaitée: {desired_date}\nBudget estimé: {estimated_budget}',
+            'siham.elani17@gmail.com',
+            [client_email],
+            fail_silently=False
+        )
+
+        return redirect('accueil')  # Redirection après l'envoi de l'email
+
+    # Rendu du formulaire pour d'autres méthodes (GET par exemple)
+    return render(request, 'front_end/demande-devis.html')
+
+
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
     queryset = Client.objects.all()
