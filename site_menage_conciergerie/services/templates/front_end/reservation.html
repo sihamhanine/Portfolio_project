@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/devis.css' %}">
+{% endblock %}
+
+{% block title %}
+Demande de Devis
+{% endblock %}
+
+{% block header_image %}
+{% static 'images/image-nosservices.jpg' %}
+{% endblock %}
+
+{% block header_title %}
+Réservez un Service
+{% endblock %}
+
+{% block header_subtitle %}
+Remplissez ce formulaire pour réserver un service à une date spécifique.
+{% endblock %}
+
+{% block content %}
+<main>
+    <h1>Réservez un Service</h1>
+    <p>Remplissez ce formulaire pour réserver un service à une date spécifique.</p>
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="form-group">
+            <label for="client_name">Nom et Prénom :</label>
+            <input type="text" id="client_name" name="client_name" required>
+        </div>
+
+        <div class="form-group">
+            <label for="client_email">Adresse Email :</label>
+            <input type="email" id="client_email" name="client_email" required>
+        </div>
+
+        <div class="form-group">
+            <label for="phone">Numéro de téléphone :</label>
+            <input type="tel" id="phone" name="phone" required>
+        </div>
+
+        <div class="form-group">
+            <label for="service">Type de service :</label>
+            <select id="service" name="service" required>
+                <option value="menage">Ménage résidentiel</option>
+                <option value="conciergerie">Conciergerie</option>
+                <option value="jardin">Entretien de jardin</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="reservation_date">Date de réservation :</label>
+            <input type="date" id="reservation_date" name="reservation_date" required>
+        </div>
+
+        <div class="form-group">
+            <label for="reservation_time">Heure de réservation :</label>
+            <input type="time" id="reservation_time" name="reservation_time" required>
+        </div>
+
+        <div class="form-group">
+            <label for="address">Adresse de prestation :</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+
+        <button type="submit">Confirmer la Réservation</button>
+    </form>
+</main>
+{% endblock %}

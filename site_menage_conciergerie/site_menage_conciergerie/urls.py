@@ -40,6 +40,7 @@ urlpatterns = [
     path('gestion-locative/', views.gestion_locative, name= 'gestion_locative'),
     path('packairbnb/', views.packairbnb, name= 'packairbnb'),
     path('demande-devis/', views.demander_devis, name= 'demander_devis'),
+    path('reservation/', views.reservation, name= 'reservation'),
 ]
 
 if settings.DEBUG:
