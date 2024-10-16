@@ -19,13 +19,16 @@ def notre_gestion(request):
     return render(request, 'front_end/notre-gestion.html') # affiche le template notre-gestion.html
 
 def gestion_administrative(request):
-    return render(request, 'front_end/gestion-administrative.html')
+    return render(request, 'front_end/gestion-administrative.html') # affiche le template gestion_administrative
 
 def gestion_locative(request):
-    return render(request, 'front_end/gestion-locative.html')
+    return render(request, 'front_end/gestion-locative.html') # affiche le template gestion_locative
 
 def packairbnb(request):
-    return render(request, 'front_end/packairbnb.html')
+    return render(request, 'front_end/packairbnb.html') # affiche le template packairbnb
+
+def reservation(request):
+    return render(request, 'front_end/reservation.html') # affiche le template reservation
 
 def demander_devis(request):
     if request.method == 'POST':
