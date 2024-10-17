@@ -30,6 +30,9 @@ def packairbnb(request):
 def reservation(request):
     return render(request, 'front_end/reservation.html') # affiche le template reservation
 
+def login(request):
+    return render(request, 'front_end/login.html') # affiche le template login
+
 def demander_devis(request):
     if request.method == 'POST':
         # Récupérer les données du formulaire
