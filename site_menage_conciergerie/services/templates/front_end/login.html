@@ -1,0 +1,53 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+    <link rel="stylesheet" href="{% static 'css/login.css' %}">
+</head>
+<body>
+    <main>
+        <section class="section1">
+            <div class="logo-para">
+                <img src="{% static 'images/logovide.PNG' %}" alt="Logo Shiva" class="logo">
+                <h1>Bienvenue sur<br>votre espace personnel<br> Majéstic Préstige</h1>
+            </div>
+    <div class="login-container">
+        <div class="login-box">
+            
+            <h1>J'accéde à mon espace:</h1>
+            <form action="{% url 'login' %}" method="post">
+                {% csrf_token %}
+                <div class="input-group">
+                    <label for="username">Indiquez votre identifiant*</label>
+                    <input type="text" id="username" name="username" placeholder="Votre identifiant" required>
+                    <p class="hint">Vous êtes client ? Votre identifiant est votre adresse e-mail</p>
+                    <p class="hint">Vous avez pas de compte ? Créer votre compte en cliquant sur s'inscrire</p>
+                </div>
+
+                <div class="input-group">
+                    <label for="password">Saisissez votre mot de passe*</label>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
+                    <p class="hint"><a href="#">Cliquez ici pour le récupérer !</a></p>
+                </div>
+
+                <div class="options">
+                    <input type="checkbox" id="remember-me" name="remember_me">
+                    <label for="remember-me">Rester connecté</label>
+                </div>
+
+                <button type="submit">J'accède à mon espace</button>
+                <button type="submit">S'inscrire</button>
+
+                <p class="forgot-password"><a href="#">Mot de passe oublié ?</a></p>
+                <p class="mandatory-fields">*Champs obligatoires</p>
+            </form>
+        </div>
+    </div>
+</section>
+</main>
+</body>
+</html>
+
