@@ -33,6 +33,9 @@ def reservation(request):
 def login(request):
     return render(request, 'front_end/login.html') # affiche le template login
 
+def contact(request):
+    return render(request, 'front_end/contact.html') # affiche le template contact
+
 def demander_devis(request):
     if request.method == 'POST':
         # Récupérer les données du formulaire
