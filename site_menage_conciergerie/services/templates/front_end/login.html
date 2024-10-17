@@ -11,7 +11,7 @@
     <main>
         <section class="section1">
             <div class="logo-para">
-                <img src="{% static 'images/logovide.PNG' %}" alt="Logo Shiva" class="logo">
+                <img src="{% static 'images/logos.PNG' %}" alt="Logo Shiva" class="logo">
                 <h1>Bienvenue sur<br>votre espace personnel<br> Majéstic Préstige</h1>
             </div>
     <div class="login-container">
@@ -24,13 +24,14 @@
                     <label for="username">Indiquez votre identifiant*</label>
                     <input type="text" id="username" name="username" placeholder="Votre identifiant" required>
                     <p class="hint">Vous êtes client ? Votre identifiant est votre adresse e-mail</p>
-                    <p class="hint">Vous avez pas de compte ? Créer votre compte en cliquant sur s'inscrire</p>
+                    <p class="hint">Vous n'avez pas de compte ? Créer votre compte en cliquant sur s'inscrire</p>
                 </div>
 
                 <div class="input-group">
                     <label for="password">Saisissez votre mot de passe*</label>
                     <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
-                    <p class="hint"><a href="#">Cliquez ici pour le récupérer !</a></p>
+                    <p class="forgot-password"><a href="#">Mot de passe oublié ?</a></p>
+                    
                 </div>
 
                 <div class="options">
@@ -41,7 +42,7 @@
                 <button type="submit">J'accède à mon espace</button>
                 <button type="submit">S'inscrire</button>
 
-                <p class="forgot-password"><a href="#">Mot de passe oublié ?</a></p>
+                
                 <p class="mandatory-fields">*Champs obligatoires</p>
             </form>
         </div>
