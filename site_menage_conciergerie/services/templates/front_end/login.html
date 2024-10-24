@@ -18,7 +18,7 @@
         <div class="login-box">
             
             <h1>J'accéde à mon espace:</h1>
-            <form action="{% url 'login' %}" method="post">
+            <form action="{% url 'login_user' %}" method="post">
                 {% csrf_token %}
                 <div class="input-group">
                     <label for="username">Indiquez votre identifiant*</label>

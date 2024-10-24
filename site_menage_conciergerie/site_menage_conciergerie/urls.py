@@ -41,7 +41,9 @@ urlpatterns = [
     path('packairbnb/', views.packairbnb, name= 'packairbnb'),
     path('demande-devis/', views.demander_devis, name= 'demander_devis'),
     path('reservation/', views.reservation, name= 'reservation'),
-    path('login/', views.login, name= 'login'),
+    path('reserve/', views.reserver, name= 'reserver'),
+    path('login/', views.login_user, name= 'login_user'),
+    path('inscription/', views.signup, name= 'signup'),
     path('contact/', views.contact, name= 'contact'),
 ]
 

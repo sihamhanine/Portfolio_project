@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/inscription.css' %}">
+{% endblock %}
+
+{% block header_image %}
+{% static 'images/acc.jpg' %}
+{% endblock %}
+
+{% block content %}
+<div class="titre">
+<h2>Créer un compte</h2>
+<img src="{% static 'images/logos.png' %}" alt="logo Majestic Prestige Conciergerie">
+</div>
+<section class="section1">
+
+  <form method="POST" class="signup-form">
+    {% csrf_token %}
+    
+    <div class="form-group">
+      {{ form.non_field_errors }}  {# Affiche les erreurs non spécifiques #}
+    </div>
+
+    <div class="form-group">
+      {{ form.username.label_tag }} 
+      {{ form.username }} 
+      <div class="error">{{ form.username.errors }}</div> {# Affichage des erreurs #}
+    </div>
+
+    <div class="form-group">
+      {{ form.email.label_tag }} 
+      {{ form.email }} 
+      <div class="error">{{ form.email.errors }}</div>
+    </div>
+
+    <div class="form-group">
+      {{ form.password1.label_tag }} 
+      {{ form.password1 }} 
+      <div class="error">{{ form.password1.errors }}</div>
+    </div>
+
+    <div class="form-group">
+      {{ form.password2.label_tag }} 
+      {{ form.password2 }} 
+      <div class="error">{{ form.password2.errors }}</div>
+    </div>
+
+    <div class="form-group">
+      {{ form.name.label_tag }} 
+      {{ form.name }} 
+      <div class="error">{{ form.name.errors }}</div>
+    </div>
+
+    <div class="form-group">
+      {{ form.phone.label_tag }} 
+      {{ form.phone }} 
+      <div class="error">{{ form.phone.errors }}</div>
+    </div>
+
+    <div class="form-group">
+      {{ form.address.label_tag }} 
+      {{ form.address }} 
+      <div class="error">{{ form.address.errors }}</div>
+    </div>
+
+    <button type="submit" class="btn-submit">S'inscrire</button>
+  </form>
+<div class="image">
+
+</div>
+</section>
+{% endblock %}

@@ -4,9 +4,22 @@ from .models import Client, Service, Reservation, Devis, Contact
 
 # Serializer pour le modèle Client
 class ClientSerializer(serializers.ModelSerializer):
+    email = serializers.EmailField(source='user.email', read_only=True)  # Inclure l'email de l'utilisateur
+    password = serializers.CharField(write_only=True)  # Mot de passe uniquement lors de l'écriture
+
     class Meta:
         model = Client
         fields = ['id', 'name', 'email', 'phone', 'password', 'address']
+
+    def create(self, validated_data):
+        # Sépare les données utilisateur du modèle Client
+        user_data = validated_data.pop('user')
+        user = User(**user_data)  # Crée un nouvel utilisateur
+        user.set_password(validated_data.pop('password'))  # Définit le mot de passe
+        user.save()  # Enregistre l'utilisateur
+
+        client = Client.objects.create(user=user, **validated_data)  # Crée le client
+        return client
 
 # Serializer pour le modèle Service
 class ServiceSerializer(serializers.ModelSerializer):
@@ -34,4 +47,4 @@ class DevisSerializer(serializers.ModelSerializer):
 class ContactSerializer(serializers.ModelSerializer):
     class Meta:
         model = Contact
-        fields = ['id', 'sender_name', 'sender_email', 'sender_phone', 'message']
+        fields = ['id', 'nom', 'email', 'objet', 'message']

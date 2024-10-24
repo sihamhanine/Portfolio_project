@@ -24,7 +24,7 @@
     <header>
         <section class="sec1">
             <div class="logo">
-                <img src="{% static 'images/logovide.PNG' %}" alt="photo logo">
+               <a href="{% url 'accueil' %}"> <img src="{% static 'images/logovide.PNG' %}" alt="photo logo"></a>
             </div>
             <nav class="menu">
                 <ul>
@@ -55,13 +55,13 @@
                         <ul class="sous-nav-projet">
                             <li><a href="{% url 'gestion_administrative' %}">Service administratifs</a></li>
                             <li><a href="{% url 'gestion_locative' %}">Gestion location</a></li>
-                            <li><a href="/">Pack AIRBNB</a></li>
+                            <li><a href="{% url 'packairbnb' %}">Pack AIRBNB</a></li>
 
 
 
                         </ul>
                     </li>
-                    <li> <a href="views/contact.html">Contact</a></li>
+                    <li> <a href="{% url 'contact' %}">Contact</a></li>
                 </ul>
             </nav>
 
@@ -85,25 +85,25 @@
     <footer>
         <section class="sec9">
             <div class="logogif">
-                <a href="accueil.html"><img src="{% static 'images/logovide.PNG' %}" alt="gifemploi"></a>
+                <a href="{% url 'accueil' %}"><img src="{% static 'images/logovide.PNG' %}" alt="gifemploi"></a>
             </div>
             <div class="menufooter">
                 <nav>
                     <ul>
-                        <a href="accueil.html"><li>ACCUEIL</li> </a> 
-                        <a href="A-propos.html"><li>A PROPOS</li></a>
-                        <a href="NosServices.html"><li>NOS OFFRES DE SERVICES</li></a>
-                        <a href=""><li>NOTRE GESTION</li></a>
-                        <a href="views/contact.html"><li>CONTACT</li></a>
+                        <a href="{% url 'accueil' %}"><li>ACCUEIL</li> </a> 
+                        <a href="{% url 'a_propos' %}"><li>A PROPOS</li></a>
+                        <a href="{% url 'nos_services' %}"><li>NOS OFFRES DE SERVICES</li></a>
+                        <a href="{% url 'notre_gestion' %}"><li>NOTRE GESTION</li></a>
+                        <a href="{% url 'contact' %}"><li>CONTACT</li></a>
                     
                     </ul>
                 </nav>
             </div>
             <div class="listes">
                 <ul>
-                   <a href=""><li>PACK AIRBNB</li></a> 
-                    <a href=""><li>SERVICE ADMINISTRATIF</li></a>
-                    <a href=""><li>GESTION LOCATION</li></a>
+                   <a href="{% url 'packairbnb' %}"><li>PACK AIRBNB</li></a> 
+                    <a href="{% url 'gestion_administrative' %}"><li>SERVICE ADMINISTRATIF</li></a>
+                    <a href="{% url 'gestion_locative' %}"><li>GESTION LOCATION</li></a>
                     <a href=""><li>CGU</li></a>
                     <a href=""><li>POLITIQUE DE PROTECTION DES DONNÉES PERSONNELLES</li></a>
                 </ul>

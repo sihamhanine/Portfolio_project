@@ -131,7 +131,7 @@ Page d'accueil
 
         <div class="groupe1">
             <div class="serviceadministratif">
-               <a href="#"> 
+               <a href="{% url 'gestion_administrative' %}"> 
                 <div class="titreadministration">
                     <h2>Service administratif</h2>
                 </div>
@@ -140,26 +140,26 @@ Page d'accueil
                     Les tâches administratives jouent un rôle essentiel dans le bon 
                     fonctionnement de l’organisation. La gestion des documents, la communication interne et le soutien opérationnel
                      contribuent à la productivité et à la réussite globale de l’entreprise.</p>
-                <button>En savoir plus</button>
+                <a href="{% url 'gestion_administrative' %}"><button>En savoir plus</button></a>
             </div>
             <div class="gestionlocation">
-               <a href="#"> <div class="titrelocation">
+               <a href="{% url 'gestion_locative' %}"> <div class="titrelocation">
                     <h2>Gestion location</h2>
                 </div>
             </a>
                 <p>La location meublée courte et moyenne durée est désormais un vrai métier, répondant à des critères de confort stricts, 
                     nécessitant une disponibilité très importante, confiez nous la gestion et l’optimisation de votre bien on se charge de tout. </p>
-                <button>En savoir plus</button>
+                <a href="{% url 'gestion_locative' %}"><button>En savoir plus</button></a>
             </div>
             <div class="packairbnb">
-                <a href="#"><div class="titreairbnb">
+                <a href="{% url 'packairbnb' %}"><div class="titreairbnb">
                     <h2>Pack airbnb</h2>
                 </div>
             </a>
                 <p>La conciergerie Airbnb offre un soutien complet aux hôtes pour optimiser l'expérience de leurs invités.
                      Cela comprend la gestion des arrivées et départs, le nettoyage professionnel entre les séjours, la réponse aux demandes des invités, 
                      et la gestion des problèmes, etc...</p>
-                <button>En savoir plus</button>
+                <a href="{% url 'packairbnb' %}"><button>En savoir plus</button></a>
             </div>
         </div>
 
@@ -192,7 +192,7 @@ Page d'accueil
 </div>
 </div>
 
-<button>Demandez un devis</button>
+<a href="{% url 'demander_devis' %}"><button>Demandez un devis</button></a>
 <div class="devis"><p>c'est gratuit et sans engagement</p></div> 
 </section>
 <section class="sec6">
@@ -238,7 +238,7 @@ Page d'accueil
 </div>
 
 
-<button>Demandez un devis</button>
+<a href="{% url 'demander_devis' %}"><button>Demandez un devis</button></a>
 <div class="devis"><p>c'est gratuit et sans engagement</p></div> 
 </section>
 
@@ -247,7 +247,7 @@ Page d'accueil
 <section class="sec7">
 
 <div class="partie1">
-<a href="views/contact.html">
+<a href="{% url 'contact' %}">
     <h3>Des spécialistes à votre service </h3>
 <p>Besoin de conseils? Contactez-nous!</p>
 <img src="{% static 'images/contact-pageaccueil.jpg' %}" alt="conseille emploi">
@@ -256,7 +256,7 @@ Page d'accueil
 </div>
 
 <div class="partie2">
-<a href="airbnb.html">
+<a href="{% url 'packairbnb' %}">
 <h3>Nous rejoindre</h3>
 <p>Votre pack airbnb</p>
 <img src="{% static 'images/Airbnb.jpg' %}" alt="contact-gif emploi">

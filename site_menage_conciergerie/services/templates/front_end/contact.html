@@ -17,6 +17,15 @@ Nos Services
 {% block content %}
 
     <main>
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+                <div class="alert {{ message.tags }}">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
         <div class="contacteznous">
             <h1>Nous contacter</h1>
             <p> <span>Majestic Préstige Conciergerie</span> vous accompagne et vous conseille dans vos démarches pour faire un devis. Elle sera pour vous un  véritable partenaire, <br> basant ses prestations sur la confiance et la qualité,
@@ -29,12 +38,12 @@ Nos Services
 </div>
 <div class="formulaire">
     <p> Pour toute question, vous pouvez contacter notre société nous vous répondrons trés vite!</p>
-<form action="/" class="form" method="POST" onsubmit="envoyerEmail();reset(); return false">
-
+<form action="{% url 'contact' %}" class="form" method="POST">
+    {% csrf_token %}
 <label for="nom">Votre nom*</label> <br>
 <input type="text" name="nom" id="nom" required placeholder="votre nom et prénom"> <br>
 <label for="adresse">Votre adresse email*</label> <br>
-<input type="email" name="adresse" id="adresse" required> <br>
+<input type="email" name="email" id="adresse" required placeholder="Votre email"> <br>
 <label for="objet" name="objet">Objet*</label> <br>
 <select name="objet" size="1" id="objet"> <br>
     <option value="-Selectionner-" >-Selectionner-</option>

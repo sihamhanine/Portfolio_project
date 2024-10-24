@@ -1,5 +1,6 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
+from django.contrib.auth.models import User
 
 
 # Modèle de base pour avoir un champ 'created_at' et 'id' dans tous les modèles
@@ -11,19 +12,15 @@ class BaseModel(models.Model):
         abstract = True  # Indique que cette classe ne doit pas créer de table dans la base
 
 # Modèle Client
-class Client(BaseModel):
+class Client(models.Model):
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)  # Lien avec le modèle User
     name = models.CharField(max_length=50)
-    email = models.EmailField(max_length=254)
     phone = models.CharField(max_length=15)
-    password = models.CharField(
-        max_length=128,
-        validators=[MinLengthValidator(12)],
-        blank=False,
-        null=False)
     address = models.CharField(max_length=100)
 
     def __str__(self):
         return self.name
+
 
 # Modèle Service
 class Service(BaseModel):
@@ -52,7 +49,7 @@ class Reservation(BaseModel):
     reservation_status = models.CharField(max_length=25)
 
     def __str__(self):
-        return f'Reservation for {self.client.name} on {self.datetime_start}'
+        return f'Reservation for {self.client.user.name} on {self.datetime_start}'
 
 # Modèle Devis
 class Devis(BaseModel):
@@ -68,10 +65,10 @@ class Devis(BaseModel):
 
 # Modèle Contact
 class Contact(BaseModel):
-    sender_name = models.CharField(max_length=50)
-    sender_email = models.EmailField(max_length=255)
-    sender_phone = models.CharField(max_length=15)
+    nom = models.CharField(max_length=50)
+    email = models.EmailField(max_length=255)
+    objet = models.CharField(max_length=50, default='Inconnu')
     message = models.TextField()
 
     def __str__(self):
-        return f'Message from {self.sender_name}'
+        return f'Message from {self.nom}'
