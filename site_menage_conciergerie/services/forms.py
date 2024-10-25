@@ -20,19 +20,55 @@ class ReservationForm(forms.ModelForm):
         self.fields['datetime_end'].input_formats = ['%Y-%m-%dT%H:%M']
 
 class SignUpForm(UserCreationForm):
-    email = forms.EmailField(max_length=254, required=True, label="Adresse e-mail")
-    name = forms.CharField(max_length=50, label="Nom complet", required=True)
-    phone = forms.CharField(max_length=15, label="Numéro de téléphone", required=True)
-    address = forms.CharField(max_length=255, label="Adresse", required=True)
+    email = forms.EmailField(
+        max_length=254, 
+        required=True, 
+        label="Adresse e-mail",
+        error_messages={
+            'required': "L'adresse e-mail est obligatoire.",
+            'invalid': "Veuillez entrer une adresse e-mail valide."
+        }
+    )
+    name = forms.CharField(
+        max_length=50, 
+        label="Nom complet", 
+        required=True,
+        error_messages={
+            'required': "Le nom complet est obligatoire."
+        }
+    )
+    phone = forms.CharField(
+        max_length=15, 
+        label="Numéro de téléphone", 
+        required=True,
+        error_messages={
+            'required': "Le numéro de téléphone est obligatoire."
+        }
+    )
+    address = forms.CharField(
+        max_length=255, 
+        label="Adresse", 
+        required=True,
+        error_messages={
+            'required': "L'adresse est obligatoire."
+        }
+    )
     password1 = forms.CharField(
         label="Mot de passe", 
         strip=False,
         widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
+        error_messages={
+            'required': "Le mot de passe est obligatoire."
+        }
     )
     password2 = forms.CharField(
         label="Confirmer le mot de passe", 
         widget=forms.PasswordInput(attrs={'autocomplete': 'new-password'}),
         strip=False,
+        error_messages={
+            'required': "Veuillez confirmer votre mot de passe.",
+            'password_mismatch': "Les deux champs de mot de passe ne correspondent pas."
+        }
     )
 
     class Meta:
@@ -41,7 +77,16 @@ class SignUpForm(UserCreationForm):
         labels = {
         'username': 'Nom d’utilisateur',
         'email': 'Adresse e-mail',
-    }
+        }
+        error_messages = {
+            'username': {
+                'required': "Le nom d'utilisateur est obligatoire.",
+                'unique': "Ce nom d'utilisateur est déjà pris."
+            },
+            'email': {
+                'unique': "Cette adresse e-mail est déjà utilisée."
+            }
+        }
 
     def save(self, commit=True):
         user = super(SignUpForm, self).save(commit=commit)  # Crée l'utilisateur

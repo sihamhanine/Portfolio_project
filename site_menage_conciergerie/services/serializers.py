@@ -1,15 +1,23 @@
 # serializers.py
 from rest_framework import serializers
+from django.contrib.auth.models import User 
 from .models import Client, Service, Reservation, Devis, Contact
 
+
+#Serializer pour le modéle User
+class UserSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ['username', 'email']  # Ajoute d'autres champs si nécessaire
 # Serializer pour le modèle Client
 class ClientSerializer(serializers.ModelSerializer):
+    user = UserSerializer(read_only=True)  # Sérialiseur pour le modèle User
     email = serializers.EmailField(source='user.email', read_only=True)  # Inclure l'email de l'utilisateur
     password = serializers.CharField(write_only=True)  # Mot de passe uniquement lors de l'écriture
 
     class Meta:
         model = Client
-        fields = ['id', 'name', 'email', 'phone', 'password', 'address']
+        fields = ['id', 'name', 'user', 'email', 'phone', 'password', 'address']
 
     def create(self, validated_data):
         # Sépare les données utilisateur du modèle Client

@@ -10,6 +10,8 @@ from django.contrib.auth import login
 from django.contrib.auth import login as auth_login
 from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
+from django.utils import timezone
+
 
 
 def accueil(request):
@@ -79,7 +81,36 @@ def signup(request):
 
     return render(request, 'front_end/inscription.html', {'form': form})
 
+#vue pour l'espace personnel du client
 
+@login_required
+def dashboard(request):
+   # Récupérer l'instance Client associée à l'utilisateur actuel
+    try:
+        client_instance = Client.objects.get(user=request.user)
+    except Client.DoesNotExist:
+        client_instance = None  # Gérer le cas où le client n'existe pas
+
+    # Récupérer les services à venir
+    services_a_venir = Reservation.objects.filter(
+        client=client_instance, 
+        datetime_start__gte=timezone.now(), 
+        reservation_status='à venir'
+    )
+
+    # Récupérer l'historique des services (services passés)
+    derniers_services = Reservation.objects.filter(
+        client=client_instance, 
+        datetime_start__gte=timezone.now(), 
+        reservation_status='terminé'
+    )
+
+    context = {
+        'services_a_venir': services_a_venir,
+        'derniers_services': derniers_services,
+    }
+
+    return render(request, 'front_end/dashboard.html', context)
 
 
 def contact(request):

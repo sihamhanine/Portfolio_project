@@ -1,0 +1,71 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title>Tableau de Bord - Espace Client</title>
+    <link rel="stylesheet" href="{% static 'css/espace.css' %}">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="">Mon Compte</a></li>
+                <li><a href="">Réservations</a></li>
+                <li><a href="">Historique des Services</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Bienvenue dans votre espace personnel, {{ user.username }}!</h1>
+        <h2>Vos services et informations récentes</h2>
+        <!-- Ici, tu pourras afficher les informations spécifiques au client -->
+        <div class="dashboard-info">
+            <div>
+                <h3>Services à venir</h3>
+                {% if services_a_venir %}
+                    <ul>
+                        {% for service in services_a_venir %}
+                            <li>{{ service.service }} - Date du service : {{ service.date_service }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Vous n'avez aucun service à venir.</p>
+                {% endif %}
+            </div>
+            <div>
+                <h3>Derniers services</h3>
+                {% if derniers_services %}
+                    <ul>
+                        {% for service in derniers_services %}
+                            <li>{{ service.service }} - Date du service : {{ service.date_service }}</li>
+                        {% endfor %}
+                    </ul>
+                {% else %}
+                    <p>Vous n'avez aucun service terminé récemment.</p>
+                {% endif %}
+            </div>
+            <div>
+                <h3>Mon Compte</h3>
+                <p>Gérer vos informations personnelles et votre compte.</p>
+                <p>Nom d'utilisateur : {{ user.username }}</p>
+                <p>Email : {{ user.email }}</p>
+                <a href="">Modifier mes informations</a>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Service de Conciergerie et Ménage</p>
+    </footer>
+</body>
+</html>
+
