@@ -13,7 +13,7 @@ class BaseModel(models.Model):
 
 # Modèle Client
 class Client(models.Model):
-    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True)  # Lien avec le modèle User
+    user = models.OneToOneField(User, on_delete=models.CASCADE, null=True, related_name='client')  # Lien avec le modèle User
     name = models.CharField(max_length=50)
     phone = models.CharField(max_length=15)
     address = models.CharField(max_length=100)
@@ -40,16 +40,28 @@ class Service(BaseModel):
 
 # Modèle Reservation
 class Reservation(BaseModel):
+    STATUS_CHOICES = [
+        ('En attente', 'En attente'),
+        ('Confirmée', 'Confirmée'),
+        ('Annulée', 'Annulée'),
+        ('Terminée', 'Terminée'),
+    ]
     client = models.ForeignKey(Client, on_delete=models.CASCADE)
     client_address = models.CharField(max_length=100)
     service = models.ForeignKey(Service, on_delete=models.CASCADE)
     service_description = models.TextField()
     datetime_start = models.DateTimeField()
     datetime_end = models.DateTimeField()
-    reservation_status = models.CharField(max_length=25)
+    reservation_status = models.CharField(
+        max_length=25,
+        choices=STATUS_CHOICES,
+        default='En attente'
+    )
 
     def __str__(self):
-        return f'Reservation for {self.client.user.name} on {self.datetime_start}'
+        username = self.client.user.username if self.client.user else "Client sans compte"
+        return f'Reservation for {username} on {self.datetime_start}'
+
 
 # Modèle Devis
 class Devis(BaseModel):

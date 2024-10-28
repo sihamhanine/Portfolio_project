@@ -4,13 +4,18 @@ from .models import Client, Service, Reservation, Devis, Contact
 from .serializers import ClientSerializer, ServiceSerializer, ReservationSerializer, DevisSerializer, ContactSerializer
 from django.core.mail import send_mail
 from django.contrib import messages
-from .forms import ReservationForm
+from .forms import ReservationForm, ProfileUpdateForm, SignUpForm
 from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login
+from django.contrib.auth import login, authenticate
 from django.contrib.auth import login as auth_login
-from .forms import SignUpForm
 from django.contrib.auth.forms import AuthenticationForm
 from django.utils import timezone
+from django.contrib.auth import logout
+from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
+from dateutil import parser
+from django.contrib.auth import update_session_auth_hash
+from django.http import HttpResponse
 
 
 
@@ -39,33 +44,113 @@ def packairbnb(request):
 def reservation(request):
     return render(request, 'front_end/reservation.html') # affiche le template reservation
 
+def historique_service(request):
+    # Exemple de choix de statut, à adapter selon votre modèle
+    status_choices = [
+        ('En attente', 'En attente'),
+        ('Terminée', 'Terminée'),
+        ('Annulée', 'Annulée'),
+        ('Confirmée', 'Confirmée'),
+    ]
+    # Récupérer les réservations du client connecté
+    client = request.user.client
+    reservations = Reservation.objects.filter(client=client)
+
+    # Récupérer les paramètres de filtre
+    status = request.GET.get('status', '')
+    date_start = request.GET.get('date_start')
+    date_end = request.GET.get('date_end')
+
+    # Filtrer par statut si un statut est fourni
+    if status:
+        reservations = reservations.filter(reservation_status=status)
+
+    # Filtrer par date de début si fourni
+    if date_start:
+        reservations = reservations.filter(datetime_start__gte=date_start)
+    # Filtrer par date de fin si fourni
+    if date_end:
+        reservations = reservations.filter(datetime_end__lte=date_end)
+
+    # Trier les résultats par date de début, les plus récents en premier
+    reservations = reservations.order_by('-datetime_start')
+
+    context = {
+        'status_choices': status_choices,
+        'reservations': reservations,
+        'status': status,
+        'date_start': date_start,
+        'date_end': date_end,
+    }
+
+    return render(request, 'front_end/historique.html', context)
+
+def dash_reservation(request):
+    query = request.GET.get('search', '').strip()
+    reservations = Reservation.objects.none()
+
+    if request.user.is_authenticated:
+        # Récupère toutes les réservations de l'utilisateur connecté
+        reservations = Reservation.objects.filter(client=request.user.client)
+        print("Toutes les réservations de l'utilisateur:", reservations)
+
+        if query:
+            # Test 1 : Filtrer par nom de service
+            service_filtered = reservations.filter(service__service_name__icontains=query)
+            print("Filtré par nom de service:", service_filtered)
+
+            # Test 2 : Filtrer par date
+            try:
+                # Tente de convertir la recherche en date
+                date_search = parser.parse(query, fuzzy=True).date()
+                print("Date recherchée:", date_search)  # Vérifie la date analysée
+                date_filtered = reservations.filter(datetime_start__date=date_search)
+                print("Filtré par date:", date_filtered)
+            except ValueError:
+                print("La recherche n'est pas une date valide.")  # Enregistre l'erreur
+                date_filtered = Reservation.objects.none()
+
+            # Combine les résultats des deux filtres
+            reservations = service_filtered | date_filtered
+
+    return render(request, 'dash_reservation.html', {'reservations': reservations, 'search': query})
+
+
+def cancel_reservation(request, reservation_id):
+    reservation = get_object_or_404(Reservation, id=reservation_id)
+    
+    # Vérifiez que l'utilisateur connecté est bien celui qui a effectué la réservation
+    if reservation.client == request.user.client:
+        if request.method == 'POST':
+            reservation.reservation_status = 'Annulée'  # Correction ici
+            reservation.delete()
+            
+            return redirect('dash_reservation')
+    else:
+        messages.error(request, "Vous n'avez pas l'autorisation d'annuler cette réservation.")
+        return redirect('dash_reservation')
+
+
+
 @login_required
 def reserver(request):
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
             reservation = form.save(commit=False)
-            reservation.client = request.user  # Associe le client connecté
-            reservation.save()
+            # Récupérez l'objet Client associé à l'utilisateur connecté
+            client = Client.objects.get(user=request.user)
+            reservation.client = client  # Associe le client à la réservation
+            reservation.reservation_status = 'En attente'  # Statut initial
+            reservation.save()  # Enregistrez la réservation dans la base de données
             messages.success(request, "Votre réservation a été enregistrée avec succès.")
             return redirect('reserver')  # Redirige vers la même page après la soumission
     else:
         form = ReservationForm()
-    
+
     return render(request, 'front_end/reserve.html', {'form': form})
 
-
-def login_user(request):
-    if request.method == 'POST':
-        form = AuthenticationForm(request, data=request.POST)
-        if form.is_valid():
-            user = form.get_user()
-            auth_login(request, user)
-            return redirect('reserver')  # Rediriger vers la réservation après la connexion
-    else:
-        form = AuthenticationForm()
-    return render(request, 'front_end/login.html', {'form': form})
-    
+# vue pour inscription d'un user
 def signup(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -82,6 +167,31 @@ def signup(request):
     return render(request, 'front_end/inscription.html', {'form': form})
 
 #vue pour l'espace personnel du client
+def login_user(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        password = request.POST.get('password')
+
+        # Recherche l'utilisateur par l'email
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            user = None
+        
+        # Authentification avec l'utilisateur trouvé
+        if user is not None and user.check_password(password):
+            login(request, user)
+            return redirect('dashboard')  # Remplacez par le nom de la vue de l'espace personnel
+        else:
+            # Afficher un message d'erreur
+            error_message = "Identifiants invalides."
+            return render(request, 'front_end/login.html', {'error_message': error_message})
+    
+    return render(request, 'front_end/login.html')
+
+def logout_user(request):
+    logout(request)
+    return render(request, 'front_end/accueil.html')
 
 @login_required
 def dashboard(request):
@@ -101,18 +211,78 @@ def dashboard(request):
     # Récupérer l'historique des services (services passés)
     derniers_services = Reservation.objects.filter(
         client=client_instance, 
-        datetime_start__gte=timezone.now(), 
+        datetime_start__lt=timezone.now(), 
         reservation_status='terminé'
     )
 
     context = {
+        'user': request.user,
         'services_a_venir': services_a_venir,
         'derniers_services': derniers_services,
     }
 
     return render(request, 'front_end/dashboard.html', context)
 
+# vue pour mettre a jour profil user
+@login_required
+def mon_compte(request):
+    # Récupérer l'objet client lié à l'utilisateur connecté
+    client = request.user.client
+    
+    # Vérifier si le formulaire a été soumis
+    if request.method == 'POST':
+        # Créer une instance du formulaire avec les données soumises et l'objet client existant
+        profile_form = ProfileUpdateForm(request.POST, instance=client)
+        
+        # Valider le formulaire
+        if profile_form.is_valid():
+            # Sauvegarder les données du formulaire
+            profile_form.save()
+            messages.success(request, 'Informations mises à jour avec succès.')
+            return redirect('mon_compte')  # Rediriger vers la même page après la soumission
 
+    else:
+        # Si la requête n'est pas un POST, initialiser le formulaire avec les données actuelles du client
+        profile_form = ProfileUpdateForm(instance=client)
+
+    # Rendre le template avec le formulaire et l'objet client
+    return render(request, 'front_end/profil.html', {
+        'profile_form': profile_form,
+        'client': client  # Passe l'objet client au template si nécessaire
+    })
+
+@login_required
+def changer_mot_de_passe(request):
+    if request.method == 'POST':
+        old_password = request.POST.get('old_password')
+        new_password1 = request.POST.get('new_password1')
+        new_password2 = request.POST.get('new_password2')
+
+        # Vérification du mot de passe actuel
+        if not request.user.check_password(old_password):
+            messages.error(request, "Le mot de passe actuel est incorrect.")
+            return redirect('mon_compte')
+
+        # Vérification que les nouveaux mots de passe correspondent
+        if new_password1 != new_password2:
+            messages.error(request, "Les nouveaux mots de passe ne correspondent pas.")
+            return redirect('mon_compte')
+
+        # Vérification des critères de sécurité du mot de passe (par exemple longueur minimale)
+        if len(new_password1) < 8:
+            messages.error(request, "Le nouveau mot de passe doit contenir au moins 8 caractères.")
+            return redirect('mon_compte')
+
+        # Si tout est correct, on change le mot de passe
+        request.user.set_password(new_password1)
+        request.user.save()
+        update_session_auth_hash(request, request.user)  # Garde l'utilisateur connecté après la modification du mot de passe
+        messages.success(request, "Votre mot de passe a été changé avec succès.")
+        return redirect('mon_compte')
+
+    return render(request, 'front_end/profil.html')
+
+# vue pour la page contact
 def contact(request):
     if request.method == "POST":
         nom = request.POST.get('nom')
@@ -194,7 +364,7 @@ class ClientList(generics.ListCreateAPIView):
     serializer_class = ClientSerializer
 
 class ClientDetail(generics.RetrieveUpdateDestroyAPIView):
-    queryset = Client.objects.all()
+    queryset = Client.objects.select_related('user').all()
     serializer_class = ClientSerializer
 
 # Vues pour les Services
@@ -215,6 +385,18 @@ class ReservationDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
 
+class CancelReservationAPIView(generics.UpdateAPIView):
+    queryset = Reservation.objects.all()
+    serializer_class = ReservationSerializer
+
+    def update(self, request, *args, **kwargs):
+        reservation = self.get_object()
+        reservation.status = 'annulée'  # Mettez à jour le statut ici
+        reservation.save()  # Enregistrez les modifications
+
+        serializer = self.get_serializer(reservation)
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
 # Vues pour les Devis
 class DevisList(generics.ListCreateAPIView):
     queryset = Devis.objects.all()
@@ -232,3 +414,4 @@ class ContactList(generics.ListCreateAPIView):
 class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
+

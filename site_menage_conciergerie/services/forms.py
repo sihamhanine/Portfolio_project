@@ -10,14 +10,14 @@ class ReservationForm(forms.ModelForm):
         model = Reservation
         fields = ['client', 'client_address', 'service', 'service_description', 'datetime_start', 'datetime_end']
         widgets = {
-            'datetime_start': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
-            'datetime_end': DateInput(attrs={'type': 'datetime-local'}, format='%Y-%m-%dT%H:%M'),
+            'datetime_start': DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
+            'datetime_end': DateInput(attrs={'type': 'date'}, format='%Y-%m-%d'),
         }
 
     def __init__(self, *args, **kwargs):
         super(ReservationForm, self).__init__(*args, **kwargs)
-        self.fields['datetime_start'].input_formats = ['%Y-%m-%dT%H:%M']
-        self.fields['datetime_end'].input_formats = ['%Y-%m-%dT%H:%M']
+        self.fields['datetime_start'].input_formats = ['%Y-%m-%d']
+        self.fields['datetime_end'].input_formats = ['%Y-%m-%d']
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(
@@ -112,3 +112,13 @@ class SignUpForm(UserCreationForm):
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError("Ce nom d'utilisateur est déjà pris.")
         return username
+
+class ProfileUpdateForm(forms.ModelForm):
+    class Meta:
+        model = Client
+        fields = ['name', 'phone', 'address']
+        widgets = {
+            'name': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Nom'}),
+            'phone': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Téléphone'}),
+            'address': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Adresse'}),
+        }

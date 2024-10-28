@@ -1,0 +1,179 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f4f4f9;
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+h2{
+    font-size: 20px; 
+    color:#333;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
+h1 {
+    color:#CDB181 ;
+    font-size: 30px;
+    text-align: center;
+    letter-spacing: 2px;
+    font-weight: 500;
+}
+
+
+header {
+    background-color: #CDB181;
+    color: white;
+    padding: 10px 0;
+    text-align: center;
+    box-shadow: 0px 4px 2px -2px gray;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    background-color: #333;
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    letter-spacing: 1.5px;
+}
+
+nav ul li {
+    margin: 0 15px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    background-color: #CDB181;
+}
+
+main {
+    margin: 20px auto;
+    padding: 20px;
+    max-width: 1200px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+main h2 {
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+/* Style pour le bouton d'exportation */
+.btn-secondary {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: #333;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn-secondary:hover {
+    background-color: #555;
+}
+.reservation-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+.reservation-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.reservation-card h3 {
+    font-size: 1.3em;
+    color: #333;
+    margin-bottom: 10px;
+    font-weight: bold;
+    letter-spacing: 2px;
+}
+strong{
+    letter-spacing: 1.5px;
+}
+
+.reservation-card p {
+    font-size: 1em;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    margin: 20px 1%;
+}
+
+.form-group {
+    display: flex; /* Utiliser Flexbox pour chaque groupe label-input */
+    align-items: center; /* Aligne les items au centre verticalement */
+    gap: 5px; /* Espace entre le label et l'input */
+}
+
+form label {
+    font-weight: 500;
+    margin-right: 5px;
+    font-size: 17px;
+    
+}
+
+form select, form input[type="date"] {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 13px;
+    min-width: 150px; /* Optionnel : définit une largeur minimale pour les champs */
+    margin-right: 30px;
+}
+form button {
+    padding: 10px 50px;
+    background-color: #CDB181;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin: 0 10px;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1.5px;
+    transition: background-color 0.3s;
+}
+

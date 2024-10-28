@@ -9,7 +9,7 @@ from services.views import (
     ReservationList, ReservationDetail,
     DevisList, DevisDetail,
     ContactList, ContactDetail,
-    nos_services,
+    nos_services, CancelReservationAPIView
 )
 
 
@@ -23,12 +23,15 @@ urlpatterns = [
 
     path('api/reservations/', ReservationList.as_view(), name='reservation-list'),
     path('api/reservations/<int:pk>/', ReservationDetail.as_view(), name='reservation-detail'),
+     path('reservations/<int:pk>/cancel/', CancelReservationAPIView.as_view(), name='cancel-reservation'),
 
     path('api/devis/', DevisList.as_view(), name='devis-list'),
     path('api/devis/<int:pk>/', DevisDetail.as_view(), name='devis-detail'),
 
     path('api/contacts/', ContactList.as_view(), name='contact-list'),
     path('api/contacts/<int:pk>/', ContactDetail.as_view(), name='contact-detail'),
+
+   
 
     #  Vues pour les pages HTML
     path('admin/', admin.site.urls),
@@ -45,7 +48,14 @@ urlpatterns = [
     path('login/', views.login_user, name= 'login_user'),
     path('inscription/', views.signup, name= 'signup'),
     path('contact/', views.contact, name= 'contact'),
+    path('logout/', views.logout_user, name='logout_user'),
     path('dashboard/', views.dashboard, name='dashboard'),
+    path('dash_reservation/', views.dash_reservation, name='dash_reservation'),
+    path('cancel_reservation/<int:reservation_id>/', views.cancel_reservation, name='cancel_reservation'),
+    path('profil/', views.mon_compte, name='mon_compte'),
+    path('changer_mot_de_passe/', views.changer_mot_de_passe, name='changer_mot_de_passe'),
+    path('historique-service/', views.historique_service, name='historique_service'),
+   
 ]
 
 if settings.DEBUG:

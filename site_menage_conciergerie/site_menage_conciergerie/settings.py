@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-4s&7#xifu&*tn2*2(k0h#fsbaw+3k8p$i#@ce5r=cp#+5#$)si
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -120,6 +120,13 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 DEBUG = True
+
+LOGIN_URL = '/login/'  # Assurez-vous que cette URL correspond à votre vue de connexion
+LOGIN_REDIRECT_URL = 'dashboard'  # Vue vers laquelle rediriger après connexion
+
+SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utilisation de la base de données pour les sessions
+SESSION_COOKIE_AGE = 1209600  # Deux semaines
+
 
 STATIC_URL = '/static/'  # URL pour accéder aux fichiers statiques
 STATICFILES_DIRS = [BASE_DIR / 'services/templates/static']  # Ajouter le chemin vers le dossier static de ton app

@@ -9,10 +9,18 @@
 Réservation de service
 {% endblock %}
 
+{% block header_image %}
+{% static 'images/acc.jpg' %}
+{% endblock %}
+
 {% block content %}
-    <h1>Réservez un service</h1>
-    
+<div class="contacteznous">
+<h1>Réservez un service</h1>
+<P>Bienvenue et merci d'être parmi nos clients les plus préstigieux veuillez remplir ce formulaire pour faire une réservation </P>
+<img src="{% static 'images/logos.png' %}"  alt="logo Majestic Prestige Conciergerie">
+</div>
     <form method="POST">
+        
         {% csrf_token %}
         {{ form.as_p }}
         

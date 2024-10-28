@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500&display=swap" rel="stylesheet">
+
+    <title>Tableau de Bord - Espace Client</title>
+    <link rel="stylesheet" href="{% static 'css/historique.css' %}">
+</head>
+<body>
+    <header>
+        
+        <nav>
+            <ul>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="{% url 'mon_compte' %}">Mon Compte</a></li>
+                <li><a href="{% url 'dash_reservation' %}">Réservations</a></li>
+                <li><a href="{% url 'historique_service' %}">Historique des Services</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'logout_user' %}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+    <!-- Contenu de la page Historique des Services -->
+    <main>
+           <!-- Formulaire de filtre -->
+<form method="get" action="{% url 'historique_service' %}" class="form-group">
+    <label for="status">Statut :</label>
+    <select name="status" id="status">
+        <option value="">Tous</option>
+        {% for choice, label in status_choices %}
+        <option value="{{ choice }}" {% if choice == status %}selected{% endif %}>{{ label }}</option>
+        {% endfor %}
+    </select>
+
+    <label for="date_start">Date de début :</label>
+    <input type="date" name="date_start" id="date_start" value="{{ request.GET.date_start }}">
+
+    <label for="date_end">Date de fin :</label>
+    <input type="date" name="date_end" id="date_end" value="{{ request.GET.date_end }}">
+
+    <button type="submit" class="btn btn-primary">Filtrer</button>
+</form>
+
+<!-- Affichage des réservations -->
+<div class="reservation-list">
+    {% if reservations %}
+        {% for reservation in reservations %}
+        <div class="reservation-card">
+            <h3>{{ reservation.service.service_name }}</h3>
+            <p><strong>Date de début :</strong> {{ reservation.datetime_start }}</p>
+            <p><strong>Date de fin :</strong> {{ reservation.datetime_end }}</p>
+            <p><strong>Statut :</strong> {{ reservation.get_reservation_status_display }}</p>
+            <p><strong>Description :</strong> {{ reservation.service_description }}</p>
+            <p><strong>Adresse :</strong> {{ reservation.client_address }}</p>
+        </div>
+        {% endfor %}
+    {% else %}
+        <p>Aucune réservation trouvée.</p>
+    {% endif %}
+</div>
+        
+            <button class="btn btn-secondary">Exporter l’historique</button>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Service de Conciergerie et Ménage</p>
+    </footer>
+</body>
+</html>

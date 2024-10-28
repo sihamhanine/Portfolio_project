@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'css/dash-reservation.css' %}">
+    <title>Mes Réservations</title>
+</head>
+<body>
+    <header>
+       
+        <nav>
+            <ul>
+                <li><a href="{% url 'accueil' %}">Accueil</a></li>
+                <li><a href="{% url 'mon_compte' %}">Mon Compte</a></li>
+                <li><a href="{% url 'dash_reservation' %}">Réservations</a></li>
+                <li><a href="{% url 'historique_service' %}">Historique des Services</a></li>
+                <li><a href="{% url 'contact' %}">Contact</a></li>
+                <li><a href="{% url 'logout_user' %}">Déconnexion</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        {% if messages %}
+        {% for message in messages %}
+          <div class="alert {{ message.tags }}">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+        <h2>Mes Réservations</h2>
+
+        <div class="search-container">
+            <form action="{% url 'dash_reservation' %}" method="get">
+                <label for="search">Rechercher par service ou date:</label>
+                <input type="text" id="search" name="search" placeholder="Entrez un service ou une date" value="{{ search }}">
+                <button type="submit">Rechercher</button>
+            </form>
+        </div>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Numéro de réservation</th>
+                    <th>Date et heure</th>
+                    <th>Service</th>
+                    <th>Statut</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for reservation in reservations %}
+    <tr>
+        <td>{{ reservation.id }}</td>
+        <td>{{ reservation.datetime_start|date:"d/m/Y" }}</td>
+        <td>{{ reservation.service.service_name }}</td>
+        <td>{{ reservation.reservation_status }}</td>
+        <td>
+            {% if reservation.status != 'Annulé' %}
+                <form action="{% url 'cancel_reservation' reservation.id %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit">Annuler</button>
+                </form>
+            {% else %}
+                Annulé
+            {% endif %}
+        </td>
+    </tr>
+    {% empty %}
+    <tr>
+        <td colspan="5" id="message_confirmation">Aucune réservation trouvée.</td>
+    </tr>
+    {% endfor %}
+                <!-- D'autres réservations peuvent être ajoutées ici -->
+            </tbody>
+        </table>
+
+        <div class="actions">
+            <a href="{% url 'reserver' %}" class="button">Ajouter une Réservation</a>
+            
+        </div>
+      
+    </main>
+
+    <footer>
+        <p>&copy; 2024 - Service de Conciergerie et Ménage</p>
+    </footer>
+</body>
+</html>

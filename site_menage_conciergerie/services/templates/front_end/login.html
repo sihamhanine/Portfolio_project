@@ -21,8 +21,8 @@
             <form action="{% url 'login_user' %}" method="post">
                 {% csrf_token %}
                 <div class="input-group">
-                    <label for="username">Indiquez votre identifiant*</label>
-                    <input type="text" id="username" name="username" placeholder="Votre identifiant" required>
+                    <label for="email">Indiquez votre identifiant*</label>
+                    <input type="email" id="email" name="email" placeholder="Votre identifiant" required>
                     <p class="hint">Vous êtes client ? Votre identifiant est votre adresse e-mail</p>
                     <p class="hint">Vous n'avez pas de compte ? Créer votre compte en cliquant sur s'inscrire</p>
                 </div>
@@ -40,7 +40,11 @@
                 </div>
 
                 <button type="submit">J'accède à mon espace</button>
-                <button type="submit">S'inscrire</button>
+                {% if error_message %}
+                    <p>{{ error_message }}</p>
+                {% endif %}
+
+                <button type="button" onclick="window.location.href='{% url 'signup' %}'">S'inscrire</button>
 
                 
                 <p class="mandatory-fields">*Champs obligatoires</p>
