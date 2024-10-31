@@ -1,6 +1,6 @@
 .sec1{
     display: flex;
-    background: rgba(0,0,0,.3);
+    background: rgba(0,0,0,.4);
      
 }
 header{
@@ -9,13 +9,13 @@ header{
     background-position: center;
     background-size: cover;
    width: 100%;
-   height: 80vh;
+   height: 70vh;
   }
   
   /*main*/
   
   .section1{
-      background: rgba(0,0,0,.2);
+      background: rgba(0,0,0,.3);
       width: 50%;
       margin: auto;
       padding-bottom: 30px;
@@ -41,7 +41,7 @@ header{
       font-size: 18px!important;
       text-align: center;
       text-transform: uppercase;
-      letter-spacing: 4px;
+      letter-spacing: 3px;
      line-height:2em;
       font-weight: 700;
      color: #CDB181;
@@ -49,14 +49,16 @@ header{
       font-family: 'Montserrat', sans-serif;
     }
 .demande-devis-section {
-    max-width: 70%;
-    margin: 0 auto;
-    margin-top: 150px;
-    margin-bottom: 150px;
-    padding: 20px;
-    background-color: #f3f3f3;
-    border-radius: 8px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+background-color: #f3f3f3;
+width: 70%;
+margin: auto;
+padding: 20px;
+margin-top: 150px;
+margin-bottom: 100px;
+border:1px solid #9e9e9e;
+border-radius: 10px;
+box-shadow: 0em -0.4em #cab48d;
 }
 
 h1 {
@@ -99,11 +101,12 @@ button {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 17px;
+    letter-spacing: 2px;
     width: 100%;
     margin-top: 20px;
 }
 
 button:hover {
-    background-color: #c7a27d;
+    background-color: #b59a68;
 }

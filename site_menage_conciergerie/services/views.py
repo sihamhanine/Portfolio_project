@@ -1,22 +1,4 @@
-from django.shortcuts import render, redirect
-from rest_framework import generics
-from .models import Client, Service, Reservation, Devis, Contact
-from .serializers import ClientSerializer, ServiceSerializer, ReservationSerializer, DevisSerializer, ContactSerializer
-from django.core.mail import send_mail
-from django.contrib import messages
-from .forms import ReservationForm, ProfileUpdateForm, SignUpForm
-from django.contrib.auth.decorators import login_required
-from django.contrib.auth import login, authenticate
-from django.contrib.auth import login as auth_login
-from django.contrib.auth.forms import AuthenticationForm
-from django.utils import timezone
-from django.contrib.auth import logout
-from django.contrib.auth.models import User
-from django.shortcuts import get_object_or_404
-from dateutil import parser
-from django.contrib.auth import update_session_auth_hash
-from django.http import HttpResponse
-
+from .imports import *
 
 
 def accueil(request):
@@ -84,14 +66,17 @@ def historique_service(request):
     }
 
     return render(request, 'front_end/historique.html', context)
-
+@login_required
 def dash_reservation(request):
     query = request.GET.get('search', '').strip()
     reservations = Reservation.objects.none()
 
     if request.user.is_authenticated:
+
+        # Récupérer l'instance Client associée à l'utilisateur connecté
+        client_instance = Client.objects.get(user=request.user)
         # Récupère toutes les réservations de l'utilisateur connecté
-        reservations = Reservation.objects.filter(client=request.user.client)
+        reservations = Reservation.objects.filter(client=client_instance)
         print("Toutes les réservations de l'utilisateur:", reservations)
 
         if query:
@@ -167,7 +152,11 @@ def signup(request):
     return render(request, 'front_end/inscription.html', {'form': form})
 
 #vue pour l'espace personnel du client
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def login_user(request):
+    if request.user.is_authenticated:
+        return redirect('dashboard')
+
     if request.method == 'POST':
         email = request.POST.get('email')
         password = request.POST.get('password')
@@ -189,8 +178,12 @@ def login_user(request):
     
     return render(request, 'front_end/login.html')
 
+@cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout_user(request):
     logout(request)
+    cache.clear() 
+    request.session.flush()
+    messages.success(request, "Vous êtes déconnecté.")
     return render(request, 'front_end/accueil.html')
 
 @login_required
@@ -201,27 +194,67 @@ def dashboard(request):
     except Client.DoesNotExist:
         client_instance = None  # Gérer le cas où le client n'existe pas
 
-    # Récupérer les services à venir
-    services_a_venir = Reservation.objects.filter(
-        client=client_instance, 
-        datetime_start__gte=timezone.now(), 
-        reservation_status='à venir'
-    )
+    services_a_venir = []
+    derniers_services = []
 
-    # Récupérer l'historique des services (services passés)
-    derniers_services = Reservation.objects.filter(
-        client=client_instance, 
-        datetime_start__lt=timezone.now(), 
-        reservation_status='terminé'
-    )
+    if client_instance:
+        # Récupérer les réservations à venir
+        services_a_venir = Reservation.objects.filter(
+            client=client_instance,
+            reservation_status='En attente'  # Assurez-vous que cela correspond exactement à ce qui est stocké
+        )
+
+        # Debug : Afficher les réservations à venir
+        print(f"Services à venir pour {client_instance.user.username}: {services_a_venir}")
+
+        # Récupérer l'historique des services (services passés)
+        derniers_services = Reservation.objects.filter(
+            client=client_instance,
+            reservation_status='Terminée'  # Assurez-vous que cela correspond également
+        )
+
+        # Debug : Afficher les derniers services
+        print(f"Derniers services pour {client_instance.user.username}: {derniers_services}")
+
+    user_services = Service.objects.filter(client=client_instance)
 
     context = {
         'user': request.user,
         'services_a_venir': services_a_venir,
         'derniers_services': derniers_services,
+        'user_services': user_services,
     }
 
     return render(request, 'front_end/dashboard.html', context)
+
+@login_required
+def exporter_historique(request):
+    # Récupérer les réservations de l'utilisateur
+    client_instance = Client.objects.get(user=request.user)
+    reservations = Reservation.objects.filter(client=client_instance)
+
+    # Créer une réponse HTTP avec le type de contenu approprié
+    response = HttpResponse(content_type='text/csv')
+    response['Content-Disposition'] = 'attachment; filename="historique_reservations.csv"'
+
+    # Créer un writer CSV
+    writer = csv.writer(response)
+    
+    # Écrire l'en-tête
+    writer.writerow(['Service', 'Date de début', 'Date de fin', 'Statut', 'Description', 'Adresse'])
+
+    # Écrire les données des réservations
+    for reservation in reservations:
+        writer.writerow([
+            reservation.service.service_name,
+            reservation.datetime_start,
+            reservation.datetime_end,
+            reservation.get_reservation_status_display(),
+            reservation.service_description,
+            reservation.client_address
+        ])
+
+    return response
 
 # vue pour mettre a jour profil user
 @login_required

@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 """
 
 from pathlib import Path
+from django.urls import reverse_lazy
 import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -46,7 +47,9 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+   # 'django.middleware.cache.UpdateCacheMiddleware',#
     'django.middleware.common.CommonMiddleware',
+     # 'django.middleware.cache.FetchFromCacheMiddleware',#
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
@@ -121,11 +124,17 @@ USE_TZ = True
 
 DEBUG = True
 
-LOGIN_URL = '/login/'  # Assurez-vous que cette URL correspond à votre vue de connexion
+LOGIN_URL = reverse_lazy('login_user')
 LOGIN_REDIRECT_URL = 'dashboard'  # Vue vers laquelle rediriger après connexion
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utilisation de la base de données pour les sessions
-SESSION_COOKIE_AGE = 1209600  # Deux semaines
+
+SESSION_COOKIE_AGE = 1800  # Deux semaines
+# Expire la session à la déconnexion
+SESSION_EXPIRE_AT_BROWSER_CLOSE = True
+CACHE_MIDDLEWARE_SECONDS = 0 
+
+LOGOUT_REDIRECT_URL = 'accueil'
 
 
 STATIC_URL = '/static/'  # URL pour accéder aux fichiers statiques

@@ -51,7 +51,7 @@ Gestion Administrative
 
 <h2>Vous cherchez un service spécialisé dans le domaine <br> de l'assistance administrative ?</h2>
 <p>Vous êtes au bon endroit.</p>
-<button>Contactez-nous</button>
+<a href="{% url 'contact' %}"><button>Contactez-nous</button></a>
 
                 </section>
 
@@ -92,7 +92,7 @@ Gestion Administrative
                                     
                                                     <div class="groupe1">
                                                         <div class="serviceadministratif">
-                                                           <a href="Gestion-Administrative.html"> 
+                                                           <a href="{% url 'gestion_administrative' %}"> 
                                                             <div class="titreadministration">
                                                                 <h2>Service administratif</h2>
                                                             </div>
@@ -100,16 +100,16 @@ Gestion Administrative
                                                            
                                                         </div>
                                                         <div class="gestionlocation">
-                                                           <a href="#"> 
+                                                           <a href="{% url 'gestion_locative' %}"> 
                                                             <div class="titrelocation">
                                                                 <h2>Gestion location</h2>
                                                             </div>
                                                         </a>
                                                             
-                                                            <button>Demander un devis</button>
+                                                            <a href="{% url 'demander_devis' %}"><button>Demander un devis</button></a>
                                                         </div>
                                                         <div class="packairbnb">
-                                                            <a href="#">
+                                                            <a href="{% url 'packairbnb' %}">
                                                                 <div class="titreairbnb">
                                                                 <h2>Pack airbnb</h2>
                                                             </div>

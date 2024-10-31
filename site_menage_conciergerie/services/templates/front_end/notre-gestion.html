@@ -56,7 +56,7 @@ Administrative et locative
         <div class="partie1">
 
         </div>
-       <a href="Gestion-Administrative.html"> <div class="partie2">
+       <a href="{% url 'gestion_administrative' %}"> <div class="partie2">
 <img src="{% static 'images/formalites-administratives.png' %}" alt="">
 <h2>Gestion administrative</h2>
 <p>Un service de conciergerie haut de gamme, libérez-vous du fardeau administratif et consacrez-vous à ce qui compte vraiment.</p>
@@ -67,7 +67,7 @@ Administrative et locative
     </div>
 
     <div class="prestation2">
-      <a href="Gestion-Location.html">  <div class="partie4">
+      <a href="{% url 'gestion_locative' %}">  <div class="partie4">
             <img src="{% static 'images/clef-locative.png' %}" alt="">
             <h2>Gestion locative</h2>
             <p>Assistance complète aux propriétaires de biens premium proposés en location saisonnière.</p>
@@ -76,7 +76,7 @@ Administrative et locative
         <div class="partie5">
 
         </div>
-       <a href="Pack-Airbnb.html"> <div class="partie6">
+       <a href="{% url 'packairbnb' %}"> <div class="partie6">
             <img src="{% static 'images/airbnb.png' %}" alt="">
             <h2>Votre Pack Airbnb</h2>
             <p>La conciergerie Airbnb offre un soutien complet aux hôtes pour optimiser l'expérience de leurs clients.</p>
@@ -90,7 +90,7 @@ Administrative et locative
                 <section class="section4">
 <h2>Vous êtes à la recherche d'une <br> conciergerie haut de gamme ?</h2>
 <p>Contactez nous pour profiter des services de conciergerie toute options  et de nos gestion administrative <br>et locative de vos biens.</p>
-<button>CONTACTEZ-NOUS</button>
+<a href="{% url 'contact' %}"><button>Contactez-nous</button></a>
                 </section>
     </main>
    {% endblock %}

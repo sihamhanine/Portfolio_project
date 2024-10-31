@@ -3,6 +3,8 @@ from .models import Reservation, Client
 from django.forms.widgets import DateInput
 from django.contrib.auth.models import User
 from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.forms import AuthenticationForm
+from django.contrib.auth import authenticate
 
 
 class ReservationForm(forms.ModelForm):
@@ -18,6 +20,7 @@ class ReservationForm(forms.ModelForm):
         super(ReservationForm, self).__init__(*args, **kwargs)
         self.fields['datetime_start'].input_formats = ['%Y-%m-%d']
         self.fields['datetime_end'].input_formats = ['%Y-%m-%d']
+
 
 class SignUpForm(UserCreationForm):
     email = forms.EmailField(

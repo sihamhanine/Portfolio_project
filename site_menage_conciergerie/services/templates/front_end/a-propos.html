@@ -177,7 +177,7 @@ Bienvenue dans la haute conciergerie
 </div>
 </div>
 
-<button>Demandez un devis</button>
+<a href="{% url 'reserver' %}"><button>Faire une réservation</button></a>
   <div class="devis"><p>C'est gratuit et sans engagement</p></div> 
 
 </section>
@@ -189,7 +189,7 @@ Bienvenue dans la haute conciergerie
 
 <div class="groupe1">
     <div class="serviceadministratif">
-       <a href="#"> 
+       <a href="{% url 'gestion_administrative' %}"> 
         <div class="titreadministration">
             <h2>Service administratif</h2>
         </div>
@@ -197,21 +197,21 @@ Bienvenue dans la haute conciergerie
         
     </div>
     <div class="gestionlocation">
-       <a href="#"> <div class="titrelocation">
+       <a href="{% url 'gestion_locative' %}"> <div class="titrelocation">
             <h2>Gestion location</h2>
         </div>
     </a>
         
     </div>
     <div class="packairbnb">
-        <a href="#"><div class="titreairbnb">
+        <a href="{% url 'packairbnb' %}"><div class="titreairbnb">
             <h2>Pack airbnb</h2>
         </div>
     </a>
        
     </div>
 </div>
-<button>Demandez un devis</button>
+<a href="{% url 'demander_devis' %}"><button>Demandez un devis</button></a>
   <div class="devis"><p>C'est gratuit et sans engagement</p></div>
 </section>
 <section class="rejoignernous">
@@ -222,7 +222,7 @@ Bienvenue dans la haute conciergerie
 <h2> Avec notre agence de conciergerie multiservices de luxe, entrez dans une expérience où chaque service est synonyme de perfection. </h2>
     <h3>Découvrez un univers où vos désirs les plus luxueux deviennent réalité</h3>
     <p>Rejoignez-nous pour un voyage au-delà du luxe ordinaire.</p>
-    <button id="boutonfinale">Contactez nous </button>
+   <a href="{% url 'contact' %}"> <button id="boutonfinale">Contactez nous </button></a>
 </div>
     
 </div>

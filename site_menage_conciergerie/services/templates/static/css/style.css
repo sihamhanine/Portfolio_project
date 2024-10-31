@@ -195,9 +195,7 @@ animation-duration: 1.5s;
 }
 /*section 4*/
 .sec4{
-  /* background-color: #F2F4F4 ;*/
-   /*background-color: #F8F9F9;*/
-   margin-top: 30px;
+    margin-top: 30px;
    margin: auto;
   
  }
@@ -214,11 +212,7 @@ animation-duration: 1.5s;
  }
  .serviceadministratif,.gestionlocation,.packairbnb{
  
-  /* max-width:30%;
-   margin-left: 14px;*/
    width: 40%;
- 
- 
    margin-left: 30px;
  }
 
@@ -303,7 +297,6 @@ object-fit: cover;
 
 .serviceadministratif button,.gestionlocation button,.packairbnb button{
   background:#CDB181;
- /* background-color: #EDBB99;*/
   border-radius: 4px;
   color:white;
   padding: 10px 30px;
@@ -313,10 +306,13 @@ object-fit: cover;
   margin-left: 150px;
   margin-top: 0px;
   letter-spacing: 3px;
- /* position: absolute;*/
  border: none;
+ 
 }
-
+.serviceadministratif button:hover,.gestionlocation button:hover,.packairbnb button:hover{
+/*  background-color: rgba(0, 0, 0, 0.5);*/
+background-color: #b59a68;
+}
 .serviceadministratif p,.gestionlocation p,.packairbnb p{
 text-align:justify;
 
@@ -360,7 +356,7 @@ text-align:justify;
 }
 .sec5 button{
   background:#CDB181;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   padding: 20px 40px;
   font-size: 16px;
@@ -371,6 +367,9 @@ text-align:justify;
   letter-spacing: 3px;
   border: none;
 }
+.sec5 button:hover{
+  background-color: #b59a68;
+}
 .sec5 p{
   font-style: italic ;
 
@@ -379,7 +378,7 @@ text-align:justify;
   font-style: normal;
 }
 .devis P{
-  margin-left: 70%;
+  margin-left: 71%;
   margin-top: 10px;
 }
 /*section 6*/
@@ -451,7 +450,7 @@ font-weight: 500;
 }
 .sec6 button{
   background:#CDB181;
-  border-radius: 10px;
+  border-radius: 8px;
   color: white;
   padding: 20px 40px;
   font-size: 16px;
@@ -461,6 +460,9 @@ font-weight: 500;
   margin-top: 60px;
   letter-spacing: 3px;
   border: none;
+}
+.sec6 button:hover{
+  background-color: #b59a68;
 }
 .sec6 .devis{
 
@@ -548,6 +550,9 @@ font-weight: 700;
 letter-spacing: 3px;
 position: absolute;
 border: none;
+}
+#boutonfinale:hover{
+  background-color: #b59a68;
 }
 
 /*footer*/

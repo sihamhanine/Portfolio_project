@@ -1,6 +1,7 @@
 from django.db import models
 from django.core.validators import MinLengthValidator
 from django.contrib.auth.models import User
+from django.utils import timezone
 
 
 # Modèle de base pour avoir un champ 'created_at' et 'id' dans tous les modèles
@@ -24,8 +25,10 @@ class Client(models.Model):
 
 # Modèle Service
 class Service(BaseModel):
+    client = models.ForeignKey(Client, on_delete=models.CASCADE, default=1)
     service_name = models.CharField(max_length=50)
     service_description = models.TextField()
+    date_service = models.DateTimeField(default=timezone.now)
     price = models.FloatField()
     image_path = models.CharField(max_length=255, blank=True, null=True)
 

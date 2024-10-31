@@ -33,9 +33,11 @@
                 <h3>Services à venir</h3>
                 {% if services_a_venir %}
                     <ul>
-                        {% for service in services_a_venir %}
-                            <li>{{ service.service }} - Date du service : {{ service.date_service }}</li>
-                        {% endfor %}
+                        {% for reservation in services_a_venir %}
+            <li>
+                Service: {{ reservation.service.service_name }} - Statut: {{ reservation.reservation_status }} - Date: {{ reservation.datetime_start }}
+            </li>
+        {% endfor %}
                     </ul>
                 {% else %}
                     <p>Vous n'avez aucun service à venir.</p>
@@ -45,9 +47,11 @@
                 <h3>Derniers services</h3>
                 {% if derniers_services %}
                     <ul>
-                        {% for service in derniers_services %}
-                            <li>{{ service.service }} - Date du service : {{ service.date_service }}</li>
-                        {% endfor %}
+                        {% for reservation in derniers_services %}
+                        <li>
+                            Service: {{ reservation.service.service_name }} - Statut: {{ reservation.reservation_status }} - Date: {{ reservation.datetime_start }}
+                        </li>
+                    {% endfor %}
                     </ul>
                 {% else %}
                     <p>Vous n'avez aucun service terminé récemment.</p>
@@ -58,13 +62,13 @@
                 <p>Gérer vos informations personnelles et votre compte.</p>
                 <p>Nom d'utilisateur : {{ user.username }}</p>
                 <p>Email : {{ user.email }}</p>
-                <a href="">Modifier mes informations</a>
+                <a href="{% url 'mon_compte' %}">Modifier mes informations</a>
             </div>
         </div>
     </main>
 
     <footer>
-        <p>&copy; 2024 - Service de Conciergerie et Ménage</p>
+        <p>&copy; 2024 - Majestic Prestige & Conciergerie</p>
     </footer>
 </body>
 </html>

@@ -22,21 +22,15 @@
                 {% csrf_token %}
                 <div class="input-group">
                     <label for="email">Indiquez votre identifiant*</label>
-                    <input type="email" id="email" name="email" placeholder="Votre identifiant" required>
+                    <input type="email" id="email" name="email" placeholder="Votre identifiant" value="" autocomplete="off" required>
                     <p class="hint">Vous êtes client ? Votre identifiant est votre adresse e-mail</p>
                     <p class="hint">Vous n'avez pas de compte ? Créer votre compte en cliquant sur s'inscrire</p>
                 </div>
 
                 <div class="input-group">
                     <label for="password">Saisissez votre mot de passe*</label>
-                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" required>
-                    <p class="forgot-password"><a href="#">Mot de passe oublié ?</a></p>
-                    
-                </div>
-
-                <div class="options">
-                    <input type="checkbox" id="remember-me" name="remember_me">
-                    <label for="remember-me">Rester connecté</label>
+                    <input type="password" id="password" name="password" placeholder="Votre mot de passe" value="" autocomplete="off" required>
+                                       
                 </div>
 
                 <button type="submit">J'accède à mon espace</button>
@@ -44,11 +38,11 @@
                     <p>{{ error_message }}</p>
                 {% endif %}
 
-                <button type="button" onclick="window.location.href='{% url 'signup' %}'">S'inscrire</button>
+                <a href="{% url 'signup' %}"><button type="button">S'inscrire</button></a>
 
                 
                 <p class="mandatory-fields">*Champs obligatoires</p>
-            </form>
+            
         </div>
     </div>
 </section>

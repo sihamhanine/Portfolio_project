@@ -33,7 +33,7 @@ class ClientSerializer(serializers.ModelSerializer):
 class ServiceSerializer(serializers.ModelSerializer):
     class Meta:
         model = Service
-        fields = ['id', 'service_name', 'service_description', 'price', 'image_path',
+        fields = ['id', 'service_name', 'service_description', 'date_service', 'price', 'image_path',
                   'subservice1_name', 'subservice1_description',
                   'subservice2_name', 'subservice2_description']
 
