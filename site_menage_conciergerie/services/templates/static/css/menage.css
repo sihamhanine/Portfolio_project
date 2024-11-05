@@ -1,0 +1,645 @@
+
+.sec1{
+    display: flex;
+    background: rgba(0,0,0,.4);
+     
+}
+header{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/residentiel.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ width: 100%;
+ height: 80vh;
+}
+
+/*main*/
+
+.section1{
+    background: rgba(0,0,0,.2);
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+  
+  .section1 h1{
+    padding-top: 20px;
+    font-size: 32px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -450px;
+   /* color: #cab48d;*/
+    color: #CDB181;
+   /* color: white;*/
+  }
+  
+  .section1 h2{
+    padding-top: 20px;
+    font-size: 24px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+   color: #CDB181;
+   /*color: white;*/
+    font-family: 'Montserrat', sans-serif;
+  }
+.section2{
+    width: 70%;
+    display: flex;
+    margin: auto;
+    margin-top: 350px;
+}
+.image-menage{
+    width: 50%;
+   
+}
+.image-menage img{
+    width: 100%;
+    height: auto;
+}
+.texte-menage{
+    width: 57%;
+}
+.texte-menage p{
+    text-align: justify;
+    line-height: 2rem;
+    margin: 20px 20px;
+}
+.texte-menage .para1{
+    text-align: justify;
+    line-height: 2rem;
+    margin-top: 10px;
+   }
+   .section3{
+    background-color:#F3f3f3;
+    width: 100%;
+    display: flex;
+    margin: auto;
+    padding: 50px;
+    margin-top: 70px;
+   }
+   
+   .groupe2{
+    width: 60%;
+
+    margin: auto;
+   }
+   .premieres-groupes,.deuxiemes-groupes{
+    display: flex;
+   /* width: 100%;*/
+  
+   justify-content: center;
+   margin: auto;
+   margin-left:30px ;
+   }
+   .deuxiemes-groupes{
+    margin-top: 30px;
+   }
+   .serv1,.serv2,.serv3,.serv4,.serv5,.serv6{
+    width: 30%;
+    height: 35vh;
+    background-color: white;
+    margin: 10px 10px;
+    padding: 30px 10px;
+    border-radius: 20px;
+   }
+   .servc1,.servc2,.servc3,.servc4,.servc5,.servc6{
+    width:30%;
+    height: 32vh;
+    background-color: white;
+    margin: 10px 10px;
+    padding: 30px 10px;
+    border-radius: 20px;
+   }
+
+ 
+   .serv1 img,.serv2 img,.serv3 img,.serv4 img,.serv5 img,.serv6 img{
+    width: 80%;
+    height: 20vh;
+    margin: auto;
+    border-style: none;
+    display: block;
+    max-width: 100%;
+   }
+   .servc1 img,.servc2 img,.servc3 img,.servc4 img,.servc5 img,.servc6 img{
+    width: 80%;
+    height: 20vh;
+    margin: auto;
+    border-style: none;
+    display: block;
+    max-width: 100%;
+   }
+  
+   .serv1 h3,.serv2 h3,.serv3 h3,.serv4 h3,.serv5 h3,.serv6 h3{
+    text-align: center;
+    color:#bda577;
+    margin-top: 20px;
+    font-size: 16.5px;
+    letter-spacing: 2px;
+   }
+   .servc1 h3,.servc2 h3,.servc3 h3,.servc4 h3,.servc5 h3,.servc6 h3{
+    text-align: center;
+    color:#bda577;
+    margin-top: 20px;
+    font-size: 16.5px;
+    letter-spacing: 2px;
+   }
+   .groupe1{
+    width: 40%;
+   
+    align-items: center;
+    margin: auto;
+    margin-top: 230px;
+    margin-bottom: 200px;
+   }
+   .groupe1 p{
+    font-size: 35px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color:#bda577;
+    margin-left: 120px;
+   
+   }
+   .groupe1 .paragroupe1{
+    font-size: 30px;
+    text-align: center;
+    font-weight: 700;
+    letter-spacing: 3px;
+    color:#bda577;
+    margin-left: 5px;
+  /*margin-bottom: 30px;*/
+   }
+   #devis-special{
+
+    background:#CDB181;
+    border-radius: 10px;
+    color: white;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 28%;
+    margin-top: 30px;
+    letter-spacing: 3px;
+    border: none;
+   }
+
+   .groupe1 .devis p{
+
+    color:black;
+    font-style: italic;
+    margin-left:210px;
+    margin-top: 10px;
+    font-size: 10px;
+   
+    }
+     .groupe1 button{
+      background:#CDB181;
+      border-radius: 10px;
+      color: white;
+      padding: 20px 40px;
+      font-size: 16px;
+      font-weight: 700;
+      text-align: center;
+      margin-left: 34%;
+      margin-top: 30px;
+      letter-spacing: 3px;
+      border: none;
+    }
+
+    .section4{
+      background-color:white;
+      width: 60%;
+      margin: auto;
+      border-radius: 20px;
+      height: 580px;
+      padding: 30px 30px;
+    }
+    .section-commercial{
+      background-color:white;
+      width: 70%;
+      margin: auto;
+      border-radius: 20px;
+      height: 740px;
+      padding: 30px 30px;
+    }
+   
+    .parties{
+      display: flex;
+      margin-top: 40px;
+    }
+    .parties-commercials{
+      display: flex;
+      margin-top: 40px;
+    }
+    .partie1{
+      
+      width: 50%;
+     
+    }
+    .partie1-commercial{
+      
+      width: 50%;
+     
+    }
+    .partie2{
+      width: 50%;
+  
+    margin: auto;
+    }
+    .partie2-commercial{
+      width: 60%;
+  
+      margin: auto;
+   
+    }
+ 
+    .image1 img{
+      width: 100%;
+      height: 100%;
+      border-style: none;
+      margin-left: 30px;
+      border-radius: 20px 45px;
+    }
+
+    .partie1-commercial .image1 img{
+      width: 120%;
+      height: 190%;
+      border-style: none;
+      margin-left: 180px;
+      border-radius: 0px;
+      position: relative;
+    /*  border: 1px solid black;*/
+    }
+ 
+
+   .image2 img{
+      width: 100%;
+      height: 100%;
+      border-style: none;
+margin-left: 250px;
+margin-top: -50px;
+border-radius: 20px 45px;
+    }
+    .partie1-commercial .image2 img{
+      width: 13%;
+      height: 20%;
+      border-style: none;
+      margin-left: 280px;
+      margin-top:75px;
+      border-radius: 0px;
+      position: absolute;
+      z-index:99;
+    /*  border: 1px solid black;*/
+    }
+   
+    .image3 img{
+      width: 100%;
+      height: 100%;
+      border-style: none;
+      margin-left: 150px;
+      margin-top: -25px;
+      border-radius: 20px 45px;
+    }
+    .partie1-commercial .image3 img{
+      width: 12%;
+      height: 19%;
+      border-style: none;
+      margin-left: 5px;
+      margin-top: -160px;
+      border-radius: 0px;
+      position: absolute;
+      z-index: 99;
+     /* border: 1px solid black;*/
+    }
+    .partie1-commercial .image4 img{
+      width: 110%;
+      height: 250%;
+      border-style: none;
+      margin-left: 90px;
+      margin-top: -140px;
+      border-radius: 0px;
+    
+     /* border: 1px solid black;*/
+    }
+    .image2,.image1,.image3,.image4{
+    
+      width:35%;
+      height: 35%;
+    }
+    .partie1-commercial .image2,.partie1-commercial .image1,.partie1-commercial .image3{
+    
+      width:35%;
+      height: 40%;
+    }
+
+  .partie2 li{
+    font-size: 100%;
+    letter-spacing: 1.5px;
+    line-height: 3.5em;
+  }
+  .partie2-commercial li{
+    font-size: 100%;
+    letter-spacing: 1.5px;
+    line-height: 3.5em;
+  }
+  .partie2 li::before{
+    content: "\002714";
+    color: #cab48d;
+    margin: 10px;
+    width: 14px;
+    height: 12px;
+}
+.partie2-commercial li::before{
+  content: "\002714";
+  color: #cab48d;
+  margin: 10px;
+  width: 14px;
+  height: 12px;
+}
+
+  .partie2 ul{
+    list-style: none;
+    padding-left: 30px;
+
+  }
+  .partie2-commercial ul{
+    list-style: none;
+    padding-left: 30px;
+
+  }
+  .background{
+    background-color: #F8F9F9;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .background1{
+    background-color: #F8F9F9;
+    padding-top: 50px;
+    padding-bottom: 50px;
+  }
+  .section4 h1{
+    font-size: 23px;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+margin-bottom: 10px;
+color:#bda577;
+  }
+  .section-commercial h1{
+    font-size: 23px;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+margin-bottom: 10px;
+color:#bda577;
+  }
+  .section4 h2{
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+margin-bottom: 10px;
+  }
+  .section-commercial h2{
+    font-size: 18px;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+margin-bottom: 10px;
+  }
+  .section4 p{
+    letter-spacing: 1.5px;
+    line-height: 2.5rem;
+margin-bottom: 10px;
+font-family: 'Poppins', sans-serif;
+  }
+  .section-commercial p{
+    letter-spacing: 1.5px;
+    line-height: 2.5rem;
+margin-bottom: 10px;
+font-family: 'Poppins', sans-serif;
+  }
+
+
+
+  /*sec5*/
+  .sec5{
+    background-color: white;
+    margin-top: 25px;
+    padding-bottom: 60px;
+  }
+  .sec5 h1{
+    padding-top: 40px;
+    font-size: 25px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .principe{
+    display: flex;
+  
+    width: 80%;
+    margin: auto;
+    margin-top: 30px;
+  }
+  .principe1,.principe2,.principe3{
+    padding: 20px 20px;
+
+    width: 30%;
+    object-fit: cover;
+    margin: auto;
+    display: flex;
+  }
+  
+  .principe2 img,.principe3 img,.principe1 img{
+    margin-top: -20px;
+  }
+  .sec5 button{
+    background:#CDB181;
+    border-radius: 10px;
+    color: white;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 41%;
+    margin-top: 60px;
+    letter-spacing: 3px;
+    border: none;
+  }
+  .sec5 p{
+    font-style: italic ;
+  
+  }
+  .texteprincipe p{
+    font-style: normal;
+    letter-spacing: 1.5px;
+  }
+  .devis P{
+    margin-left: 43%;
+    margin-top: 10px;
+  }
+  .nos-services{
+    display: flex;
+  }
+  .service2{
+    background-color: aquamarine;
+    border-radius:10px 5% / 20px 25em 30px 35em;
+    width: 5%;
+    height: 150px;
+  }
+
+  /*nos services*/
+
+    .nosservices{
+     display: flex;
+     margin: auto;
+     width: 80%;
+     margin-top: 60px;
+    }
+   
+    .servicemenage,.serviceconciergerie,.serviceaide,.servicechantier,.serviceEntretien{
+    
+     width: 20%;
+      margin-left: 10px;
+    }
+   
+    .serviceEntretien{
+     margin-right: 10px;
+    }
+   
+    .servicemenage a,.serviceconciergerie a,.serviceaide a,.servicechantier a,.serviceEntretien a{
+     text-decoration: none;
+   }
+   .servicemenage a:hover .titremenage,.serviceconciergerie a:hover .titreconciergerie,.serviceaide a:hover .titreaide,.servicechantier a:hover .titrechantier,.serviceEntretien a:hover .titreEntretien{
+     filter:brightness(70%);
+   }
+   .titremenage{
+     background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/menage.jpg');
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+   
+   height: 200px;
+   width:100%;
+   object-fit: cover;
+   
+   }
+   .titreconciergerie{
+     background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/conciergerie.jpg');
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat; 
+   
+   height: 200px;
+   width:100%;
+   object-fit: cover;
+   
+   }
+   .titreaide{
+     background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/soutien.jpg');
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+    
+   
+   height: 200px;
+   width:100%;
+   object-fit: cover;
+   
+   }
+   .titrechantier{
+     background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/chantier.jpeg');
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+   
+   height: 200px;
+   width:100%;
+   object-fit: cover;
+   
+   }
+   .titreEntretien{
+     background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/espacevert.jpg');
+     background-position: center;
+     background-size: cover;
+     background-repeat: no-repeat;
+    
+   
+   height: 200px;
+   width:100%;
+   object-fit: cover;
+   
+   }
+   .titremenage h2,.titreconciergerie h2,.titreaide h2,.titrechantier h2,.titreEntretien h2{
+     padding-top: 80px;
+     line-height:2em;
+      font-family: 'Montserrat', sans-serif ;
+     font-size: 20px!important;
+     text-align: center;
+     color: white;
+     letter-spacing: 2px;
+     line-height: 30px;
+     font-weight: 500;
+   }
+   
+   .secnosservices button,.secnotregestion button{
+     background:#CDB181;
+     border-radius: 10px;
+     color: white;
+     padding: 20px 40px;
+     font-size: 18px;
+     font-weight: 700;
+     text-align: center;
+     margin-left: 41.7%;
+     margin-top: 60px;
+     letter-spacing: 3px;
+     border: none;
+     text-transform: uppercase;
+   }
+   .sec6 .devis p{
+     margin-left: 42.7%;
+     margin-top: 10px;
+   }
+   
+   .sec6 h1{
+    padding-top: 40px;
+    font-size: 25px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .sec6 p{
+    text-align: center;
+    letter-spacing: 2px;
+    line-height: 2.5rem;
+  }
+  .sec6{
+
+    margin-bottom: 100px;
+  }
+
+
+  
+
+/*page ménage commercial*/
+
+.header{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/menage-commercial.jpg');
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ width: 100%;
+ height: 80vh;
+}

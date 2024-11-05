@@ -45,9 +45,9 @@ Nos offres de services de luxe
             <h2>{{ service.service_name }}</h2>
 
                 <!-- Vérification si le premier sous-service existe -->
-                {% if service.subservice1_name %}
+                {% if service.subservice1_name %} 
                     <h3>{{ service.subservice1_name }}</h3>
-                    {% if service.subservice1_description %}
+                    {% if service.subservice1_description %} 
                         <p>{{ service.subservice1_description }}</p>
                     {% endif %}
                 {% endif %}
@@ -63,7 +63,7 @@ Nos offres de services de luxe
                 <!-- Si aucun sous-service n'existe, afficher la description normale -->
                 {% if not service.subservice1_name and not service.subservice2_name %}
                     {% if service.service_description %}
-                        <p>{{ service.service_description }}</p>
+                        <p>{{ service.service_description }}</p> 
                     {% endif %}
                 {% endif %}
                 

@@ -17,6 +17,14 @@ Nos Services
 {% block content %}
 
     <main>
+         <!-- Bloc pour afficher les messages de succès ou d'erreur -->
+         {% if messages %}
+         {% for message in messages %}
+             <div class="{{ message.tags }}">
+                 <p>{{ message }}</p>
+             </div>
+         {% endfor %}
+     {% endif %}
       
         <div class="contacteznous">
             <h1>Nous contacter</h1>
@@ -39,8 +47,8 @@ Nos Services
 <label for="objet" name="objet">Objet*</label> <br>
 <select name="objet" size="1" id="objet"> <br>
     <option value="-Selectionner-" >-Selectionner-</option>
-    <option value="Information sur ma mission">Information sur le devis</option>
-    <option value="Information sur mon compte">Information sur les services</option>
+    <option value="Information sur le devis">Information sur le devis</option>
+    <option value="Information sur mon compte">Information sur mon compte</option>
     
 </select> <br>
 <label for="message">Votre message*</label> <br>

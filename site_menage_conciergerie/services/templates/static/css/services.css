@@ -68,8 +68,12 @@ header{
   }
 
   .section2 p{
-    text-align: center;
-    line-height: 2em;
+  text-align: center;
+  line-height: 2em;
+  padding: 10px 20px;
+  line-height: 2rem;
+  letter-spacing: 1.5px;
+    
   }
   /*test*/
 

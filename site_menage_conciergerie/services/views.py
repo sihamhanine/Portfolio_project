@@ -334,11 +334,11 @@ def contact(request):
         from_email = 'siham.elani17@gmail.com'  # Adresse e-mail vérifiée
         
         # Ajoute l'email du client dans le corps du message
-        full_message = f"Message de : {nom}\nEmail : {email}\n\n{message}"
+        full_message = f"Bonjour {nom},\n\nNous avons bien reçu votre message concernant \"{objet}\" et nous vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe de support."
 
         # Envoie l'email
         send_mail(
-            subject=f"{objet} de {nom}",
+            subject=f"Confirmation de réception de votre message",
             message=full_message,
             from_email=from_email,  # Adresse e-mail vérifiée
             recipient_list=[email],  # Ton adresse e-mail

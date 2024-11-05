@@ -1,0 +1,191 @@
+{% extend basic.html %}
+{% load static%}
+
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/menage.css' %}">
+{% endblock %}
+
+{% block title%}
+menage commercial
+{% endblock%}
+
+{% block header_image %}
+{% static 'images/acc.jpg' %}
+{% endblock %}
+
+{% block header_title %}
+Nos offres de ménage de luxe
+{% endblock %}
+
+{% block header_subtitle %}
+Ménage Commercial
+{% endblock %}
+
+{% block content %}
+    <main>
+
+                <section class="section2">
+                <div class="image-menage">
+            <img src={% url 'images/menage-commercial-foto.jpg' %} alt="">
+                </div>
+                <div class="texte-menage">
+            <p class="para1"> Optimisez la propreté de votre espace professionnel avec notre service de ménage commercial haut de gamme</p>
+            <p>Nos équipes dédiées garantissent un environnement impeccable, adapté à vos besoins spécifiques. </p>
+            <p>Profitez d'une prestation fiable, efficace et sur mesure pour maintenir la qualité de votre lieu de travail.</p>
+            <p> Nous sommes conscients qu’un lieu commercial bien propre est un facteur premier de la réussite de votre projet.</p>
+            <p>Voulez-vous garder vos bureaux propres et en parfaite états? Si oui, vous êtes au bon endroit. 
+                Majestic Préstige & Conciergerie est une entreprise spécialisée dans le ménage commercial ainsi que d'autres services pertinents.</p>
+                </div>
+            </section>
+
+            <section class="section3">
+                <div class="groupe1">
+                
+                    <p class="paragroupe1">Notre gamme complète de services de ménage commercial inclut:</p>
+                    <a href=""><button id="devis-special">Demandez un devis</button></a>
+                 <!-- <div class="devis"><p>c'est gratuit et sans engagement</p></div> -->
+                </div>
+                <div class="groupe2">
+                    <div class="premieres-groupes">
+                    <div class="servc1">
+                        <img src="{% url 'images/nettoyage-bureau.jpg' %}" alt="">
+                        <h3>Nettoyage des bureaux</h3>
+                    </div>
+                    <div class="servc2">
+                        <img src="{% url 'images/desinfecter-surface.jpg' %}" alt="">
+                <h3> La désinfection des surfaces</h3>
+                    </div>
+                        <div class="servc3">
+                <img src="{% url 'images/aspiration-des-sols.jpg' %}" alt="">
+                <h3>Nettoyage des sols</h3>
+                        </div>
+                    </div>
+                    <div class="deuxiemes-groupes">
+                        <div class="servc4">
+                            <img src="{% url 'images/la-poussiére.jpg' %}" alt="">
+                            <h3>Le dépoussiérage</h3>
+                        </div>
+                        <div class="servc5">
+                            <img src="{% url 'images/nettoyage-sanitaires (1).jpg' %}" alt="">
+            <h3>Nettoyage sanitaire</h3>
+                        </div>
+                        <div class="servc6">
+                            <img src="{% url 'images/nettoyage-vitres-commercial.png' %}" alt="">
+                            <h3>Lavage de vitres commercial</h3>
+                        </div>
+                    </div>
+                    </div>
+                
+                </section>
+
+                <section class="background1">
+                    <section  class="section-commercial">
+                    <h1>Besoin d'un coup de main supplémentaire ? </h1>
+                        <h2> Nous proposons des prestations avec des options personnalisables:</h2>
+                    <p> Nous personnalisons nos interventions pour répondre à vos exigences spécifiques,
+                         assurant ainsi un environnement professionnel propre et accueillant pour votre équipe et vos clients.</p>
+                    
+                    <div class="parties" class="parties-commercials">
+                        <div class="partie1-commercial">
+                    <div class="image1"><img src="{% url 'images/menage-co1.jpg' %}" alt=""></div>
+                    <div class="image2"><img src="{% url 'images/menage-co3.png' %}" alt=""></div>
+                    <div class="image3"  ><img src="{% url 'images/menage-co2.jpg' %}" alt=""></div>
+                    <div class="image4"><img src="{% url 'images/menage-electromenager.jpg' %}" alt=""></div>
+                        </div>
+                        <div class="partie2-commercial">
+                    <ul>
+                        <li>Nettoyage des électroménagers </li>
+                        <li>Aspiration et nettoyage des salles d'attente et de conférence</li>
+                        <li>Lavage des tapis</li>
+                        <li>Nettoyage en profondeur et récurage de la céramique</li>
+                        <li>...Et plus encore! </li>
+                    </ul>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                    </section>
+                    </section>
+
+
+<section class="sec5">
+    <h1>Pourquoi nous confier le ménage commercial <br> de votre organisme</h1>
+    <hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
+    <div class="principe">
+<div class="principe1">
+<img src="{% url 'images/reglage.png' %}" alt="">
+<div class="texteprincipe">
+    <h2>Résponsabilité</h2>
+<p>Entiérement assuré.</p>
+</div>
+</div>
+<div class="principe2">
+    <img src="{% url 'images/reglage.png' %}" alt="">
+   <div class="texteprincipe">
+     <h2>Ecologie</h2>
+    <p>Utilisation de produits ecologiques.</p>
+</div>
+    </div>
+    <div class="principe3">
+       <img src="{% url 'images/reglage.png' %}" alt=""> 
+        <div class="texteprincipe">
+            <h2>Flexibilté</h2>
+            <p>Réservation flexible à annuler <br> a tout moment.</p>
+        </div>
+        </div>
+    </div>
+
+    <button>Réservation facile</button>
+  <div class="devis"><p>Annulez à tout moment</p></div> 
+</section>
+
+<section class="sec6">
+    <h1>Découvrez plus de services</h1>
+    <p>Et si nous vous aidions pour autre chose ?</p>
+    <hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
+    <div class="nosservices">     
+        <div class="servicemenage" class="image-item" id="c1">
+            <a href="#"> 
+             <div class="titremenage">
+                 <h2>Ménage résidentiel</h2>
+             </div>
+         </a>
+        </div>
+        
+        <div class="serviceconciergerie" class="image-item" id="c2">
+            <a href="#"> 
+             <div class="titreconciergerie">
+                 <h2>Conciergerie résidentielle</h2>
+             </div>
+         </a>
+        </div>
+        
+        
+        <div class="serviceaide" class="image-item" id="c3">
+            <a href="#"> 
+             <div class="titreaide">
+                 <h2>Service de soutien à domicile</h2>
+             </div>
+         </a>
+        </div>
+        
+        <div class="servicechantier" class="image-item" id="c4">
+            <a href="#"> 
+             <div class="titrechantier">
+                 <h2>Service de chantier</h2>
+             </div>
+         </a>
+        </div>
+        
+        <div class="serviceEntretien" class="image-item" id="c5">
+            <a href="#"> 
+             <div class="titreEntretien">
+                 <h2>Entretien espace vert</h2>
+             </div>
+         </a>
+        </div>
+        </div>
+</section>
+    </main>
+    {% endblock %}

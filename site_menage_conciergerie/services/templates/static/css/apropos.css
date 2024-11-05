@@ -426,7 +426,6 @@ padding: 20px 20px;
   color:white;
   letter-spacing: 3px;
   font-size: 18px;
-  /*text-transform:uppercase ;*/
   font-weight: 600;
 }
 .lestitres h2{
@@ -435,7 +434,6 @@ padding: 20px 20px;
   color:white;
   letter-spacing: 3px;
   font-size: 22px;
-  /*text-transform:uppercase ;*/
   font-weight: 700;
 }
 .lestitres p{
@@ -444,7 +442,6 @@ padding: 20px 20px;
   color: white;
   letter-spacing: 3px;
   font-size: 15px;
-  /*text-transform:uppercase ;*/
   font-weight: 500;
 }
 
