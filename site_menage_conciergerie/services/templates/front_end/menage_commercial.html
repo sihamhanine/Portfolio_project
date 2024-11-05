@@ -1,4 +1,4 @@
-{% extend basic.html %}
+{% extends 'base.html' %}
 {% load static%}
 
 {% block page_css %}
@@ -13,20 +13,18 @@ menage commercial
 {% static 'images/acc.jpg' %}
 {% endblock %}
 
-{% block header_title %}
-Nos offres de ménage de luxe
-{% endblock %}
 
-{% block header_subtitle %}
-Ménage Commercial
-{% endblock %}
 
 {% block content %}
     <main>
+        <section class="section1">
+            <h1> Nos offres de ménage de luxe</h1>
+            <h2>Ménage Commercial</h2>
+            </section>
 
                 <section class="section2">
                 <div class="image-menage">
-            <img src={% url 'images/menage-commercial-foto.jpg' %} alt="">
+            <img src="{% static 'images/menage-commercial-foto.jpg' %}" alt="">
                 </div>
                 <div class="texte-menage">
             <p class="para1"> Optimisez la propreté de votre espace professionnel avec notre service de ménage commercial haut de gamme</p>
@@ -42,35 +40,35 @@ Ménage Commercial
                 <div class="groupe1">
                 
                     <p class="paragroupe1">Notre gamme complète de services de ménage commercial inclut:</p>
-                    <a href=""><button id="devis-special">Demandez un devis</button></a>
+                    <a href="{% url 'demander_devis' %}"><button id="devis-special">Demandez un devis</button></a>
                  <!-- <div class="devis"><p>c'est gratuit et sans engagement</p></div> -->
                 </div>
                 <div class="groupe2">
                     <div class="premieres-groupes">
                     <div class="servc1">
-                        <img src="{% url 'images/nettoyage-bureau.jpg' %}" alt="">
+                        <img src="{% static 'images/nettoyage-bureau.jpg' %}" alt="">
                         <h3>Nettoyage des bureaux</h3>
                     </div>
                     <div class="servc2">
-                        <img src="{% url 'images/desinfecter-surface.jpg' %}" alt="">
+                        <img src="{% static 'images/desinfecter-surface.jpg' %}" alt="">
                 <h3> La désinfection des surfaces</h3>
                     </div>
                         <div class="servc3">
-                <img src="{% url 'images/aspiration-des-sols.jpg' %}" alt="">
+                <img src="{% static 'images/aspiration-des-sols.jpg' %}" alt="">
                 <h3>Nettoyage des sols</h3>
                         </div>
                     </div>
                     <div class="deuxiemes-groupes">
                         <div class="servc4">
-                            <img src="{% url 'images/la-poussiére.jpg' %}" alt="">
+                            <img src="{% static 'images/la-poussiére.jpg' %}" alt="">
                             <h3>Le dépoussiérage</h3>
                         </div>
                         <div class="servc5">
-                            <img src="{% url 'images/nettoyage-sanitaires (1).jpg' %}" alt="">
+                            <img src="{% static 'images/nettoyage-sanitaires (1).jpg' %}" alt="">
             <h3>Nettoyage sanitaire</h3>
                         </div>
                         <div class="servc6">
-                            <img src="{% url 'images/nettoyage-vitres-commercial.png' %}" alt="">
+                            <img src="{% static 'images/nettoyage-vitres-commercial.png' %}" alt="">
                             <h3>Lavage de vitres commercial</h3>
                         </div>
                     </div>
@@ -87,10 +85,10 @@ Ménage Commercial
                     
                     <div class="parties" class="parties-commercials">
                         <div class="partie1-commercial">
-                    <div class="image1"><img src="{% url 'images/menage-co1.jpg' %}" alt=""></div>
-                    <div class="image2"><img src="{% url 'images/menage-co3.png' %}" alt=""></div>
-                    <div class="image3"  ><img src="{% url 'images/menage-co2.jpg' %}" alt=""></div>
-                    <div class="image4"><img src="{% url 'images/menage-electromenager.jpg' %}" alt=""></div>
+                    <div class="image1"><img src="{% static 'images/menage-co1.jpg' %}" alt=""></div>
+                    <div class="image2"><img src="{% static 'images/menage-co3.png' %}" alt=""></div>
+                    <div class="image3"  ><img src="{% static 'images/menage-co2.jpg' %}" alt=""></div>
+                    <div class="image4"><img src="{% static 'images/menage-electromenager.jpg' %}" alt=""></div>
                         </div>
                         <div class="partie2-commercial">
                     <ul>
@@ -114,21 +112,21 @@ Ménage Commercial
     <hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
     <div class="principe">
 <div class="principe1">
-<img src="{% url 'images/reglage.png' %}" alt="">
+<img src="{% static 'images/reglage.png' %}" alt="">
 <div class="texteprincipe">
     <h2>Résponsabilité</h2>
 <p>Entiérement assuré.</p>
 </div>
 </div>
 <div class="principe2">
-    <img src="{% url 'images/reglage.png' %}" alt="">
+    <img src="{% static 'images/reglage.png' %}" alt="">
    <div class="texteprincipe">
      <h2>Ecologie</h2>
     <p>Utilisation de produits ecologiques.</p>
 </div>
     </div>
     <div class="principe3">
-       <img src="{% url 'images/reglage.png' %}" alt=""> 
+       <img src="{% static 'images/reglage.png' %}" alt=""> 
         <div class="texteprincipe">
             <h2>Flexibilté</h2>
             <p>Réservation flexible à annuler <br> a tout moment.</p>
@@ -136,7 +134,7 @@ Ménage Commercial
         </div>
     </div>
 
-    <button>Réservation facile</button>
+   <a href="{% url 'reserver' %}"><button>Réservation facile</button></a> 
   <div class="devis"><p>Annulez à tout moment</p></div> 
 </section>
 

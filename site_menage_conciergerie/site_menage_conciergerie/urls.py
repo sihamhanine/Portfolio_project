@@ -56,6 +56,7 @@ urlpatterns = [
     path('changer_mot_de_passe/', views.changer_mot_de_passe, name='changer_mot_de_passe'),
     path('historique-service/', views.historique_service, name='historique_service'),
     path('exporter_historique/', views.exporter_historique, name='exporter_historique'),
+    path('menage_commercial/', views.menage_commercial, name='menage_commercial')
    
 ]
 

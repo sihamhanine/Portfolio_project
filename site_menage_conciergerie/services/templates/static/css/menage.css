@@ -190,7 +190,10 @@ header{
     letter-spacing: 3px;
     border: none;
    }
-
+  
+   #devis-special:hover{
+    background-color: #b59a68;
+  }
    .groupe1 .devis p{
 
     color:black;
@@ -212,6 +215,9 @@ header{
       margin-top: 30px;
       letter-spacing: 3px;
       border: none;
+    }
+    .groupe1 button:hover{
+      background-color: #b59a68;
     }
 
     .section4{
@@ -473,6 +479,9 @@ font-family: 'Poppins', sans-serif;
     margin-top: 60px;
     letter-spacing: 3px;
     border: none;
+  }
+  .sec5 button:hover{
+    background-color: #b59a68;
   }
   .sec5 p{
     font-style: italic ;

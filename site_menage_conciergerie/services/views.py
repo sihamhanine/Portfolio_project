@@ -26,6 +26,9 @@ def packairbnb(request):
 def reservation(request):
     return render(request, 'front_end/reservation.html') # affiche le template reservation
 
+def menage_commercial(request):
+    return render(request, 'front_end/menage_commercial.html') # affiche le template menage_commercial
+
 def historique_service(request):
     # Exemple de choix de statut, à adapter selon votre modèle
     status_choices = [
