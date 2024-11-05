@@ -1,60 +1,19 @@
-<!DOCTYPE html>
-<html lang="fr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="conciergerie.css">
-    <title>Conciergerie Résidentielle</title>
-</head>
-<body>
-    <header>
+{% extends 'base.html' %}
+{% load static%}
 
-        <section class="sec1">
-            <div class="logo">
-                <img src="nos-images/logovide.PNG" alt="photo logo">
-            </div>
-            <nav class="menu">
-                <ul>
-                    <li><a href="accueil.html">Accueil</a></li>
-                    <li><a href="A-propos.html">À propos</a></li>
-                    <li class="p-sous-nav-service">
-                        <a href="NosServices.html">Nos offres de services</a>
-                        <ul class="sous-nav-service">
-                            <li class="p-sous-nav-menage">
-                                <a href="/">Ménage</a>
-                                <ul class="sous-nav-menage">
-                                    <li><a href="Menage-Résidentiel.html">Résidentiel </a></li>
-                                    <li><a href="Menage-Commercial.html">Commercial</a></li>
-                                </ul>
+{% block page_css %}
+<link rel="stylesheet" href="{% static 'css/menage.css' %}">
+{% endblock %}
 
+{% block title%}
+Conciergerie résidentielle
+{% endblock%}
 
-                            </li>
-                            <li class="p-sous-nav-conciergerie">
-                                <a href="Consiergerie-Résidentielle.html">Conciergerie Résidentielle</a>  
+{% block header_image %}
+{% static 'images/acc.jpg' %}
+{% endblock %}
 
-                          </li>
-                            <li><a href="/">Service de soutien à domicile</a></li>
-                            <li><a href="/">Service de chantier</a></li>
-                            <li><a href="/">Entretien espace vert</a></li>
-                        </ul>
-                    </li>
-                    <li class="p-sous-nav-projet">
-                        <a href="/">Notre gestion</a>
-                        <ul class="sous-nav-projet">
-                            <li><a href="/">Service administratifs</a></li>
-                            <li><a href="/">Gestion location</a></li>
-                            <li><a href="/">Pack AIRBNB</a></li>
-
-
-
-                        </ul>
-                    </li>
-                    <li> <a href="views/contact.html">Contact</a></li>
-                </ul>
-            </nav>
-
-        </section>
-    </header>
+{% block content %}
     <main>
 
         <section class="section1">
@@ -108,8 +67,6 @@
 <div class="service3">
     <h3>Service de blanchisserie</h3>
     <p> Se concentre sur le nettoyage et l’entretien du linge de maison: Lavage, séchage, Repassage et pliage et peut également proposer des services de réparation ou de remplacement.
-
-
     </p>
 </div>
 <div class="service4">
@@ -124,16 +81,11 @@
 
 <div class="back2">
 
-<img src="nos-images/conciergerie.jpg" alt="">
+<img src="{% static 'images/conciergerie.jpg' %}" alt="">
 
 </div>
 
-
 </div>
-
-
-
-
 </section>
 
 <section class="autres-services">
@@ -258,12 +210,12 @@
 
 
 
-        <a href=""><button>Demandez un devis</button></a>
+        <a href="{% url 'demander_devis' %}"><button>Demandez un devis</button></a>
        
 </div>
 <div class="service-special2">
-   <div class="service-special-image1"><img src="nos-images/derniere-image1.jpg" alt=""></div> 
-    <div class="service-special-image2"><img src="nos-images/derniere-image2.jpg" alt=""></div>
+   <div class="service-special-image1"><img src="{% static 'images/derniere-image1.jpg' %}" alt=""></div> 
+    <div class="service-special-image2"><img src="{% static 'images/derniere-image2.jpg' %}" alt=""></div>
 </div>
 </section>
 
@@ -274,7 +226,7 @@
    
     <div class="nosservices">     
         <div class="servicemenage" class="image-item" id="c1">
-            <a href="#"> 
+            <a href="{% url 'menage_residentiel' %}"> 
              <div class="titremenage">
                  <h2>Ménage résidentiel</h2>
              </div>
@@ -282,7 +234,7 @@
         </div>
         
         <div class="serviceconciergerie" class="image-item" id="c2">
-            <a href="#"> 
+            <a href="{% url 'menage_commercial' %}"> 
              <div class="titreconciergerie">
                  <h2>Ménage commercial</h2>
              </div>
@@ -325,50 +277,4 @@
 
 </section>
     </main>
-    <footer>
-        
-        <section class="sec9">
-            <div class="logogif">
-                <a href="accueil.html"><img src="nos-images/logovide.PNG" alt="gifemploi"></a>
-            </div>
-            <div class="menufooter">
-                <nav>
-                    <ul>
-                        <a href="accueil.html"><li>ACCUEIL</li> </a> 
-                        <a href="A-propos.html"><li>A PROPOS</li></a>
-                        <a href="NosServices.html"><li>NOS OFFRES DE SERVICES</li></a>
-                        <a href=""><li>NOTRE GESTION</li></a>
-                        <a href="views/contact.html"><li>CONTACT</li></a>
-                    
-                    </ul>
-                </nav>
-            </div>
-            <div class="listes">
-                <ul>
-                   <a href=""><li>PACK AIRBNB</li></a> 
-                    <a href=""><li>SERVICE ADMINISTRATIF</li></a>
-                    <a href=""><li>GESTION LOCATION</li></a>
-                    <a href=""><li>CGU</li></a>
-                    <a href=""><li>POLITIQUE DE PROTECTION DES DONNÉES PERSONNELLES</li></a>
-                </ul>
-            </div>
-            <div class="reseau">
-                <h2 id="titres">Suivez-nous sur:</h2>
-                <div class="suivre">
-                    <div class="linkdinbas"><a href="https://www.linkedin.com/company/"><img src="views/images/capdernier.png" alt="linkedin"></a></div>
-                    <div class="gmailbas"><a href=""><img src="views/images/gmail.png" alt="gmail"></a></div>
-                    <div class="ytbbas"><a href="https://www.youtube.com/channel/UCy0L6f8kYbNlhLx2DzrAlCg"><img src="views/images/youtube.png" alt="youtube"></a></div>
-                </div>
-            </div>
-           
-        </section>
-        <div class="copy">
-            <hr width="20%" size="1.5" text-align="center" color="#cab48d">
-            <p>Copyright @ 2023 Majestic Prestige Conciergerie. Tous les droits sont réservés</p>
-            
-            </div>
-
-
-    </footer>
-</body>
-</html>
+    {% endblock %}
