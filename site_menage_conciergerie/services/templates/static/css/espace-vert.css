@@ -1,19 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
-*{
 
-    box-sizing: border-box;
-    padding: 0px;
-    margin: 0px;
-   font-family: 'Poppins', sans-serif;
-  }
 .sec1{
     display: flex;
-    background: rgba(0,0,0,.3);
+    background: rgba(0,0,0,.4);
      
 }
 header{
-  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(nos-images/espacevert.jpg);
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../images/espacevert.jpg');
   background-attachment: fixed;
   background-position: center;
   background-size: cover;
@@ -22,175 +14,10 @@ header{
  height: 80vh;
 }
 
-
-/*mise a jour logo*/
-
-.logo{
-    width: 20%;
-    text-align: center;
-    margin: auto;
- }
- .logo img{
-  width: 50%;
-height: 30%;
-
- }
-
- /*mise a jour menu*/
-
-.menu{
-  
-    width: 90%;
-  
-}
-.menu > ul{
-    display: flex;
-    list-style: none;
-/*  justify-content:right;*/
-  margin-top: 15px;
-  margin-left: 640px;
-}
-.menu li > a{
- /*color: white;*/
- /*color:#CDB181;*/
- color: #CDB181;
-    text-decoration: none;
-    display: block;
-    padding:20px 20px;
- /* text-transform: uppercase;*/
-    font-size: 21.8px;
-    font-weight: 700;
-    transition: 0.6s ease;
-    letter-spacing: 0.5px;
-}
-.menu ul li:hover{
- 
- 
-  background: rgba(0,0,0,.4);
-  border-radius: 3px;
- }
-/*sous liste nos service*/
-
-.p-sous-nav-service{
-    position: relative;
-   
-}
-
-.sous-nav-service {
-list-style: none;
-display: none;
-
-background: rgba(0,0,0,.4);
-position: absolute;
-top: 73px;
-left: 0;
-width:auto;
-}
-
-.sous-nav-service li a{
-    padding: 10px 20px;
-     border-bottom: 1px dotted #fff; 
-
-}
-.sous-nav-service li a:hover{
-
-  background: rgba(0,0,0,.4);
-}
-.p-sous-nav-service:hover .sous-nav-service{
-display: block;
-
-}
-/*sous liste menage*/
-
-.p-sous-nav-menage{
-  position: relative;
- 
-}
-
-.sous-nav-menage {
-list-style: none;
-display: none;
-background: rgba(0,0,0,.4);
-position: absolute;
-top:0;
-left: 285px;
-width: max-content;
-}
-.sous-nav-menage li a{
-  padding: 10px 20px;
-  border-bottom: 1px dotted #fff ;
-}
-.sous-nav-menage li a:hover{
-
-  background: rgba(0,0,0,.4);
-}
-.p-sous-nav-menage:hover .sous-nav-menage{
-display: block;
-}
-/*sous liste conciergerie*/
-
-.p-sous-nav-conciergerie{
-  position: relative;
- 
-}
-
-.sous-nav-conciergerie {
-list-style: none;
-display: none;  
-background: rgba(0,0,0,.4);
-position: absolute;
-top:0;
-left: 275px;
-width: max-content;
-}
-.sous-nav-conciergerie li a{
-  padding: 10px 20px;
-  border-bottom: 1px dotted #fff ;
-}
-.sous-nav-conciergerie li a:hover{
-
-  background: rgba(0,0,0,.4);
-}
-.p-sous-nav-conciergerie:hover .sous-nav-conciergerie{
-display: block;
-}
-
-/*sous liste notre region*/
-
-
-.p-sous-nav-projet{
-  position: relative;
- 
-}
-
-.sous-nav-projet {
-list-style: none;
-display: none;
-
-background: rgba(0,0,0,.4);
-position: absolute;
-top: 73px;
-left: 0;
-width:auto;
-}
-
-.sous-nav-projet li a{
-  padding: 10px 18px;
-   border-bottom: 1px dotted #fff; 
-
-}
-.sous-nav-projet li a:hover{
-
-  background: rgba(0,0,0,.4);
-}
-.p-sous-nav-projet:hover .sous-nav-projet{
-display: block;
-
-}
 /*main*/
 
 .section1{
-  background: rgba(0,0,0,.2);
+  background: rgba(0,0,0,.3);
   width: 50%;
   margin: auto;
   padding-bottom: 30px;
@@ -263,7 +90,7 @@ display: block;
     margin-top:70px;
   }
   .imageArriereEspaceVert{
-    background-image: url(nos-images/arriere-plan-vert.jpg);
+    background-image: url('../images/arriere-plan-vert.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -328,7 +155,7 @@ display: block;
 
  
  .image1{
-    background-image:url(nos-images/entretien-espace-vert.jpg);
+    background-image:url('../images/entretien-espace-vert.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -337,7 +164,7 @@ display: block;
 margin: 20px;
  }
  .image2{
-    background-image:url(nos-images/amenagement-espace-vert.jpg);
+    background-image:url('../images/amenagement-espace-vert.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -346,7 +173,7 @@ margin: 20px;
    margin: 20px;
  }
  .image3{
-    background-image:url(nos-images/creation-espace-vert.jpg);
+    background-image:url('../images/creation-espace-vert.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -417,7 +244,7 @@ border: none;
     filter:brightness(70%);
   }
   .titremenage{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/menage.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/menage.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -428,7 +255,7 @@ border: none;
   
   }
   .titreconciergerie{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/conciergerie.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/conciergerie.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat; 
@@ -439,7 +266,7 @@ border: none;
   
   }
   .titreaide{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/soutien.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/soutien.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -451,7 +278,7 @@ border: none;
   
   }
   .titrechantier{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/chantier.jpeg);
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/chantier.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -462,7 +289,7 @@ border: none;
   
   }
   .titreEntretien{
-    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/espacevert.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../images/espacevert.jpg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -523,110 +350,7 @@ border: none;
   }
   .sec6{
   margin-top: 20px;
-   /*margin-bottom: 100px;*/
    padding-bottom: 150px;
   
-  }
-  
-  /*footer*/
-  
-  .sec9{
-    background: rgba(0,0,0,.7);
-    display: flex;
-    height: 350px;
-    justify-content: center;
-    padding-top: 50px;
-  }
-  .logogif{
-   width: 25%;
-   text-align: center;
-  }
-  .logogif img{
-    width: 300px;
-    height: auto; 
-  }
-  .menufooter{
-    width:25%;
-    
-  }
-  .listes{
-    width:25%;
-   
-  }
-  .reseau{
-    width:25%;
-  
-  }
-  .menufooter nav ul{
-    list-style: none;
-  
-  line-height: 2.5em;
-  padding-left: 100px;
-  }
-  .menufooter nav ul li{
-    color:#cab48d;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-    
-  }
-  .listes ul{
-    list-style: none;
-    line-height: 2.5em;
-  padding-left: 10px;
-  }
-  .listes ul li{
-    color:#cab48d;
-    font-size: 18px;
-    font-weight: 500;
-    font-family: Arial, Helvetica, sans-serif;
-  }
-  .suivre{
-    display: flex;
-  }
-  .ytbbas{
-   margin-left: 20px;
-  
-  }
-  .linkdinbas{
-  
-    margin-left: -15px;
-  }
-  .gmailbas{
-    margin-left: 20px;
-  
-  }
-  #titres{
-    color:#cab48d;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
-    font-weight: 500;
-    padding-top: 8px;
-  }
-  .menufooter a, .listes a{
-    text-decoration: none;
-  }
-  .menufooter a:hover, .listes a:hover{
-    text-decoration: underline;
-    color:#cab48d;
-  }
-  
-  
-  .copy{
-    background: rgba(0,0,0,.7);
-    margin-top:0px;
-    padding-bottom: 30px;
-  }
-  .copy p{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: bold;
-    color: #cab48d;
-    text-align: center;
-   word-spacing: 0.1em;
-   padding-top:20px;
-  
-  }
-  .copy hr{
-    margin-left: 750px;
   }
   
