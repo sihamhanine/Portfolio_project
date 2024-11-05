@@ -1,0 +1,658 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap');
+*{
+
+    box-sizing: border-box;
+    padding: 0px;
+    margin: 0px;
+   font-family: 'Poppins', sans-serif;
+  }
+.sec1{
+    display: flex;
+    background: rgba(0,0,0,.3);
+     
+}
+header{
+  background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(nos-images/chantier.jpeg);
+  background-attachment: fixed;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ width: 100%;
+ height: 80vh;
+}
+
+
+/*mise a jour logo*/
+
+.logo{
+    width: 20%;
+    text-align: center;
+    margin: auto;
+ }
+ .logo img{
+  width: 50%;
+height: 30%;
+
+ }
+
+  /*mise a jour menu*/
+
+.menu{
+  
+  width: 90%;
+
+}
+.menu > ul{
+  display: flex;
+  list-style: none;
+/*  justify-content:right;*/
+/*margin-top: 15px;*/
+margin-left: 640px;
+}
+.menu li > a{
+/*color: white;*/
+/*color:#CDB181;*/
+color: #CDB181;
+  text-decoration: none;
+  display: block;
+  padding:35px 20px;
+/* text-transform: uppercase;*/
+  font-size: 21.8px;
+  font-weight: 700;
+  transition: 0.6s ease;
+  letter-spacing: 0.5px;
+}
+.menu ul li:hover{
+
+
+background: rgba(0,0,0,.4);
+border-radius: 3px;
+}
+/*sous liste nos service*/
+
+.p-sous-nav-service{
+  position: relative;
+ 
+}
+
+.sous-nav-service {
+list-style: none;
+display: none;
+
+background: rgba(0,0,0,.4);
+position: absolute;
+top:103px;
+left: 0;
+width:auto;
+}
+
+.sous-nav-service li a{
+  padding: 10px 20px;
+   border-bottom: 1px dotted #fff; 
+
+}
+.sous-nav-service li a:hover{
+
+background: rgba(0,0,0,.4);
+}
+.p-sous-nav-service:hover .sous-nav-service{
+display: block;
+
+}
+/*sous liste menage*/
+
+.p-sous-nav-menage{
+position: relative;
+
+}
+
+.sous-nav-menage {
+list-style: none;
+display: none;
+background: rgba(0,0,0,.4);
+position: absolute;
+top:0;
+left: 285px;
+width: max-content;
+}
+.sous-nav-menage li a{
+padding: 10px 20px;
+border-bottom: 1px dotted #fff ;
+}
+.sous-nav-menage li a:hover{
+
+background: rgba(0,0,0,.4);
+}
+.p-sous-nav-menage:hover .sous-nav-menage{
+display: block;
+}
+/*sous liste conciergerie*/
+
+.p-sous-nav-conciergerie{
+position: relative;
+
+}
+
+.sous-nav-conciergerie {
+list-style: none;
+display: none;  
+background: rgba(0,0,0,.4);
+position: absolute;
+top:0;
+left: 275px;
+width: max-content;
+}
+.sous-nav-conciergerie li a{
+padding: 10px 20px;
+border-bottom: 1px dotted #fff ;
+}
+.sous-nav-conciergerie li a:hover{
+
+background: rgba(0,0,0,.4);
+}
+.p-sous-nav-conciergerie:hover .sous-nav-conciergerie{
+display: block;
+}
+
+/*sous liste notre region*/
+
+
+.p-sous-nav-projet{
+position: relative;
+
+}
+
+.sous-nav-projet {
+list-style: none;
+display: none;
+
+background: rgba(0,0,0,.4);
+position: absolute;
+top: 103px;
+left: 0;
+width:auto;
+}
+
+.sous-nav-projet li a{
+padding: 10px 14px;
+ border-bottom: 1px dotted #fff; 
+
+}
+.sous-nav-projet li a:hover{
+
+background: rgba(0,0,0,.4);
+}
+.p-sous-nav-projet:hover .sous-nav-projet{
+display: block;
+
+}
+
+/*main*/
+
+.section1{
+    background: rgba(0,0,0,.2);
+    width: 50%;
+    margin: auto;
+    padding-bottom: 30px;
+  }
+  
+  .section1 h1{
+    padding-top: 20px;
+    font-size: 35px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-top: -450px;
+   /* color: #cab48d;*/
+    color: #CDB181;
+   /* color: white;*/
+  }
+  
+  .section1 h2{
+    padding-top: 20px;
+    font-size: 23px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+   color: #CDB181;
+   /*color: white;*/
+    font-family: 'Montserrat', sans-serif;
+  }
+
+  /*section2*/
+
+  .section2{
+    display: flex;
+    width: 90%;
+    margin: auto;
+    justify-content: center;
+    margin-top: 350px;
+  }
+  .image1{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(nos-images/chantier1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   width: 100%;
+   height: 52vh;
+  }
+  
+  
+  .image2{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(nos-images/chantier2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+   width: 100%;
+   height: 52vh;
+  }
+  .image1,.image2,.texte1{
+    width: 30%;
+    margin-left: 20px;
+  }
+  .texte1 p{
+    text-align: justify;
+    line-height: 2rem;
+    margin: 20px 0px;
+  }
+  .texte1 h3{
+    letter-spacing: 1.2px;
+    font-size: 19px;
+    padding-top: 5px;
+    text-align: center;
+  }
+
+
+  /*section3*/
+  .section3{
+    margin-top:70px;
+  }
+  .imageChantier{
+    background-image:linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url(nos-images/imageChantier.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+   width: 100%;
+   height: 50vh;
+
+  }
+.imageChantier h1{
+    text-align: center;
+    padding-top: 100px;
+    font-size: 28px;
+    font-weight: 700;
+    line-height: 2em;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color:white;
+}
+
+.imageChantier p{
+    text-align: center;
+    padding-top: 20px;
+    color: white;
+    font-size: 20px;
+    line-height: 2em;
+    letter-spacing: 2px;
+}
+
+.imageChantier button{
+    margin-left: 800px;
+  margin-top: 40px;
+  background:#cab48d;
+  border-radius: 5px;
+padding: 20px 20px;
+color: white;
+font-size: 18px;
+font-weight: 700;
+letter-spacing: 3px;
+position: absolute;
+border: none;
+}
+.section4 h1{
+    padding-top: 40px;
+    margin-bottom: 0px;
+    font-size: 25px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+.serviceChantier{
+    width: 80%;
+    margin: auto;
+    margin-top: 70px;
+}
+
+.serviceChantier1,.serviceChantier2{
+    width: 100%;
+    margin: auto;
+    display: flex;
+    margin-top: 20px;
+}
+.nettoyageChantier, .serviceDémolition,.carrelage,.la-maconnerie,.la-peinture,.la-menuiserie{
+    width: 40%;
+    background-color:#f9f9f9;
+    padding-bottom: 20px;
+    margin-left: 20px;
+}
+.nettoyageChantier img,.serviceDémolition img, .carrelage img,.la-maconnerie img,.la-peinture img,.la-menuiserie img{
+    width: 100%;
+    height: 40vh;
+}
+.nettoyageChantier h2,.serviceDémolition h2, .carrelage h2,.la-maconnerie h2,.la-peinture h2,.la-menuiserie h2{
+    letter-spacing: 2px;
+    padding: 10px 20px;
+    font-size: 21px;
+    text-transform: uppercase;
+}
+.nettoyageChantier p, .serviceDémolition p, .carrelage p,.la-maconnerie p,.la-peinture p,.la-menuiserie p{
+    line-height: 2rem;
+    padding: 10px 20px;
+    text-align: justify;
+}
+
+  /*section 5*/
+
+.sec5{
+  /*  background-color: #F8F9F9;*/
+    margin-top: 30px;
+    padding-bottom: 60px;
+  }
+  .sec5 h1{
+    padding-top: 40px;
+    margin-bottom: 0px;
+    font-size: 25px!important;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+   line-height:2em;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+  }
+  .principe{
+    display: flex;
+   
+    width: 80%;
+    margin: auto;
+    margin-top: 25px;
+  }
+  .principe1,.principe2,.principe3{
+    padding: 20px 20px;
+  
+    width: 30%;
+    object-fit: cover;
+    margin: auto;
+    display: flex;
+  }
+  
+  .principe2 img,.principe3 img,.principe1 img{
+    margin-top: -20px;
+  }
+  .sec5 button{
+    background:#CDB181;
+    border-radius: 10px;
+    color: white;
+    padding: 20px 40px;
+    font-size: 16px;
+    font-weight: 700;
+    text-align: center;
+    margin-left: 43%;
+    margin-top: 30px;
+    letter-spacing: 3px;
+    border: none;
+  }
+  .sec5 p{
+    font-style: italic ;
+  
+  }
+  .texteprincipe p{
+    font-style: normal;
+  }
+ /*nos services*/
+
+.nosservices{
+  display: flex;
+  margin: auto;
+  width: 80%;
+  margin-top: 40px;
+ }
+
+ .servicemenage,.serviceconciergerie,.serviceaide,.servicechantier,.serviceEntretien{
+ 
+  width: 20%;
+   margin-left: 10px;
+ }
+
+ .serviceEntretien{
+  margin-right: 10px;
+ }
+
+ .servicemenage a,.serviceconciergerie a,.serviceaide a,.servicechantier a,.serviceEntretien a{
+  text-decoration: none;
+}
+.servicemenage a:hover .titremenage,.serviceconciergerie a:hover .titreconciergerie,.serviceaide a:hover .titreaide,.servicechantier a:hover .titrechantier,.serviceEntretien a:hover .titreEntretien{
+  filter:brightness(70%);
+}
+.titremenage{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/menage.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titreconciergerie{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/conciergerie.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat; 
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titreaide{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/soutien.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titrechantier{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/chantier.jpeg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titreEntretien{
+  background-image:linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url(nos-images/espacevert.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+ 
+
+height: 200px;
+width:100%;
+object-fit: cover;
+
+}
+.titremenage h2,.titreconciergerie h2,.titreaide h2,.titrechantier h2,.titreEntretien h2{
+  padding-top: 80px;
+  line-height:2em;
+   font-family: 'Montserrat', sans-serif ;
+  font-size: 20px!important;
+  text-align: center;
+  color: white;
+  letter-spacing: 2px;
+  line-height: 30px;
+  font-weight: 500;
+}
+
+.secnosservices button,.secnotregestion button{
+  background:#CDB181;
+  border-radius: 10px;
+  color: white;
+  padding: 20px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  text-align: center;
+  margin-left: 41.7%;
+  margin-top: 60px;
+  letter-spacing: 3px;
+  border: none;
+  text-transform: uppercase;
+}
+.sec6 .devis p{
+  margin-left: 42.7%;
+  margin-top: 10px;
+}
+
+.sec6 h1{
+ padding-top: 40px;
+ padding-bottom: 10px;
+ font-size: 25px!important;
+ text-align: center;
+ text-transform: uppercase;
+ letter-spacing: 4px;
+line-height:2em;
+ font-weight: 700;
+ font-family: 'Montserrat', sans-serif;
+}
+.sec6 p{
+ text-align: center;
+ letter-spacing: 2px;
+ line-height: 2.5rem;
+ padding-top: -5px;
+}
+.sec6{
+margin-top: 20px;
+ /*margin-bottom: 100px;*/
+ padding-bottom: 150px;
+ background-color: #f5ead6;
+}
+
+/*footer*/
+
+.sec9{
+  background: rgba(0,0,0,.7);
+  display: flex;
+  height: 350px;
+  justify-content: center;
+  padding-top: 50px;
+}
+.logogif{
+ width: 25%;
+ text-align: center;
+}
+.logogif img{
+  width: 300px;
+  height: auto; 
+}
+.menufooter{
+  width:25%;
+  
+}
+.listes{
+  width:25%;
+ 
+}
+.reseau{
+  width:25%;
+
+}
+.menufooter nav ul{
+  list-style: none;
+
+line-height: 2.5em;
+padding-left: 100px;
+}
+.menufooter nav ul li{
+  color:#cab48d;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+  
+}
+.listes ul{
+  list-style: none;
+  line-height: 2.5em;
+padding-left: 10px;
+}
+.listes ul li{
+  color:#cab48d;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: Arial, Helvetica, sans-serif;
+}
+.suivre{
+  display: flex;
+}
+.ytbbas{
+ margin-left: 20px;
+
+}
+.linkdinbas{
+
+  margin-left: -15px;
+}
+.gmailbas{
+  margin-left: 20px;
+
+}
+#titres{
+  color:#cab48d;
+font-family: Arial, Helvetica, sans-serif;
+font-size: 20px;
+  font-weight: 500;
+  padding-top: 8px;
+}
+.menufooter a, .listes a{
+  text-decoration: none;
+}
+.menufooter a:hover, .listes a:hover{
+  text-decoration: underline;
+  color:#cab48d;
+}
+
+
+.copy{
+  background: rgba(0,0,0,.7);
+  margin-top:0px;
+  padding-bottom: 30px;
+}
+.copy p{
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: #cab48d;
+  text-align: center;
+ word-spacing: 0.1em;
+ padding-top:20px;
+
+}
+.copy hr{
+  margin-left: 750px;
+}
