@@ -23,11 +23,25 @@ def gestion_locative(request):
 def packairbnb(request):
     return render(request, 'front_end/packairbnb.html') # affiche le template packairbnb
 
-def reservation(request):
-    return render(request, 'front_end/reservation.html') # affiche le template reservation
-
 def menage_commercial(request):
     return render(request, 'front_end/menage_commercial.html') # affiche le template menage_commercial
+
+def menage_residentiel(request):
+    return render(request, 'front_end/Menage-Résidentiel.html') # affiche le template menage_residentiel
+
+def conciergerie(request):
+    return render(request, 'front_end/Conciergerie-Résidentielle.html') # affiche le template conciergerie-residentielle
+
+def service_chantier(request):
+    return render(request, 'front_end/service-chantier.html') # affiche le template service-chantier
+
+def espace_vert(request):
+    return render(request, 'front_end/Espace-vert.html') # affiche le template espace vert
+
+def soutien_domicile(request):
+    return render(request, 'front_end/Soutien-à-domicile.html') # affiche le template soutien a domicile
+
+
 
 def historique_service(request):
     # Exemple de choix de statut, à adapter selon votre modèle

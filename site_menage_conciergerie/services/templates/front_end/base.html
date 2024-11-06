@@ -36,18 +36,18 @@
                             <li class="p-sous-nav-menage">
                                 <a href="/">Ménage</a>
                                 <ul class="sous-nav-menage">
-                                    <li><a href="Menage-Résidentiel.html">Résidentiel </a></li>
+                                    <li><a href="{% url 'menage_residentiel' %}">Résidentiel </a></li>
                                     <li><a href="{% url 'menage_commercial' %}">Commercial</a></li>
                                 </ul>
 
 
                             </li>
                             <li class="p-sous-nav-conciergerie">
-                                <a href="Consiergerie-Résidentielle.html">Conciergerie résidentielle</a>
+                                <a href="{% url 'conciergerie' %}">Conciergerie résidentielle</a>
                             </li>
-                            <li><a href="/">Service de soutien à domicile</a></li>
-                            <li><a href="/">Service de chantier</a></li>
-                            <li><a href="/">Entretien espace vert</a></li>
+                            <li><a href="{% url 'soutien_domicile' %}">Service de soutien à domicile</a></li>
+                            <li><a href="{% url 'service_chantier' %}">Service de chantier</a></li>
+                            <li><a href="{% url 'espace_vert' %}">Entretien espace vert</a></li>
                         </ul>
                     </li>
                     <li class="p-sous-nav-projet">

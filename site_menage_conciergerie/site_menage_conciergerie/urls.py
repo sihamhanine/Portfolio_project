@@ -43,7 +43,6 @@ urlpatterns = [
     path('gestion-locative/', views.gestion_locative, name= 'gestion_locative'),
     path('packairbnb/', views.packairbnb, name= 'packairbnb'),
     path('demande-devis/', views.demander_devis, name= 'demander_devis'),
-    path('reservation/', views.reservation, name= 'reservation'),
     path('reserve/', views.reserver, name= 'reserver'),
     path('login/', views.login_user, name= 'login_user'),
     path('inscription/', views.signup, name= 'signup'),
@@ -56,7 +55,12 @@ urlpatterns = [
     path('changer_mot_de_passe/', views.changer_mot_de_passe, name='changer_mot_de_passe'),
     path('historique-service/', views.historique_service, name='historique_service'),
     path('exporter_historique/', views.exporter_historique, name='exporter_historique'),
-    path('menage_commercial/', views.menage_commercial, name='menage_commercial')
+    path('menage_commercial/', views.menage_commercial, name='menage_commercial'),
+    path('menage_residentiel/', views.menage_residentiel, name='menage_residentiel'),
+    path('conciergerie/', views.conciergerie, name='conciergerie'),
+    path('service_chantier/', views.service_chantier, name='service_chantier'),
+    path('espace_vert/', views.espace_vert, name='espace_vert'),
+    path('soutien_domicile/', views.soutien_domicile, name='soutien_domicile'),
    
 ]
 
