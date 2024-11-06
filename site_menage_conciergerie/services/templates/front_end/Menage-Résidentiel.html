@@ -83,7 +83,7 @@ Ménage Résidentiel
 <div class="parties">
     <div class="partie1">
 <div class="image1"><img src="{% static 'images/nettoyer-vitre.jpg' %}" alt=""></div>
-<div class="image2"><img src="{% static 'images/laver-tapis.jpg' %}" alt=""></div>
+<div class="image2"><img src="{% static 'images/Laver-Tapis.jpg' %}" alt=""></div>
 <div class="image3"><img src="{% static 'images/nettoyer-four.jpg' %}" alt=""></div>
     </div>
     <div class="partie2">
@@ -147,7 +147,7 @@ Ménage Résidentiel
         </div>
         
         <div class="serviceconciergerie" class="image-item" id="c2">
-            <a href="#"> 
+            <a href="{% url 'conciergerie' %}"> 
              <div class="titreconciergerie">
                  <h2>Conciergerie</h2>
              </div>
@@ -156,7 +156,7 @@ Ménage Résidentiel
         
         
         <div class="serviceaide" class="image-item" id="c3">
-            <a href="#"> 
+            <a href="{% url 'soutien_domicile' %}"> 
              <div class="titreaide">
                  <h2>Service de soutien à domicile</h2>
              </div>
@@ -164,7 +164,7 @@ Ménage Résidentiel
         </div>
         
         <div class="servicechantier" class="image-item" id="c4">
-            <a href="#"> 
+            <a href="{% url 'service_chantier' %}"> 
              <div class="titrechantier">
                  <h2>Service de chantier</h2>
              </div>
@@ -172,7 +172,7 @@ Ménage Résidentiel
         </div>
         
         <div class="serviceEntretien" class="image-item" id="c5">
-            <a href="#"> 
+            <a href="{% url 'espace_vert' %}"> 
              <div class="titreEntretien">
                  <h2>Entretien espace vert</h2>
              </div>

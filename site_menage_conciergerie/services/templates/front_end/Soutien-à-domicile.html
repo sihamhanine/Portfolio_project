@@ -80,7 +80,7 @@ Soutien à domicile
         <li>Sorties associatives</li>
         <li>Et plus encore ... !</li>
     </ul>
-    <a href=""><button>Demandez un devis</button></a>
+    <a href="{% url 'demander_devis' %}"><button>Demandez un devis</button></a>
 </div>
 <div class="imagemobilite">
 <div class="image-aide1"><img src="{% static 'images/aide-mobilité.jpg' %}" alt=""></div>
@@ -100,7 +100,7 @@ Soutien à domicile
                 nos équipes vous guident et vous conseillent dans toutes vos démarches pour obtenir les aides financières auxquelles vous ou votre proche avez droit.</p>
                 <br>
             <p>Soufflez : vous pouvez compter sur nous en toute confiance.</p>
-            <a href=""><button>Contactez-nous</button></a>
+            <a href="{% url 'contact' %}"><button>Contactez-nous</button></a>
         </section>
 
         <section class="sec6">
@@ -109,14 +109,14 @@ Soutien à domicile
             <hr style="width:10%; margin: auto; margin-top: 20px; margin-bottom: 30px;" color="#cab48d" size="5"/>
             <div class="nosservices">     
                 <div class="servicemenage" class="image-item" id="c1">
-                    <a href="#"> 
+                    <a href="{% url 'menage_residentiel' %}"> 
                      <div class="titremenage">
                          <h2>Ménage résidentiel</h2>
                      </div>
                  </a>
                 </div>
                 <div class="serviceaide" class="image-item" id="c3">
-                    <a href="#"> 
+                    <a href="{% url 'menage_commercial' %}"> 
                      <div class="titreaide">
                          <h2>Ménage commercial</h2>
                      </div>
@@ -124,14 +124,14 @@ Soutien à domicile
                 </div>
                 
                 <div class="serviceconciergerie" class="image-item" id="c2">
-                    <a href="#"> 
+                    <a href="{% url 'conciergerie' %}"> 
                      <div class="titreconciergerie">
                          <h2>Conciergerie résidentielle</h2>
                      </div>
                  </a>
                 </div>
                 <div class="servicechantier" class="image-item" id="c4">
-                    <a href="#"> 
+                    <a href="{% url 'service_chantier' %}"> 
                      <div class="titrechantier">
                          <h2>Service de chantier</h2>
                      </div>
@@ -139,13 +139,14 @@ Soutien à domicile
                 </div>
                 
                 <div class="serviceEntretien" class="image-item" id="c5">
-                    <a href="#"> 
+                    <a href="{% url 'espace_vert' %}"> 
                      <div class="titreEntretien">
                          <h2>Entretien espace vert</h2>
                      </div>
                  </a>
                 </div>
                 </div>
+                <a href="{% url 'reserver' %}"><button>Faire une réservation</button></a>
         </section>
     </main>
 {% endblock %}
