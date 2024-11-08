@@ -1,5 +1,5 @@
 
-![Page d'accueil](services/templates/static/images/logovide.PNG)
+                                                     ![Page d'accueil](services/templates/static/images/logovide.PNG)
 
 # Majestic Préstige Conciergerie
 
