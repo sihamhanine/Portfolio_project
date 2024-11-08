@@ -1,5 +1,8 @@
 
-                                                     ![Page d'accueil](services/templates/static/images/logovide.PNG)
+![Page d'accueil](services/templates/static/images/logovide.PNG)
+<p align="center">
+  <img src="services/templates/static/images/logovide.PNG" alt="logo" width="400">
+</p>
 
 # Majestic Préstige Conciergerie
 
