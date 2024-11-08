@@ -19,7 +19,7 @@ Check out the demo video of the Majestic Préstige Conciergerie app in action:
 
 - **Deployed Site**: [Link to Deployed Site](https://sihamhanine.github.io/landing-page-conciergerie/)
 - **Project Blog Article**: [Final Project Blog Article](https://www.linkedin.com/feed/update/urn:li:activity:7260368530955464705 )
-- **LinkedIn**: Siham HANINE Linkdin
+- **LinkedIn**: [LinkedIn: Siham HANINE](https://www.linkedin.com/in/siham-hanine/)
 ---
 
 ## 📖 Introduction
