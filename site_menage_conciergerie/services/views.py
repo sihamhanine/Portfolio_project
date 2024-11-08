@@ -1,49 +1,105 @@
-from .imports import *
+from .imports import *  # Importe les modules nécessaires
 
 
 def accueil(request):
-    return render(request, 'front_end/accueil.html')  # Affiche le template accueil.html
+    """
+    Vue pour afficher la page d'accueil du site web.
+    Renvoie le template 'accueil.html' pour le frontend.
+    """
+    return render(request, 'front_end/accueil.html')  
 
 def nos_services(request):
-    services = Service.objects.all()  # Récupérer tous les services depuis la base de données
+    """
+    Vue pour afficher la liste des services disponibles.
+    Récupère tous les services de la base de données et les transmet au template.
+    """
+    services = Service.objects.all() 
     return render(request, 'front_end/NosServices.html', {'services': services})
 
 def a_propos(request):
-    return render(request, 'front_end/a-propos.html') # affiche le template a-propos.html
+    """
+    Vue pour afficher la page "À propos".
+    Renvoie le template 'a-propos.html' pour le frontend.
+    """
+    return render(request, 'front_end/a-propos.html') 
 
 def notre_gestion(request):
-    return render(request, 'front_end/notre-gestion.html') # affiche le template notre-gestion.html
+    """
+    Vue pour afficher la page "Notre Gestion".
+    Renvoie le template 'notre-gestion.html' pour le frontend.
+    """
+    return render(request, 'front_end/notre-gestion.html')
+
 
 def gestion_administrative(request):
-    return render(request, 'front_end/gestion-administrative.html') # affiche le template gestion_administrative
+    """
+    Vue pour afficher la page "Gestion administrative".
+    Renvoie le template 'gestion-administrative.html' pour le frontend.
+    """
+    return render(request, 'front_end/gestion-administrative.html')
 
 def gestion_locative(request):
-    return render(request, 'front_end/gestion-locative.html') # affiche le template gestion_locative
+    """
+    Vue pour afficher la page "Gestion locative".
+    Renvoie le template 'gestion-locative.html' pour le frontend.
+    """
+    return render(request, 'front_end/gestion-locative.html') 
 
 def packairbnb(request):
-    return render(request, 'front_end/packairbnb.html') # affiche le template packairbnb
+    """
+    Vue pour afficher la page "Pack Airbnb".
+    Renvoie le template 'packairbnb.html' pour le frontend.
+    """
+    return render(request, 'front_end/packairbnb.html')
 
 def menage_commercial(request):
-    return render(request, 'front_end/menage_commercial.html') # affiche le template menage_commercial
+    """
+    Vue pour afficher la page "menage commercial".
+    Renvoie le template 'menage_commercial.html' pour le frontend.
+    """
+    return render(request, 'front_end/menage_commercial.html') 
 
 def menage_residentiel(request):
-    return render(request, 'front_end/Menage-Résidentiel.html') # affiche le template menage_residentiel
+    """
+    Vue pour afficher la page "Menage Résidentiel".
+    Renvoie le template 'Menage-Résidentiel.html' pour le frontend.
+    """
+    return render(request, 'front_end/Menage-Résidentiel.html') 
 
 def conciergerie(request):
-    return render(request, 'front_end/Conciergerie-Résidentielle.html') # affiche le template conciergerie-residentielle
+    """
+    Vue pour afficher la page "Conciergerie Résidentielle".
+    Renvoie le template 'Conciergerie-Résidentielle.html' pour le frontend.
+    """
+    return render(request, 'front_end/Conciergerie-Résidentielle.html') 
 
 def service_chantier(request):
-    return render(request, 'front_end/service-chantier.html') # affiche le template service-chantier
+    """
+    Vue pour afficher la page "service chantier".
+    Renvoie le template 'service-chantier.html' pour le frontend.
+    """
+    return render(request, 'front_end/service-chantier.html') 
 
 def espace_vert(request):
-    return render(request, 'front_end/Espace-vert.html') # affiche le template espace vert
+    """
+    Vue pour afficher la page "Espace vert".
+    Renvoie le template 'Espace-vert.html' pour le frontend.
+    """
+    return render(request, 'front_end/Espace-vert.html') 
 
 def soutien_domicile(request):
-    return render(request, 'front_end/Soutien-à-domicile.html') # affiche le template soutien a domicile
-
+    """
+    Vue pour afficher la page "Soutien-à-domicile".
+    Renvoie le template 'Soutien-à-domicile.html' pour le frontend.
+    """
+    return render(request, 'front_end/Soutien-à-domicile.html') 
 
 
 def historique_service(request):
+    """
+    Vue pour afficher l'historique des réservations d'un client.
+    Filtre les réservations en fonction des paramètres fournis (statut, date).
+    """
     # Exemple de choix de statut, à adapter selon votre modèle
     status_choices = [
         ('En attente', 'En attente'),
@@ -85,6 +141,10 @@ def historique_service(request):
     return render(request, 'front_end/historique.html', context)
 @login_required
 def dash_reservation(request):
+    """
+    Vue pour le tableau de bord des réservations du client.
+    Permet de rechercher des réservations par nom de service ou date.
+    """
     query = request.GET.get('search', '').strip()
     reservations = Reservation.objects.none()
 
@@ -119,6 +179,17 @@ def dash_reservation(request):
 
 
 def cancel_reservation(request, reservation_id):
+    """
+    Annule une réservation existante si l'utilisateur est le propriétaire de la réservation.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+        reservation_id (int): L'identifiant de la réservation à annuler.
+    
+    Returns:
+        HttpResponse: Redirige vers la page des réservations du client si la réservation est annulée.
+        Messages d'erreur sont affichés si l'utilisateur tente d'annuler une réservation qu'il ne possède pas.
+    """
     reservation = get_object_or_404(Reservation, id=reservation_id)
     
     # Vérifiez que l'utilisateur connecté est bien celui qui a effectué la réservation
@@ -133,9 +204,19 @@ def cancel_reservation(request, reservation_id):
         return redirect('dash_reservation')
 
 
-
+#vue pour la page reservation d'un service
 @login_required
 def reserver(request):
+    """
+    Permet à un utilisateur de faire une nouvelle réservation.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page de réservation avec le formulaire.
+        Si le formulaire est soumis et valide, redirige vers la même page avec un message de succès.
+    """
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
@@ -154,6 +235,16 @@ def reserver(request):
 
 # vue pour inscription d'un user
 def signup(request):
+    """
+    Permet à un nouvel utilisateur de s'inscrire sur le site.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page d'inscription avec un formulaire.
+        Si le formulaire est soumis et valide, l'utilisateur est créé et redirigé vers la page de réservation.
+    """
     if request.method == 'POST':
         form = SignUpForm(request.POST)
         if form.is_valid():
@@ -171,6 +262,15 @@ def signup(request):
 #vue pour l'espace personnel du client
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def login_user(request):
+    """
+    Permet à un utilisateur de se connecter à son compte.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page de connexion. Si les identifiants sont valides, redirige vers le tableau de bord.
+    """
     if request.user.is_authenticated:
         return redirect('dashboard')
 
@@ -197,14 +297,33 @@ def login_user(request):
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout_user(request):
+    """
+    Permet à un utilisateur de se déconnecter du site.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Redirige vers la page d'accueil après la déconnexion et nettoie la session.
+    """
     logout(request)
     cache.clear() 
     request.session.flush()
     messages.success(request, "Vous êtes déconnecté.")
     return render(request, 'front_end/accueil.html')
 
+#vue pour l'espace personnel
 @login_required
 def dashboard(request):
+    """
+    Affiche le tableau de bord de l'utilisateur avec ses services à venir et terminés.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page du tableau de bord avec les réservations et les services de l'utilisateur.
+    """
    # Récupérer l'instance Client associée à l'utilisateur actuel
     try:
         client_instance = Client.objects.get(user=request.user)
@@ -246,6 +365,15 @@ def dashboard(request):
 
 @login_required
 def exporter_historique(request):
+    """
+    Exporte l'historique des réservations de l'utilisateur sous forme de fichier CSV.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Renvoie un fichier CSV contenant les réservations de l'utilisateur.
+    """
     # Récupérer les réservations de l'utilisateur
     client_instance = Client.objects.get(user=request.user)
     reservations = Reservation.objects.filter(client=client_instance)
@@ -276,6 +404,16 @@ def exporter_historique(request):
 # vue pour mettre a jour profil user
 @login_required
 def mon_compte(request):
+    """
+    Permet à l'utilisateur de modifier son profil.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page de profil avec le formulaire de mise à jour.
+        Si les données du formulaire sont valides, le profil est mis à jour et l'utilisateur est redirigé.
+    """
     # Récupérer l'objet client lié à l'utilisateur connecté
     client = request.user.client
     
@@ -303,6 +441,15 @@ def mon_compte(request):
 
 @login_required
 def changer_mot_de_passe(request):
+    """
+    Permet à un utilisateur de changer son mot de passe.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page de profil. Si les informations sont valides, le mot de passe est mis à jour.
+    """
     if request.method == 'POST':
         old_password = request.POST.get('old_password')
         new_password1 = request.POST.get('new_password1')
@@ -334,12 +481,21 @@ def changer_mot_de_passe(request):
 
 # vue pour la page contact
 def contact(request):
+    """
+    Permet à un utilisateur d'envoyer un message via la page de contact.
+    
+    Args:
+        request (HttpRequest): La requête HTTP de l'utilisateur.
+    
+    Returns:
+        HttpResponse: Affiche la page de contact et envoie un email de confirmation à l'utilisateur.
+    """
     if request.method == "POST":
         nom = request.POST.get('nom')
         email = request.POST.get('email')
         objet = request.POST.get('objet')
         message = request.POST.get('message')
-        # Créer un nouvel objet Contact
+        
         contact = Contact(
             nom=nom,
             email=email,  
@@ -347,28 +503,38 @@ def contact(request):
             message=message
         )
         contact.save()
-       # Utilise une adresse e-mail vérifiée comme expéditeur
-        from_email = 'siham.elani17@gmail.com'  # Adresse e-mail vérifiée
+        from_email = 'siham.elani17@gmail.com'  
         
-        # Ajoute l'email du client dans le corps du message
-        full_message = f"Bonjour {nom},\n\nNous avons bien reçu votre message concernant \"{objet}\" et nous vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe de support."
+        full_message = f"Bonjour {nom},\n\nNous avons bien reçu votre message concernant \"{objet}\"\
+        et nous vous répondrons dans les plus brefs délais.\n\nCordialement,\nL'équipe de support."
 
-        # Envoie l'email
         send_mail(
             subject=f"Confirmation de réception de votre message",
             message=full_message,
-            from_email=from_email,  # Adresse e-mail vérifiée
-            recipient_list=[email],  # Ton adresse e-mail
+            from_email=from_email,  
+            recipient_list=[email],  
             fail_silently=False,
         )
 
-        # Message de succès ou redirection après soumission
         messages.success(request, 'Votre message a été envoyé avec succès !')
-        return redirect('contact')  # Rediriger vers la page de contact après soumission
+        return redirect('contact')
 
-    return render(request, 'front_end/contact.html') # affiche le template contact
+    return render(request, 'front_end/contact.html') 
 
+#vue pour la page demander un devis
 def demander_devis(request):
+    """
+    Permet à un utilisateur de soumettre une demande de devis en ligne.
+    Après soumission, les informations sont sauvegardées dans la base de données et un email de confirmation est envoyé à l'utilisateur.
+    
+    Args:
+        request (HttpRequest): La requête HTTP envoyée par l'utilisateur.
+    
+    Returns:
+        HttpResponse: Redirige vers la page d'accueil après l'envoi de la demande de devis.
+        Si la méthode est 'POST', les données du formulaire sont traitées et sauvegardées.
+        Sinon, le formulaire est simplement affiché.
+    """
     if request.method == 'POST':
         # Récupérer les données du formulaire
         client_name = request.POST.get('client_name')
@@ -410,36 +576,115 @@ def demander_devis(request):
 
 # Vues pour les Clients
 class ClientList(generics.ListCreateAPIView):
+    """
+    Vue pour afficher la liste des clients et permettre la création de nouveaux clients.
+    
+    Args:
+        generics.ListCreateAPIView: Hérite de ListCreateAPIView pour gérer la lecture et l'écriture des données.
+    
+    Attributes:
+        queryset (QuerySet): La liste des clients à afficher ou à manipuler.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Client.objects.all()
     serializer_class = ClientSerializer
 
 class ClientDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Vue pour afficher, mettre à jour ou supprimer un client spécifique.
+    
+    Args:
+        generics.RetrieveUpdateDestroyAPIView: Hérite de RetrieveUpdateDestroyAPIView pour gérer les opérations de lecture, mise à jour et suppression.
+    
+    Attributes:
+        queryset (QuerySet): Le client spécifique à afficher ou modifier.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Client.objects.select_related('user').all()
     serializer_class = ClientSerializer
 
 # Vues pour les Services
 class ServiceList(generics.ListCreateAPIView):
+    """
+    Vue pour afficher la liste des services et permettre la création de nouveaux services.
+    
+    Args:
+        generics.ListCreateAPIView: Hérite de ListCreateAPIView pour gérer la lecture et l'écriture des données.
+    
+    Attributes:
+        queryset (QuerySet): La liste des services à afficher ou à manipuler.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
 
 class ServiceDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Vue pour afficher, mettre à jour ou supprimer un service spécifique.
+    
+    Args:
+        generics.RetrieveUpdateDestroyAPIView: Hérite de RetrieveUpdateDestroyAPIView pour gérer les opérations de lecture, mise à jour et suppression.
+    
+    Attributes:
+        queryset (QuerySet): Le service spécifique à afficher ou modifier.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Service.objects.all()
     serializer_class = ServiceSerializer
 
 # Vues pour les Reservations
 class ReservationList(generics.ListCreateAPIView):
+    """
+    Vue pour afficher la liste des réservations et permettre la création de nouvelles réservations.
+    
+    Args:
+        generics.ListCreateAPIView: Hérite de ListCreateAPIView pour gérer la lecture et l'écriture des données.
+    
+    Attributes:
+        queryset (QuerySet): La liste des réservations à afficher ou à manipuler.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
 
 class ReservationDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Vue pour afficher, mettre à jour ou supprimer une réservation spécifique.
+    
+    Args:
+        generics.RetrieveUpdateDestroyAPIView: Hérite de RetrieveUpdateDestroyAPIView pour gérer les opérations de lecture, mise à jour et suppression.
+    
+    Attributes:
+        queryset (QuerySet): La réservation spécifique à afficher ou modifier.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
 
 class CancelReservationAPIView(generics.UpdateAPIView):
+    """
+    Vue pour annuler une réservation spécifique en mettant à jour son statut.
+    
+    Args:
+        generics.UpdateAPIView: Hérite de UpdateAPIView pour gérer les mises à jour des données.
+    
+    Attributes:
+        queryset (QuerySet): La réservation à annuler.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Reservation.objects.all()
     serializer_class = ReservationSerializer
 
     def update(self, request, *args, **kwargs):
+        """
+        Met à jour le statut d'une réservation à 'annulée' et enregistre les modifications.
+        
+        Args:
+            request (HttpRequest): La requête HTTP avec les données de mise à jour.
+        
+        Returns:
+            Response: La réponse avec les données de la réservation mise à jour.
+        """
         reservation = self.get_object()
         reservation.status = 'annulée'  # Mettez à jour le statut ici
         reservation.save()  # Enregistrez les modifications
@@ -449,19 +694,59 @@ class CancelReservationAPIView(generics.UpdateAPIView):
 
 # Vues pour les Devis
 class DevisList(generics.ListCreateAPIView):
+    """
+    Vue pour afficher la liste des devis et permettre la création de nouveaux devis.
+    
+    Args:
+        generics.ListCreateAPIView: Hérite de ListCreateAPIView pour gérer la lecture et l'écriture des données.
+    
+    Attributes:
+        queryset (QuerySet): La liste des devis à afficher ou à manipuler.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Devis.objects.all()
     serializer_class = DevisSerializer
 
 class DevisDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Vue pour afficher, mettre à jour ou supprimer un devis spécifique.
+    
+    Args:
+        generics.RetrieveUpdateDestroyAPIView: Hérite de RetrieveUpdateDestroyAPIView pour gérer les opérations de lecture, mise à jour et suppression.
+    
+    Attributes:
+        queryset (QuerySet): Le devis spécifique à afficher ou modifier.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Devis.objects.all()
     serializer_class = DevisSerializer
 
 # Vues pour les Contacts
 class ContactList(generics.ListCreateAPIView):
+    """
+    Vue pour afficher la liste des contacts et permettre la création de nouveaux contacts.
+    
+    Args:
+        generics.ListCreateAPIView: Hérite de ListCreateAPIView pour gérer la lecture et l'écriture des données.
+    
+    Attributes:
+        queryset (QuerySet): La liste des contacts à afficher ou à manipuler.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 
 class ContactDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    Vue pour afficher, mettre à jour ou supprimer un contact spécifique.
+    
+    Args:
+        generics.RetrieveUpdateDestroyAPIView: Hérite de RetrieveUpdateDestroyAPIView pour gérer les opérations de lecture, mise à jour et suppression.
+    
+    Attributes:
+        queryset (QuerySet): Le contact spécifique à afficher ou modifier.
+        serializer_class (class): Le serializer à utiliser pour la conversion des données.
+    """
     queryset = Contact.objects.all()
     serializer_class = ContactSerializer
 

@@ -1,13 +1,17 @@
-from django import forms
-from .models import Reservation, Client
-from django.forms.widgets import DateInput
-from django.contrib.auth.models import User
-from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.forms import AuthenticationForm
-from django.contrib.auth import authenticate
-
+from .imports import *  # Importe les modules nécessaires
 
 class ReservationForm(forms.ModelForm):
+    """
+    Formulaire pour la création et la gestion des réservations.
+    
+    Cette classe hérite de ModelForm et permet de créer ou modifier une réservation.
+    Elle inclut des champs comme le client, le service, l'adresse du client, et les dates de début et de fin de la réservation.
+    
+    Attributs:
+        model (class): Le modèle utilisé pour ce formulaire (Reservation).
+        fields (list): Les champs du modèle à inclure dans le formulaire.
+        widgets (dict): Personnalisation des widgets pour les champs de date (utilisation d'un champ de type 'date').
+    """
     class Meta:
         model = Reservation
         fields = ['client', 'client_address', 'service', 'service_description', 'datetime_start', 'datetime_end']
@@ -23,6 +27,25 @@ class ReservationForm(forms.ModelForm):
 
 
 class SignUpForm(UserCreationForm):
+    """
+    Formulaire pour l'inscription d'un utilisateur (création d'un compte).
+    
+    Ce formulaire permet de créer un utilisateur avec son email, son nom, son numéro de téléphone, 
+    son adresse, et son mot de passe. Il valide aussi que l'email et le nom d'utilisateur sont uniques.
+    
+    Attributs:
+        email (EmailField): Champ pour l'adresse e-mail de l'utilisateur.
+        name (CharField): Champ pour le nom complet de l'utilisateur.
+        phone (CharField): Champ pour le numéro de téléphone de l'utilisateur.
+        address (CharField): Champ pour l'adresse de l'utilisateur.
+        password1 (CharField): Champ pour le mot de passe de l'utilisateur.
+        password2 (CharField): Champ pour confirmer le mot de passe.
+    
+    Méthodes:
+        save: Crée l'utilisateur et son client associé dans la base de données.
+        clean_email: Vérifie que l'adresse e-mail est unique dans la base de données.
+        clean_username: Vérifie que le nom d'utilisateur est unique dans la base de données.
+    """
     email = forms.EmailField(
         max_length=254, 
         required=True, 
@@ -92,6 +115,17 @@ class SignUpForm(UserCreationForm):
         }
 
     def save(self, commit=True):
+        """
+        Sauvegarde l'utilisateur et crée un client associé.
+        
+        Crée un utilisateur à partir des données du formulaire, puis crée un objet Client associé à cet utilisateur.
+        
+        Args:
+            commit (bool): Si True, l'objet Client sera enregistré dans la base de données.
+        
+        Returns:
+            user (User): L'utilisateur créé.
+        """
         user = super(SignUpForm, self).save(commit=commit)  # Crée l'utilisateur
         # Crée le Client associé
         client = Client(
@@ -105,18 +139,50 @@ class SignUpForm(UserCreationForm):
         return user  # Retourne l'utilisateur créé
 
     def clean_email(self):
+        """
+        Vérifie si l'email est déjà utilisé dans la base de données.
+        
+        Si l'email est déjà utilisé, une ValidationError est levée.
+        
+        Returns:
+            email (str): L'adresse email nettoyée.
+        
+        Raises:
+            ValidationError: Si l'email est déjà pris.
+        """
         email = self.cleaned_data.get('email')
         if User.objects.filter(email=email).exists():
             raise forms.ValidationError("Cette adresse e-mail est déjà utilisée.")
         return email
 
     def clean_username(self):
+        """
+        Vérifie si le nom d'utilisateur est déjà pris.
+        
+        Si le nom d'utilisateur existe déjà dans la base de données, une ValidationError est levée.
+        
+        Returns:
+            username (str): Le nom d'utilisateur nettoyé.
+        
+        Raises:
+            ValidationError: Si le nom d'utilisateur est déjà pris.
+        """
         username = self.cleaned_data.get('username')
         if User.objects.filter(username=username).exists():
             raise forms.ValidationError("Ce nom d'utilisateur est déjà pris.")
         return username
 
 class ProfileUpdateForm(forms.ModelForm):
+    """
+    Formulaire pour mettre à jour le profil d'un utilisateur.
+    
+    Ce formulaire permet à un utilisateur de mettre à jour son nom, son numéro de téléphone et son adresse.
+    
+    Attributs:
+        model (class): Le modèle associé à ce formulaire (Client).
+        fields (list): Les champs du modèle à inclure dans le formulaire.
+        widgets (dict): Widgets personnalisés pour l'affichage des champs du formulaire.
+    """
     class Meta:
         model = Client
         fields = ['name', 'phone', 'address']
