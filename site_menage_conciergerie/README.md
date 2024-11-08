@@ -1,5 +1,4 @@
 
-![Page d'accueil](services/templates/static/images/logovide.PNG)
 <p align="center">
   <img src="services/templates/static/images/logovide.PNG" alt="logo" width="400">
 </p>
@@ -134,12 +133,16 @@ This project is licensed under the MIT License. See the LICENSE file for details
 
 ## 📓 Screenshot
 
-![Screenshot](accueil.png)
-![Screenshot](figure connexion.png)
+<p align="center">
+  <img src="services/templates/static/images/accueil.png" alt="page accueil" width="400">
+</p>
 
+<p align="center">
+  <img src="services/templates/static/images/figure connexion.png" alt="page de connexion" width="400">
+</p>
 
 
 ---
 
 
-Authors: Siham HANINE
+- **Authors**: Siham HANINE
