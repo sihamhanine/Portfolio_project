@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Service, Reservation, Client, Contact, Devis
+from .backend.models import Service, Reservation, Client, Contact, Devis
 
 admin.site.register(Service)
 admin.site.register(Reservation)
