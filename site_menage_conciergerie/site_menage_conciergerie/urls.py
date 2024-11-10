@@ -1,9 +1,9 @@
 from django.contrib import admin
 from django.urls import path, include
-from services import views
+from services.backend import views
 from django.conf import settings
 from django.conf.urls.static import static
-from services.views import (
+from services.backend.views import (
     ClientList, ClientDetail,
     ServiceList, ServiceDetail,
     ReservationList, ReservationDetail,

@@ -61,7 +61,7 @@ ROOT_URLCONF = 'site_menage_conciergerie.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'services/templates/front_end')],
+        'DIRS': [os.path.join(BASE_DIR, 'services/frontend/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -130,6 +130,7 @@ LOGIN_REDIRECT_URL = 'dashboard'  # Vue vers laquelle rediriger après connexion
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utilisation de la base de données pour les sessions
 
 SESSION_COOKIE_AGE = 1800  # Deux semaines
+SESSION_COOKIE_SECURE = True
 # Expire la session à la déconnexion
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
 CACHE_MIDDLEWARE_SECONDS = 0 
@@ -138,7 +139,8 @@ LOGOUT_REDIRECT_URL = 'accueil'
 
 
 STATIC_URL = '/static/'  # URL pour accéder aux fichiers statiques
-STATICFILES_DIRS = [BASE_DIR / 'services/templates/static']  # Ajouter le chemin vers le dossier static de ton app
+STATICFILES_DIRS = [BASE_DIR / 'services' / 'frontend' / 'static']
+ # Ajouter le chemin vers le dossier static de ton app
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

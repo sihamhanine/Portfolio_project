@@ -121,6 +121,7 @@ form button:hover {
     margin: 20px 0;
     padding: 10px;
     list-style-type: none;
+    text-align: center;
 }
 
 .messages li {
@@ -129,6 +130,7 @@ form button:hover {
     padding: 10px;
     border: 1px solid #bce8f1;
     border-radius: 5px;
+    text-align: center;
 }
 
 /* Responsive Styles */

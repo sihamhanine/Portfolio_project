@@ -6,7 +6,7 @@ def accueil(request):
     Vue pour afficher la page d'accueil du site web.
     Renvoie le template 'accueil.html' pour le frontend.
     """
-    return render(request, 'front_end/accueil.html')  
+    return render(request, 'accueil.html')  
 
 def nos_services(request):
     """
@@ -14,21 +14,21 @@ def nos_services(request):
     Récupère tous les services de la base de données et les transmet au template.
     """
     services = Service.objects.all() 
-    return render(request, 'front_end/NosServices.html', {'services': services})
+    return render(request, 'NosServices.html', {'services': services})
 
 def a_propos(request):
     """
     Vue pour afficher la page "À propos".
     Renvoie le template 'a-propos.html' pour le frontend.
     """
-    return render(request, 'front_end/a-propos.html') 
+    return render(request, 'a-propos.html') 
 
 def notre_gestion(request):
     """
     Vue pour afficher la page "Notre Gestion".
     Renvoie le template 'notre-gestion.html' pour le frontend.
     """
-    return render(request, 'front_end/notre-gestion.html')
+    return render(request, 'notre-gestion.html')
 
 
 def gestion_administrative(request):
@@ -36,63 +36,63 @@ def gestion_administrative(request):
     Vue pour afficher la page "Gestion administrative".
     Renvoie le template 'gestion-administrative.html' pour le frontend.
     """
-    return render(request, 'front_end/gestion-administrative.html')
+    return render(request, 'gestion-administrative.html')
 
 def gestion_locative(request):
     """
     Vue pour afficher la page "Gestion locative".
     Renvoie le template 'gestion-locative.html' pour le frontend.
     """
-    return render(request, 'front_end/gestion-locative.html') 
+    return render(request, 'gestion-locative.html') 
 
 def packairbnb(request):
     """
     Vue pour afficher la page "Pack Airbnb".
     Renvoie le template 'packairbnb.html' pour le frontend.
     """
-    return render(request, 'front_end/packairbnb.html')
+    return render(request, 'packairbnb.html')
 
 def menage_commercial(request):
     """
     Vue pour afficher la page "menage commercial".
     Renvoie le template 'menage_commercial.html' pour le frontend.
     """
-    return render(request, 'front_end/menage_commercial.html') 
+    return render(request, 'menage_commercial.html') 
 
 def menage_residentiel(request):
     """
     Vue pour afficher la page "Menage Résidentiel".
     Renvoie le template 'Menage-Résidentiel.html' pour le frontend.
     """
-    return render(request, 'front_end/Menage-Résidentiel.html') 
+    return render(request, 'Menage-Résidentiel.html') 
 
 def conciergerie(request):
     """
     Vue pour afficher la page "Conciergerie Résidentielle".
     Renvoie le template 'Conciergerie-Résidentielle.html' pour le frontend.
     """
-    return render(request, 'front_end/Conciergerie-Résidentielle.html') 
+    return render(request, 'Conciergerie-Résidentielle.html') 
 
 def service_chantier(request):
     """
     Vue pour afficher la page "service chantier".
     Renvoie le template 'service-chantier.html' pour le frontend.
     """
-    return render(request, 'front_end/service-chantier.html') 
+    return render(request, 'service-chantier.html') 
 
 def espace_vert(request):
     """
     Vue pour afficher la page "Espace vert".
     Renvoie le template 'Espace-vert.html' pour le frontend.
     """
-    return render(request, 'front_end/Espace-vert.html') 
+    return render(request, 'Espace-vert.html') 
 
 def soutien_domicile(request):
     """
     Vue pour afficher la page "Soutien-à-domicile".
     Renvoie le template 'Soutien-à-domicile.html' pour le frontend.
     """
-    return render(request, 'front_end/Soutien-à-domicile.html') 
+    return render(request, 'Soutien-à-domicile.html') 
 
 
 def historique_service(request):
@@ -138,7 +138,7 @@ def historique_service(request):
         'date_end': date_end,
     }
 
-    return render(request, 'front_end/historique.html', context)
+    return render(request, 'historique.html', context)
 @login_required
 def dash_reservation(request):
     """
@@ -217,10 +217,16 @@ def reserver(request):
         HttpResponse: Affiche la page de réservation avec le formulaire.
         Si le formulaire est soumis et valide, redirige vers la même page avec un message de succès.
     """
+    client = Client.objects.get(user=request.user)
     if request.method == "POST":
         form = ReservationForm(request.POST)
         if form.is_valid():
             reservation = form.save(commit=False)
+            # Vérifier que la réservation appartient bien au client connecté
+            if reservation.client != client:
+                # Si la réservation appartient à un autre client, afficher un message d'erreur
+                messages.error(request, "Vous ne pouvez pas réserver pour un autre client.")
+                return redirect('reserver')  # Redirige vers la même page
             # Récupérez l'objet Client associé à l'utilisateur connecté
             client = Client.objects.get(user=request.user)
             reservation.client = client  # Associe le client à la réservation
@@ -231,7 +237,7 @@ def reserver(request):
     else:
         form = ReservationForm()
 
-    return render(request, 'front_end/reserve.html', {'form': form})
+    return render(request, 'reserve.html', {'form': form})
 
 # vue pour inscription d'un user
 def signup(request):
@@ -257,10 +263,10 @@ def signup(request):
     else:
         form = SignUpForm()
 
-    return render(request, 'front_end/inscription.html', {'form': form})
+    return render(request, 'inscription.html', {'form': form})
 
 #vue pour l'espace personnel du client
-@cache_control(no_cache=True, must_revalidate=True, no_store=True)
+@never_cache
 def login_user(request):
     """
     Permet à un utilisateur de se connecter à son compte.
@@ -278,6 +284,10 @@ def login_user(request):
         email = request.POST.get('email')
         password = request.POST.get('password')
 
+        # Déconnexion de tout utilisateur existant
+        if request.user.is_authenticated:
+            logout(request)
+            request.session.flush()
         # Recherche l'utilisateur par l'email
         try:
             user = User.objects.get(email=email)
@@ -287,13 +297,14 @@ def login_user(request):
         # Authentification avec l'utilisateur trouvé
         if user is not None and user.check_password(password):
             login(request, user)
+            request.session.modified = True 
             return redirect('dashboard')  # Remplacez par le nom de la vue de l'espace personnel
         else:
             # Afficher un message d'erreur
             error_message = "Identifiants invalides."
-            return render(request, 'front_end/login.html', {'error_message': error_message})
+            return render(request, 'login.html', {'error_message': error_message})
     
-    return render(request, 'front_end/login.html')
+    return render(request, 'login.html')
 
 @cache_control(no_cache=True, must_revalidate=True, no_store=True)
 def logout_user(request):
@@ -310,7 +321,11 @@ def logout_user(request):
     cache.clear() 
     request.session.flush()
     messages.success(request, "Vous êtes déconnecté.")
-    return render(request, 'front_end/accueil.html')
+    # Création de la réponse et suppression des cookies
+    response = redirect('accueil')
+    response.delete_cookie('csrftoken')  # Facultatif si vous voulez régénérer ce cookie
+    return response
+    
 
 #vue pour l'espace personnel
 @login_required
@@ -361,7 +376,7 @@ def dashboard(request):
         'user_services': user_services,
     }
 
-    return render(request, 'front_end/dashboard.html', context)
+    return render(request, 'dashboard.html', context)
 
 @login_required
 def exporter_historique(request):
@@ -434,7 +449,7 @@ def mon_compte(request):
         profile_form = ProfileUpdateForm(instance=client)
 
     # Rendre le template avec le formulaire et l'objet client
-    return render(request, 'front_end/profil.html', {
+    return render(request, 'profil.html', {
         'profile_form': profile_form,
         'client': client  # Passe l'objet client au template si nécessaire
     })
@@ -477,7 +492,7 @@ def changer_mot_de_passe(request):
         messages.success(request, "Votre mot de passe a été changé avec succès.")
         return redirect('mon_compte')
 
-    return render(request, 'front_end/profil.html')
+    return render(request, 'profil.html')
 
 # vue pour la page contact
 def contact(request):
@@ -519,7 +534,7 @@ def contact(request):
         messages.success(request, 'Votre message a été envoyé avec succès !')
         return redirect('contact')
 
-    return render(request, 'front_end/contact.html') 
+    return render(request, 'contact.html') 
 
 #vue pour la page demander un devis
 def demander_devis(request):
@@ -569,7 +584,7 @@ def demander_devis(request):
         return redirect('accueil')  # Redirection après l'envoi de l'email
 
     # Rendu du formulaire pour d'autres méthodes (GET par exemple)
-    return render(request, 'front_end/demande-devis.html')
+    return render(request, 'demande-devis.html')
 
 
 
