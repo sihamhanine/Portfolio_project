@@ -118,8 +118,8 @@ Contributing to this project is welcome! If you'd like to contribute, here's how
 
 ## 📂 Project Structure
 
-- **`services/`**: Contains Django project files for API and model logic.
-- **`services/templates/frontend/`**: Holds HTML, CSS, and JavaScript files for the UI.
+- **`services/backend`**: Contains Django project files for API and model logic.
+- **`services/frontend`**: Holds HTML, CSS, and JavaScript files for the UI.
 - **`site_menage_conciergerie/`**: Configuration files to manage static files and improve server performance.
 
 ---
