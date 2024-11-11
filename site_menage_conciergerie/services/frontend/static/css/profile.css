@@ -5,6 +5,75 @@ body {
     padding: 0;
     color: #333;
 }
+/* Style de base pour tous les messages */
+.alert {
+    padding: 15px 20px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+/* Styles de base pour le conteneur de messages */
+.alert {
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 5px;
+    font-size: 16px;
+    line-height: 1.5;
+    color: #fff; /* Couleur du texte blanche par défaut */
+    background-color: #333; /* Couleur de fond par défaut (gris foncé) */
+    border: 1px solid transparent;
+}
+
+/* Styles pour chaque type de message */
+.alert-success {
+    background-color: #28a745;
+    border-color: #28a745;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alert-error,
+.alert-danger { /* Compatible avec les messages d'erreur ou de danger */
+    background-color: #dc3545;
+    border-color: #dc3545;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alert-warning {
+    background-color: #ffc107;
+    color: #212529; /* Texte en couleur foncée pour le contraste */
+    border-color: #ffc107;
+    text-align: center;
+    font-size: 16px;
+}
+
+.alert-info {
+    background-color: #17a2b8;
+    border-color: #17a2b8;
+    text-align: center;
+    font-size: 16px;
+}
+
+/* Pour ajouter un peu d'ombre aux messages */
+.alert {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ajouter un bouton de fermeture optionnel si nécessaire */
+.alert .close {
+    float: right;
+    font-size: 1.2rem;
+    line-height: 1;
+    color: inherit;
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+
 h2{
     font-size: 20px; 
     color:#333;

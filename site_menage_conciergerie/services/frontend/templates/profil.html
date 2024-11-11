@@ -24,8 +24,16 @@
         </nav>
     </header>
 <main>
+    {% if messages %}
+<div>
+    {% for message in messages %}
+        <div class="alert {% if message.tags %}alert-{{ message.tags }}{% endif %}">
+            {{ message }}
+        </div>
+    {% endfor %}
+</div>
+{% endif %}
 <h1>Mon Profil</h1>
-  
 <!-- Informations personnelles -->
 <div class="profile-section">
     <h2>Informations Personnelles</h2>
@@ -56,6 +64,7 @@
 </div>
 
 <!-- Modification du mot de passe -->
+ 
 <div class="profile-section">
     <h2>Changer le Mot de Passe</h2>
     <form method="post" action="{% url 'changer_mot_de_passe' %}">
