@@ -164,9 +164,9 @@ def dash_reservation(request):
             # Test 2 : Filtrer par date
             try:
                 # Tente de convertir la recherche en date
-                date_search = parser.parse(query, fuzzy=True).date()
+                date_search = datetime.strptime(query, '%d/%m/%Y').date()
                 print("Date recherchée:", date_search)  # Vérifie la date analysée
-                date_filtered = reservations.filter(datetime_start__date=date_search)
+                date_filtered = reservations.filter(datetime_start__date__exact=date_search)
                 print("Filtré par date:", date_filtered)
             except ValueError:
                 print("La recherche n'est pas une date valide.")  # Enregistre l'erreur
