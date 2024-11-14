@@ -255,8 +255,7 @@ def signup(request):
         form = SignUpForm(request.POST)
         if form.is_valid():
             form.save()  # Crée l'utilisateur et le client
-            messages.success(request, "Inscription réussie ! Bienvenue.")
-            return redirect('reserver')  # Redirection vers la page de réservation
+            return redirect('login_user')  # Redirection vers la page de réservation
         else:
             print(form.errors)  # Affiche les erreurs du formulaire pour le débogage
             messages.error(request, "Veuillez corriger les erreurs ci-dessus.")
@@ -320,7 +319,6 @@ def logout_user(request):
     logout(request)
     cache.clear() 
     request.session.flush()
-    messages.success(request, "Vous êtes déconnecté.")
     # Création de la réponse et suppression des cookies
     response = redirect('accueil')
     response.delete_cookie('csrftoken')  # Facultatif si vous voulez régénérer ce cookie

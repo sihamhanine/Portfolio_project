@@ -19,6 +19,7 @@ from django.core.cache import cache
 from django.forms.widgets import DateInput
 from django import forms
 from django.utils.dateparse import parse_datetime
+from django.contrib.messages import get_messages
 
 
 # Imports de packages tiers

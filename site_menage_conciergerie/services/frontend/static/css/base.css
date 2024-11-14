@@ -237,8 +237,7 @@ display: block;
   
   }
   .menufooter nav ul{
-    list-style: none;
-  
+  list-style: none;
   line-height: 2.5em;
   padding-left: 100px;
   }
@@ -277,8 +276,8 @@ display: block;
   }
   #titres{
     color:#cab48d;
-  font-family: Arial, Helvetica, sans-serif;
-  font-size: 20px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
     font-weight: 500;
     padding-top: 8px;
   }
@@ -302,8 +301,8 @@ display: block;
     font-weight: bold;
     color: #cab48d;
     text-align: center;
-   word-spacing: 0.1em;
-   padding-top:20px;
+    word-spacing: 0.1em;
+    padding-top:20px;
   
   }
   .copy hr{

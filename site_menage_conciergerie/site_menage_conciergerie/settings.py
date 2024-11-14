@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/5.1/ref/settings/
 from pathlib import Path
 from django.urls import reverse_lazy
 import os
+from django.contrib.messages import constants as message_constants
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -129,7 +130,7 @@ LOGIN_REDIRECT_URL = 'dashboard'  # Vue vers laquelle rediriger après connexion
 
 SESSION_ENGINE = 'django.contrib.sessions.backends.db'  # Utilisation de la base de données pour les sessions
 
-SESSION_COOKIE_AGE = 1800  # Deux semaines
+SESSION_COOKIE_AGE = 3600  # Deux semaines
 SESSION_COOKIE_SECURE = True
 # Expire la session à la déconnexion
 SESSION_EXPIRE_AT_BROWSER_CLOSE = True
@@ -155,3 +156,4 @@ EMAIL_HOST_USER = 'apikey'  # Utilisez 'apikey' comme nom d'utilisateur
 EMAIL_HOST_PASSWORD = os.getenv('SENDGRID_API_KEY')
 DEFAULT_FROM_EMAIL = 'siham.elani17@gmail.com'  # Votre adresse e-mail d'expéditeur
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
