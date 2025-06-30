@@ -127,9 +127,9 @@ footer {
     font-size: 16px;
     color: #555;
 }
-
 /* Responsive Design */
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1024px) {
+  /* Tablettes comme iPad Pro, iPad */
   nav ul {
     flex-direction: column;
     align-items: center;
@@ -166,7 +166,21 @@ footer {
   }
 }
 
+@media screen and (max-width: 768px) {
+  /* Petits tablettes et grands téléphones */
+  nav ul li a {
+    font-size: 15px;
+    padding: 8px 10px;
+  }
+
+  main li {
+    font-size: 15px;
+    margin: 15px;
+  }
+}
+
 @media screen and (max-width: 480px) {
+  /* Smartphones */
   h1 {
     font-size: 16px;
   }
@@ -186,6 +200,7 @@ footer {
   }
 
   nav ul li a {
+    font-size: 14px;
     padding: 8px 12px;
   }
 
@@ -198,3 +213,17 @@ footer {
     margin: 10px;
   }
 }
+
+@media screen and (max-width: 320px) {
+  /* Très petits téléphones */
+  nav ul li a {
+    font-size: 13px;
+    padding: 6px 10px;
+  }
+
+  main li {
+    font-size: 13px;
+    margin: 8px;
+  }
+}
+
