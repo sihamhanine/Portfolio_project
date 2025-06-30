@@ -7,20 +7,24 @@ body {
     margin: 0;
     padding: 0;
     color: #333;
+    min-height: 100vh;
+    position: relative;
+    padding-bottom: 60px; /* espace pour le footer */
 }
-h2, h3{
+
+h2, h3 {
     font-size: 20px; 
-    color:#333;
-    text-align: center;
-    letter-spacing: 1.5px;
-}
-h1 {
-    color:#CDB181 ;
-    font-size: 24px;
+    color: #333;
     text-align: center;
     letter-spacing: 1.5px;
 }
 
+h1 {
+    color: #CDB181;
+    font-size: 24px;
+    text-align: center;
+    letter-spacing: 1.5px;
+}
 
 header {
     background-color: #CDB181;
@@ -39,6 +43,8 @@ nav {
     display: flex;
     justify-content: center;
     padding: 10px;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 nav ul {
@@ -51,7 +57,6 @@ nav ul {
 
 nav ul li {
     margin: 0 15px;
-    
 }
 
 nav ul li a {
@@ -61,6 +66,7 @@ nav ul li a {
     padding: 10px 20px;
     display: block;
     border-radius: 5px;
+    text-align: center;
 }
 
 nav ul li a:hover {
@@ -79,21 +85,22 @@ main {
 main h2 {
     margin-bottom: 20px;
 }
-main li{
+
+main li {
     margin: 20px;
     font-size: 16px;
     color: #555;
 }
-
 
 footer {
     background-color: #333;
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
+    position: fixed;  /* footer toujours visible en bas */
     width: 100%;
     bottom: 0;
+    left: 0;
 }
 
 /* Specific Styles for Dashboard */
@@ -126,15 +133,18 @@ footer {
   nav ul {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   nav ul li {
     margin: 10px 0;
+    width: 100%;
   }
 
   nav ul li a {
     font-size: 16px;
-    padding: 8px 12px;
+    padding: 10px;
+    width: 100%;
   }
 
   .dashboard-info {
@@ -165,8 +175,18 @@ footer {
     padding: 5px;
   }
 
+  nav ul {
+    width: 100%;
+    padding: 0;
+    margin: 0 auto;
+  }
+
+  nav ul li {
+    margin: 6px 0;
+  }
+
   nav ul li a {
-    padding: 6px 12px;
+    padding: 8px 12px;
   }
 
   .dashboard-info div {
