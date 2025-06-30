@@ -665,4 +665,85 @@ font-size: 20px;
 }
 
 
+/* résponsive design*/
+@media screen and (max-width: 768px) {
+  .sec1, .sec2, .groupe1, .principe {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .reactivite, .humain, .qualite, .polyvalence,
+  .serviceadministratif, .gestionlocation, .packairbnb,
+  .principe1, .principe2, .principe3 {
+    width: 90% !important;
+    margin: 10px 0;
+  }
+
+  .sec2 img {
+    margin-left: 0;
+    width: 80px;
+    height: auto;
+  }
+
+  .serviceadministratif button,
+  .gestionlocation button,
+  .packairbnb button {
+    margin: 10px auto;
+    display: block;
+  }
+
+  .sec5 button {
+    margin: 30px auto;
+    display: block;
+  }
+
+  .devis p {
+    margin-left: 0;
+    text-align: center;
+  }
+
+  .titre h2, .titreadministration h2, .titrelocation h2, .titreairbnb h2 {
+    padding-top: 40px;
+    font-size: 20px;
+  }
+
+  .text p {
+    font-size: 14px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .desc h1, .sec3 h1, .sec4 h1, .sec5 h1 {
+    font-size: 22px !important;
+    padding: 10px;
+  }
+
+  .sec2 h2 {
+    font-size: 18px !important;
+  }
+
+  .text p {
+    font-size: 12px;
+  }
+
+  .titre {
+    font-size: 18px !important;
+  }
+
+  .gliss img {
+    height: 250px;
+  }
+
+  .sec5 button {
+    padding: 12px 20px;
+    font-size: 14px;
+  }
+
+  .numero {
+    width: 35px;
+    height: 35px;
+    font-size: 14px;
+  }
+}
+
 
