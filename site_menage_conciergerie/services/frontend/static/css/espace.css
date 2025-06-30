@@ -132,6 +132,11 @@ footer {
     margin: 10px 0;
   }
 
+  nav ul li a {
+    font-size: 16px;
+    padding: 8px 12px;
+  }
+
   .dashboard-info {
     flex-direction: column;
     align-items: center;
@@ -149,14 +154,8 @@ footer {
   h1, h2, h3 {
     font-size: 18px;
   }
-
-  nav ul li a {
-    font-size: 16px;
-    padding: 8px 16px;
-  }
 }
 
-/* Petit écran - smartphones */
 @media screen and (max-width: 480px) {
   h1 {
     font-size: 16px;
@@ -179,4 +178,3 @@ footer {
     margin: 10px;
   }
 }
-
